@@ -10,4 +10,4 @@
   - [실습 환경 세팅](./html/210829_index.html)
 - [2021-08-30]
   - [메타데이터](./html/00_html-summary.md#%EB%A9%94%ED%83%80%EB%8D%B0%EC%9D%B4%ED%84%B0)
-  - [텍스트 요소-01](./html/00_html-summary.md#%ED%85%8D%EC%8A%A4%ED%8A%B8+%EC%9A%94%EC%86%8C-01)
+  - [텍스트 요소-01](./html/00_html-summary.md#%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%9A%94%EC%86%8C-01)
