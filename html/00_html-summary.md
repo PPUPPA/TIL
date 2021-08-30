@@ -98,9 +98,7 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 #### 빈 요소(Empty elements)
 
 - 내용이 없는 이미지, 수평선, 줄바꿈 등의 요소를 빈 요소(Empty element)라 부른다.
-
 - 닫는 태그를 추가로 명사하지 않는다.
-
 - 부르는 이름이 다양하다.
   Empty element, Self-Closing element, Void element, Single tag, ...
 
@@ -185,10 +183,10 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 
 #### 태그를 구분짓는 특성(body)
 1. 구획을 나누는 태그(layout)
-  - 단독으로 사용했을 땐 눈에 보이지 않는다.
-  - 컨테이너 역할을 하는, **그룹화** 태그.
+    - 단독으로 사용했을 땐 눈에 보이지 않는다.
+    - 컨테이너 역할을 하는, **그룹화** 태그.
 2. 그 자체로 요소인 태그
-  - 단독으로 사용해도 눈으로 보인다.
+    - 단독으로 사용해도 눈으로 보인다.
 
 <br>
 
@@ -199,11 +197,11 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 - 직전 요소가 블록인지 인라인인지에 따라 다음 태그의 위치가 정해진다.
 
 1. 블록(block)
-  - 언제나 새로운 줄에서 시작하며, 좌우 양쪽으로 최대한 늘어나 가능한 모든 너비를 차지 (부모가 차지한 영역의 한 줄 차지)
-  - 상자를 아래로 쌓는 것
+    - 언제나 새로운 줄에서 시작하며, 좌우 양쪽으로 최대한 늘어나 가능한 모든 너비를 차지 (부모가 차지한 영역의 한 줄 차지)
+    - 상자를 아래로 쌓는 것
 2. 인라인(inline)
-  - 줄의 어느 곳에서나 시작함
-  - 바로 이전 요소가 끝나는 지점부터, 요소의 내용(content)만큼만 차지!
+    - 줄의 어느 곳에서나 시작함
+    - 바로 이전 요소가 끝나는 지점부터, 요소의 내용(content)만큼만 차지!
 
 > **[포함 규칙]**
 > - 같은 형태의 다른 요소를 안에 포함할 수 있음(블록>블록 / 인라인>인라인)
