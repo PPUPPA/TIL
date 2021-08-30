@@ -225,3 +225,339 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 |인터렉티브 콘텐츠(Interactive Content)|대화형 콘텐츠. 사용자와의 상호작용을 위한 콘텐츠 요소|
 
 > [콘텐츠 카테고리, W3C](https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html)
+<br>
+<br>
+<br>
+<br>
+
+### 메타데이터
+> [HTML head, MDN](https://developer.mozilla.org/ko/docs/Glossary/Head)
+
+- `<head>`에 들어가는 정보 영역
+- **메타데이터** : 데이터를 설명하는 데이터, 데이터를 위한 데이터.
+- 검색 엔진이 문서의 정보를 분류할 때 사용하기도 한다
+
+
+#### `<title>` : 문서 제목 요소
+
+> [title, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/title)
+
+- 문자열만 작성, 안쪽에 태그가 있어도 무시한다.
+- 문서에 하나만 들어가며, 브라우저 상단의 제목에 해당한다.
+- 결과 페이지의 순서를 결정하는 구성 요소 중 하나가 페이지의 제목이다. (SEO와도 관련)
+- 단순한 단어 나열 제목은 검색 알고리즘이 광고 등으로 인식해 검색 순위를 낮추므로 설명할 수 있도록 한다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이 곳은 송아선의 웹페이지 입니다!</title>
+  </head>
+  <body>
+    
+    </body>
+</html>
+```
+<br>
+
+#### `<meta>` : 메타데이터 요소
+
+> [meta, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta)
+
+- 빈 요소로 내용을 가질 수 없으며 속성으로 정보를 나열한다.
+
+<br>
+
+##### [메타 태그의 속성]
+
+###### `name`
+
+[표준 메타데이터 이름](https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta/name)으로 사용
+
+- `application-name` : 웹페이지 전체를 아우를 수 있는 제목. (ex: 페이스북 / 타이틀 : 페이스북 - 대쉬보드 등.. 타이틀에는 메뉴에 따라 정보가 달라질 수 있음)
+- `description` : 페이지에 대한 짧은 요약. 일부 브라우저에서는 즐겨찾기 내 기본 설명값으로 사용하기도 한다.
+- `generator` : 페이지를 생성한 소프트웨어의 식별자
+- `keywords` : 문서를 설명할 수 있는 키워드. 인스타그램의 해시태그와 유사함.
+- `referrer` : 링크를 통해 페이지를 이동하면 흔적이 남기 때문에, 그 흔적을 어떻게 남길지에 대한 속성. (아직 서버나 http에 대한 개념이 부족하니 이 정도로 알고 넘어감)
+
+<br>
+
+###### `charset`
+
+- 언어 세팅, 타이틀 전이나 **`<head>`영역의 가장 첫번째로 작성**하는 것을 권장한다.
+- UTF-8 : 모든 나라의 언어셋을 사용함
+
+<br>
+
+###### `[name="viewport"]`
+
+- 전체 브라우저에서 웹 페이지를 볼 수 있는 영역을 말함.
+- 모바일 장치에서 사용.
+- 쉼표로 구분
+
+|값|하위값|설명|
+|----|--|-----|
+|width|정수(+) 혹은 device-width|브라우저가 모바일 화면(디바이스)의 가로너비와 동일하게 적용하고자 할 때 device-width를 사용하며, 그 외에는 정수를 입력해 사이즈를 정의할 수 있다.|
+|height|정수(+) 혹은 device-height|width와 동일한 내용(단 높이)이나, width를 설정하면 height는 따라오기 때문에 따로 설정하지 않는 경우가 많음|
+|initial-scale|0.0 ~ 10.0|초기 비율. 실제 디바이스의 가로와 뷰포트 너비의 비율을 정의한다. 일반적으로 쓰이는 건 1.0|
+|user-scalable|yes / no|웹페이지 확대 축소 가능 여부, 기본값은 yes|
+|maximum-scale|0.0 ~ 10.0|웹페이지 최대 확대 비율|
+|minimum-scale|0.0 ~ 10.0|웹페이지 최대 축소 비율|
+
+<br>
+
+#### MIME 타입
+
+> [MIME 타입, MDN](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+
+- 파일을 해석하지 못하는 걸 방지하기 위해 타입을 명시해주는 것
+- `type/subtype` 형태로 작성
+- `type`에는 `text`, `image`, `video`, `audio` 등이 있다.
+- 사용할 때마다 적절한 MIME 타입을 찾아 사용한다.
+
+<br>
+
+#### `<style>`
+
+- 외부 파일을 `<link>` 형태로 불러와 사용하는 것을 권장하지만 내부 `<head>`영역에도 작성할 수 있다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      p {color:red;}
+    </style>
+  </head>
+  <body>
+    <p>안녕하세요. 반갑습니다</p>
+  </body>
+</html>
+```
+
+<br>
+
+#### `<script>`
+
+- 외부 파일(src속성)을 불러와 사용하기도 하고, 직접 내부에 자바스크립트 문법을 작성할 수도 있다.
+- 스크립트 파일을 만나 해석하는 동안 브라우저의 랜더링은 중단된다.
+- 위의 이슈 때문에 가능한 스크립트는 `</body>` 의 바로 위에서 작성하는 것을 권장한다. (다른 방법이 있으나 이는 지금 다루지 않는다!)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // 자바스크립트
+    </script>
+  </head>
+  <body>
+    <p>안녕하세요. 반갑습니다</p>
+
+    <script>
+      // 자바스크립트
+    </script>
+  </body>
+</html>
+```
+
+<br>
+<br>
+<br>
+<br>
+
+### 텍스트 요소-01
+> [실습 문서](210830_index.html)
+
+#### 제목 태그(h1 ~ h6)
+> [제목태그, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/Heading_Elements)
+> [HTML5 Outliner](https://gsnedders.html5.org/outliner/)에서 html5 문서의 제목 태그 구성을 확인할 수 있다.
+
+- heading 태그로 `<h1>`이 가장 높고 `<h6>`이 가장 낮다
+- 유저 에이전트에서 제목을 분석해 목차를 만드는 등의 작업을 수행할 수 있다(스크린모드, html읽기 모드 등)
+- 제목 단계를 건너뛰는 것(`<h2>` 직후 `<h6>`을 사용하는 등)을 지양할 것.
+- 글씨 크기를 위해 제목 태그 사용 금지. 글씨 크기는 브라우저에서 기본적으로 지정된 크기일 뿐, 브라우저에 따라 다를 수도 있다.
+- `<h1>`은 여러번 써도 오류가 나지는 않지만 단일로 사용하는 것을 권장한다. (웹접근성, SEO와도 연관됨)
+
+```html
+<h1>Heading elements</h1>
+<h2>Summary</h2>
+<p>Some text here...</p>
+
+<h2>Examples</h2>
+<h3>Example 1</h3>
+<p>Some text here...</p>
+
+<h3>Example 2</h3>
+<p>Some text here...</p>
+
+<h2>See also</h2>
+<p>Some text here...</p>
+```
+
+<br>
+
+#### 본문
+##### p
+> [p, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/p)
+
+- 하나의 문단을 의미함
+- 블록 레벨 요소.
+- `<p>`태그와 `<p>`태그 사이엔 문장 한줄 높이가 자동으로 여백으로 들어감.
+- 정확하게 비슷한 내용으로 문단을 묶어줘야 문단 띄어넘기(스크린 리더 등)를 했을 때 문제가 없으니 고려해서 작성한다.
+- 빈 `<p>` 태그를 이용해 여백을 만들지 말고 css를 사용한다.
+
+```html
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisi a neque consectetur porta vitae ut ligula. Suspendisse et est sit amet mi hendrerit dapibus. Phasellus pretium quam at placerat fermentum. Mauris ac dui sit amet ligula fermentum faucibus vitae quis est. Sed eget sem tortor. Praesent hendrerit purus in enim imperdiet, sed mollis tellus mollis. In malesuada pharetra felis eu dignissim. Sed suscipit nisi a turpis venenatis imperdiet. Quisque ac mi eu est ullamcorper accumsan. Nulla scelerisque elit quis luctus vehicula. Quisque ac mauris nec dui viverra luctus in id ante. Curabitur non accumsan quam. Maecenas a libero laoreet leo congue eleifend nec nec tellus. Quisque interdum turpis at mauris euismod, nec porttitor massa aliquam.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in nisi a neque consectetur porta vitae ut ligula. Suspendisse et est sit amet mi hendrerit dapibus. Phasellus pretium quam at placerat fermentum. Mauris ac dui sit amet ligula fermentum faucibus vitae quis est. Sed eget sem tortor. Praesent hendrerit purus in enim imperdiet, sed mollis tellus mollis. In malesuada pharetra felis eu dignissim. Sed suscipit nisi a turpis venenatis imperdiet. Quisque ac mi eu est ullamcorper accumsan. Nulla scelerisque elit quis luctus vehicula. Quisque ac mauris nec dui viverra luctus in id ante. Curabitur non accumsan quam. Maecenas a libero laoreet leo congue eleifend nec nec tellus. Quisque interdum turpis at mauris euismod, nec porttitor massa aliquam.</p>
+```
+
+<br>
+
+##### br
+> [br, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/br)
+
+- 줄바꿈(line break) 태그
+- 빈 요소
+- 문단 사이 여백을 위해 여러개의 `<br>`을 두는 대신 css로 여백을 조정한다.
+- 내용이 나눠지는 경우 `<br>` 대신 `<p>` 태그를 여러개 사용하여 나눈다.
+
+```html
+<p> O’er all the hilltops<br>
+  Is quiet now,<br>
+  In all the treetops<br>
+  Hearest thou<br>
+  Hardly a breath;
+</p>
+<p>
+  The birds are asleep in the trees:<br>
+  Wait, soon like these<br>
+  Thou too shalt rest.
+</p>
+```
+
+<br>
+
+##### blockquote, q
+> [blockquote, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/blockquote)
+> [q, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/q)
+
+- `<blockquote>` : 인용 블록 요소
+- `<q>` : 인라인 인용문 요소
+- `cite` : 인용문의 출처나 메세지를 가리키는 속성, url 값을 넣는다.
+
+```html
+<!-- blockquote, q 태그 -->
+<!-- blockquote 예제 -->
+<blockquote cite="https://www.huxley.net/bnw/four.html">
+  <p>
+    Words can be like X-rays, if you use them properly–they'll go through anything. You read and you're pierced.
+  </p>
+</blockquote>
+
+<!-- p 태그 안에는 blockquote가 올 수 없음! / 오류 코드 -->
+<p>
+  선택의 조건 (행복을 어디서 찾을 것인가)라는 도서에서는 아래와 같이 이야기한다.
+  <blockquote>
+    사람들은 이제 휴식을 부끄러워한다. 오랜 사색에 대해선 양심의 가책까지 느낀다. 시계를 바라보며 점심 식사는 어떻게 할 것인지 생각하고, 눈은 주식 시세가 나와있는 신문을 향해있다.
+  </blockquote>
+</p>
+<!-- //p 태그 안에는 blockquote가 올 수 없음! / 오류 코드 -->
+<!-- // blockquote 예제 -->
+
+<!-- q 예제 -->
+<p><q>이건 나는 게 아냐, 아주 멋있게 떨어지는 거지.</q> - 토이스토리</p>
+<!-- // q 예제 -->
+<!-- // blockquote, q 태그 -->
+```
+
+<br>
+
+##### pre
+> [pre, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/pre)
+
+- 미리 서식을 지정한 텍스트(preformatted text).
+- 작성한 내용 그대로 표현(요소 내 공백을 그대로 유지함)
+- 고정폭 글꼴로 렌더링.
+- 하나의 스냅샷 이미지와 유사하다.
+
+```html
+<pre>
+  L          TE
+    A       A
+      C    V
+       R A
+       DOU
+       LOU
+      REUSE
+      QUE TU
+      PORTES
+    ET QUI T'
+    ORNE O CI
+     VILISÉ
+    OTE-  TU VEUX
+     LA    BIEN
+    SI      RESPI
+            RER       - Apollinaire
+</pre>
+```
+
+<br>
+
+##### figure, figcaption
+> [figure, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/figure)
+
+- 독립적인 콘텐츠
+- `<figure>`태그로 묶어 사용하면 하나의 영역으로 묶어줄 수 있다.
+
+<br>
+
+> [figcaption, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/figcaption)
+
+- `<figure>` 태그 내에 설명을 붙이기 위한 태그
+
+```html
+<figure>
+  <p>
+    Bid me discourse, I will enchant thine ear,
+    Or, like a fairy, trip upon the green,
+    Or, like a nymph, with long dishevelled hair,
+    Dance on the sands, and yet no footing seen:
+    Love is a spirit all compact of fire,
+    Not gross to sink, but light, and will aspire.
+  </p>
+  <figcaption>by William Shakespeare</figcaption>
+</figure>
+```
+
+
+<br>
+
+##### hr
+> [hr, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/hr)
+
+- 수평선(horizon)태그.
+
+```html
+<p>§1: The first rule of Fight Club is: You do not talk about Fight Club.</p>
+
+<hr>
+
+<p>§2: The second rule of Fight Club is: Always bring cupcakes.</p>
+```
+
+
+<br>
