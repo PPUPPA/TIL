@@ -673,8 +673,8 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 <pre>문단을 나타내는 태그는 &lt;p&gt;&lt;/p&gt;태그입니다.</pre>
 ```
 
-|---|----|
 |값|엔티티 코드|
+|---|----|
 |`<`|`&lt;`|
 |`>`|`&gt;`|
 |`"`|`&quot;`|
