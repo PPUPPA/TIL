@@ -559,5 +559,277 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 <p>§2: The second rule of Fight Club is: Always bring cupcakes.</p>
 ```
 
+<br>
+<br>
+<br>
+<br>
+
+### 텍스트 요소-02
+> [실습 문서](210831_index.html)
+
+#### 본문
+##### abbr, address, cite, bdo
+> 스타일 지정을 위해 해당 태그를 사용하지 않도록 한다.
+
+- `abbr` : 약어로, `title` 속성에 전체 내용을 적어 사용한다.
+- `address` : 주소. 예전에는 지역 등의 주소를 나타내는 데 많이 사용했으나, 현재는 메일이나 사이트 주소를 모두 통틀어 사용한다.
+- `cite` : 인용의 출처를 밝힐 때 사용하는 태그. `q`, `blockquote` 등의 코드에서 속성 값으로도 사용하지만 눈에 보이도록 출처를 남기도록 할 땐 `cite` 태그를 사용한다.
+- `bdo` : 양방향. 텍스트를 반대 방향으로 표현할 때 사용한다. `dir`(디렉션) 속성에 `ltr`, `rtl` 등으로 방향을 지정해서 사용한다.
+
+<br>
+<br>
+
+#### 포매팅
+##### b, strong
+> [b, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/b)
+> [strong, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/strong)
+
+- `<b>` 태그는 단순히 '굵게 표시할 부분'에 사용하며, 전체가 아닌 부분적 강조를 위해 사용하는 태그다.
+- `<strong>` 태그는 '중요한 요소'에 사용한다.
+- 둘은 완전히 다른 태그지만 형태만 유사하게 보일 뿐!
+
+<br>
+
+##### i, em
+> [i, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/i)
+> [em, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/em)
+
+- `<i>` 태그는 기술용어, 외국어 등 앞뒤와 톤이 다르게 읽혀야 하는 부분에 사용.
+- `<em>` 태그는 '중요한 요소'에 사용한다. `<strong>`보다 더 긴급하게 강조하는 느낌!
+- 둘은 완전히 다른 태그지만 형태만 유사하게 보일 뿐!
+
+<br>
+
+##### mark, small, sub, sup
+
+**mark**
+> [mark, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/mark)
+- 텍스트를 강조(하이라이트) 처리를 위한 태그.
+- 검색결과나 `q`, `blockquote` 등의 태그에서도 사용함
+<br>
+
+**small**
+> [small, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/small)
+- 덧붙임 요소. 저작권, 법률표기 등을 작은 글씨로 표기해줌
+<br>
+
+**sup, sub**
+> [sup, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/sup)
+> [sub, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/sub)
+- `<sup>` : 위 첨자 태그 (지수 표기, 외국어 서수 표기 등)
+- `<sub>` : 아래 첨자 태그 (화학식, 각주 등)
+
+<br>
+
+##### del, ins, code, kbd
+**del, ins**
+> [del, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/del)
+> [ins, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/ins)
+- 사용 범위 및 속성이 유사하다 (cite, datetime)
+- `<del>` : 제거된 텍스트 범위 (취소선 등)
+- `<ins>` : 삽입된 텍스트 범위 (밑줄 등)
+- `cite` : 변경점을 설명하는 리소스의 url 속성
+- `datetime` : 변경 일시에 대한 속성
+<br>
+
+**code**
+> [code, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/code)
+- 고정폭 글씨체, `<pre>`의 인라인 요소 버전!
+<br>
+
+**kbd**
+> [kbd, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/kbd)
+- 고정폭 글씨체, 키보드 입력 등의 사용자 입력을 나타냄
+
+<br>
+<br>
+
+#### a태그와 하이퍼링크
+> [a, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/a)
+
+- `<a>`는 anker 요소를 의미함.
+- `href` 속성을 통해 위치, 파일, 주소, 전화번호(`tel:`), 메일주소(`mailto:`) 등을 **url**로 연결할 수 있다.
+  - 절대경로 : 현재 위치와 관련없이 동일한 곳으로 이동
+  - 상대경로 : 현재 위치를 기준으로 이동
+  - `<a href="https://www.mozilla.com">Mozilla</a>`
+- `target` : url을 표시할 위치(열 위치)
+  - `_self` : 기본 값, 현재 창에 연다.
+  - `_blank` : 새 탭/새 창에 연다.
+  - `_parent` : 현재 영역의 창의 부모 영역에 표시(iframe 등)하나, 부모가 없을 경우 `_self`와 동일하게 동작.
+  - `_top` : 최상단 브라우징 맥락에 표시하며, 없을 경우 `_self`와 동일하게 동작함
+  - `<a href="https://www.mozilla.com" target="_blank">Mozilla</a>`
+
+
+<br>
+
+#### 엔티티(Entity)
+> [entity, MDN](https://developer.mozilla.org/en-US/docs/Glossary/Entity)
+> [entity(국문 문서, 중하단에 위치), MDN](https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
+
+- &(앰퍼시티)로 시작해서 ;(세미콜론)으로 끝난다.
+
+```html
+<p>다섯개의 스페이싱 (     )</p>
+<pre>문단을 나타내는 태그는 &lt;p&gt;&lt;/p&gt;태그입니다.</pre>
+```
+
+|---|----|
+|값|엔티티 코드|
+|`<`|`&lt;`|
+|`>`|`&gt;`|
+|`"`|`&quot;`|
+|`'`|`&apos;`|
+|`&`|`&amp;`|
+|` (spacing)`|`&nbsp;`|
+
+<br>
+<br>
+<br>
+<br>
+
+### 구조를 나타내는 요소
+> [실습 문서](210831_construction.html)
+
+#### 컨테이너(div, span)
+
+##### div
+- 순수컨테이너로 아무것도 표현하지 않음.
+- 아무런 의미가 없는 블록 요소로, 여러 요소를 묶어 스타일링 하거나 레이아웃을 짜기 위해 사용.
+- 특정 구역에 lang 속성을 이용해 다른 언어로 표현할 수 있음.
+
+##### span
+- div와 동일하게 순수 컨테이너로 아무것도 표현하지 않음.
+- 아무 의미가 없는 인라인 요소.
+
+<br>
+
+#### 시멘틱 웹이란
+- Semantic : 의미의, 의미론적인
+- 요소의 의미를 고려하여 구조를 설계하고 코드를 작성한다.
+```html
+<body>
+  <!-- 시멘틱 마크업 O -->
+  <header><!-- Header --></header>
+
+  <nav><!-- 메뉴 --></nav>
+
+  <main>
+    <article><!-- 본문 --></article>
+    <aside><!-- 사이드바 --></aside>
+  </main>
+
+  <footer><!-- Footer --></footer>
+</body>
+```
+```html
+<body>
+  <!-- 시멘틱 마크업 X -->
+  <div><!-- Header --></div>
+
+  <div><!-- 메뉴 --></div>
+
+  <div>
+    <div><!-- 본문 --></div>
+    <div><!-- 사이드바 --></div>
+  </div>
+
+  <div><!-- Footer --></div>
+</body>
+```
+
+##### 시멘틱 마크업의 장점
+- 검색엔진이 시멘틱 마크업을 분석해 페이지의 SEO에 영향을 주는 중요 키워드로 간주한다.
+- 시각장애가 있는 사용자가 스크린 리더 등의 장치로 페이지를 탐색할 때 푯말로 사용할 수 있다. (웹접근성!)
+- 의미 없는 `div`들을 탐색하는 것보다 의미 있는 코드블록을 찾는 것이 쉽다. (유지보수 측면)
+- 개발자에게 태그 안에 채워질 데이터 유형을 제안한다.
+- 의미있는 이름 짓기(Semantic naming)는 적절한 사용자 정의 요소 / 구성요소의 이름짓기(naming)를 반영한다.
+
+
+<br>
+
+#### header, footer
+##### header
+> [header, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/header)
+
+- 소개 및 탐색에 도움을 주는 콘텐츠
+- 제목, 로고, 검색 폼, 작성자 명 등의 요소도 포함
+- 웹 페이지에 하나만 있으며, 일반적으로 웹페이지 내 어떤 곳을 탐색해도 동일한 헤더를 갖는다.
+- 내부에 `header`또는 `footer`를 자식으로 가질 수 없다.
+<br>
+
+##### footer
+> [footer, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/footer)
+- 일반적으로 구획의 작성자, 저작권 정보, 관련 문서 등의 정보를 담고 있음.
+- 웹 페이지에 하나만 있으며, 일반적으로 웹페이지 내 어떤 곳을 탐색해도 동일한 푸터를 갖는다.
+- 내부에 `header`또는 `footer`를 자식으로 가질 수 없다.
+
+
+<br>
+
+#### nav
+> [nav, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/nav)
+- 내비게이션 바.
+- 일반적인 내비게이션이 내가 있는 위치나, 가야할 방향을 알려주듯 내가 어느 페이지에 있고, 상위 페이지는 어디인지 위치를 보여준다.
+- 현재 페이지에서의 탐색도 용이하게 만들어준다.
+- 메뉴, 목차, 색인 등으로 쓰인다.
+- 일반적으로 목록(`ul`, `li`)의 형태를 갖는다.
+
+> 푸터는 사이트 내 공통사항, 내비게이션은 페이지 내의 링크로 다른 점을 기억해두자.
+
+<br>
+
+#### aside
+> [aside, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/aside)
+
+- 사이드바를 만들 때 사용.
+- 본문과 크게 직접적인 연관은 없으나 간접적인 연관이 있을 때 사용한다.
+- 본문 내 단어를 추가적/부가적으로 설명할 때나, 광고 등의 영역!
+- 없어도 메인 영역의 내용을 읽는데 문제가 없다.
+
+<br>
+
+#### main
+> [main, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/main)
+
+- `body`태그의 바로 하위 자식으로 사용하며, 페이지 내 단 하나만 사용 가능.
+  - hidden 속성으로 숨길 경우엔 여러개로 사용 가능.
+- 전체 컨텐츠를 아우른다.
+- IE 11 이하 버전에서 지원되지 않으므로, IE 11 이하에서 사용 시 ARIA 속성을 이용해 `<main role="main">`과 같이 사용한다. (접근성)
+
+<br>
+
+#### article
+> [article, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/article)
+
+- 한 페이지에 여러개 사용 가능
+- 독립적으로 구분해 재포하거나 재사용할 수 있는 구획.
+- 뉴스의 기사, 블로그 포스팅, 주간 날씨의 일일 날씨 정보 등.
+- 페이지 내의 독립적인 컨텐츠.
+- 내부에 여러개의 `section`이 있을 수 있고, 반대로 `section` 내부에 `article`이 존재할 수도 있음.
+- `article` 내부에 제목 요소(h태그)를 사용해 식별할 수 있는 제목을 넣어줌.
+- 독립적인 요소이기 때문에 내부에 `header`, `footer`를 사용할 수도 있다.
+
+<br>
+
+#### section
+> [section, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/section)
+
+- `article`과 유사하나 다르다!
+- 가장 쉬운 구분점은 독립적 요소로 `article`로 묶을 수 있다면 `article`로 사용하고, 그게 아니라면 `section`으로 사용한다.
+- `div`를 사용하지 않는 이유는 일반적으로 레이아웃, 스타일을 위해 사용하는 `div`와 달리 *전체 글의 흐름에 있어 문맥적으로 호흡이 끊겨 바뀌는 부분*에서 구분하기 위해 사용한다.
+- 접근성을 위해 제목 요소(h태그)를 사용해 식별한다.
+
+```html
+<h1>Choosing an Apple</h1>
+<section>
+    <h2>Introduction</h2>
+    <p>This document provides a guide to help with the important task of choosing the correct Apple.</p>
+</section>
+
+<section>
+    <h2>Criteria</h2>
+    <p>There are many different criteria to be considered when choosing an Apple — size, color, firmness, sweetness, tartness...</p>
+</section>
+```
 
 <br>
