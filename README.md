@@ -14,6 +14,8 @@
 - [2021-08-31]
   - [텍스트 요소-02](./html/00_html-summary.md#%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%9A%94%EC%86%8C-02)
   - [구조를 나타내는 요소](./html/00_html-summary.md#%EA%B5%AC%EC%A1%B0%EB%A5%BC-%EB%82%98%ED%83%80%EB%82%B4%EB%8A%94-%EC%9A%94%EC%86%8C)
+- [2021-09-01]
+  - [개인 복습, W3Schools](./html/210901_html-review.html)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용
