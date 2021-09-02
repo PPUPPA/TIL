@@ -19,7 +19,6 @@
 > **하이퍼텍스트**: 다른 페이지나 위치로 이동하도록 만들어진 요소이나, 지금은 웹페이지를 이루는 요소 하나하나를 말함.
 
 > **프로그래밍 언어** : 데이터를 가공하거나 명령하는 action에 관련된 언어
->
 > **마크업 언어** : 데이터를 어디에 어떻게 표현할지 구조적 의미를 정의하는 언어
 
 <br>
@@ -149,6 +148,7 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 
 - `<!DOCTYPE html>` : 문서 타입 명시, html5를 의미. 생략해도 문제 없으나 선언하고 시작하는 게 관습화되어 사용하고 있다.
 - `html` : 실제 태그 영역. 하나의 문서에 하나만 있으며, 모든 요소가 이 안에 위치해야 한다. 최상위 요소, root요소라고 불린다.
+  - `lang` : `html lang="언어"` 속성을 통해 페이지 언어를 지정할 수 있다.
   - `head` : 웹페이지 화면에 직접 노출되지 않는 **웹페이지의 정보** 영역
     - meta tag : 문서의 일반적인 정보와 문자 인코딩 등을 명시한다
     - title : 웹페이지의 제목
@@ -207,6 +207,11 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 > - 같은 형태의 다른 요소를 안에 포함할 수 있음(블록>블록 / 인라인>인라인)
 > - 대부분의 블록 요소는 인라인 요소도 포함할 수 있음
 > - !! 인라인 요소는 블록 요소를 포함할 수 없다!
+
+> **inline-block?**
+> inline과 block 외에도 inline-block 요소가 존재한다.
+> 기본적으로 inline과 유사하게 줄의 어느 곳에서나 시작하고, 바로 이전 요소가 끝나는 지점부터 요소의 내용만큼 공간을 차지하지만 **width, height, margin, padding, line-height** 등을 사용해 크기를 커스텀할 수 있다.
+> inline-block은 기본적으로 공백을 갖고 있는데 부모 요소에 `font-size:0`을 적용하면 공백이 제거되며, 폰트사이즈는 요소 자체에 직접 적용한다.
 
 <br>
 
@@ -272,6 +277,8 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 <br>
 
 ##### [메타 태그의 속성]
+
+- `property` 속성의 `og:title`, `og:description`, `og:image` 등을 이용하면 오픈 그래프 메타 데이터를 설정할 수 있다. 페이스북, 네이버, 트위터 등에서 사용되는 링크의 미리보기에 사용되는 메타데이터!
 
 ###### `name`
 
@@ -350,6 +357,11 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 - 외부 파일(src속성)을 불러와 사용하기도 하고, 직접 내부에 자바스크립트 문법을 작성할 수도 있다.
 - 스크립트 파일을 만나 해석하는 동안 브라우저의 랜더링은 중단된다.
 - 위의 이슈 때문에 가능한 스크립트는 `</body>` 의 바로 위에서 작성하는 것을 권장한다. (다른 방법이 있으나 이는 지금 다루지 않는다!)
+
+> 스크립트에서 시작하는 시점을 설정해줄 수 있다.
+> 대표적으로 페이지가 준비 되었을 때(document.ready) / 전부 로딩되었을 때(window.load)가 있다.
+> document.ready의 경우 DOM이 트리를 생성한 직후 실행되며,
+> window.load의 경우 html의 모든 요소가 페이지에 로딩된 후 동작한다. 외부 리소스 이슈 등으로 페이지 로딩시간이 길어질 경우 그만큼 스크립트를 불러오기까지의 대기 시간도 길어진다.
 
 ```html
 <!DOCTYPE html>
@@ -484,6 +496,8 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 <!-- // blockquote, q 태그 -->
 ```
 
+> 잘 사용하지 않아서 잊고 있던 태그라, 개인 복습을 위해 W3Schools 등의 문제를 인용할 때 사용해서 익혀두면 좋을 것 같다.
+
 <br>
 
 ##### pre
@@ -543,6 +557,7 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 </figure>
 ```
 
+> 잘 사용하지 않아 잊고 있던 태그인데, 기억해뒀더라면 더 잘 사용할 수 있었을 것 같다. 다른 날 정리해둔 `audio`, `video` 태그 등의 임베드 요소들이나 위에서 사용한 인용 요소(`blockquote`, `q`), 코드문(`pre`, `code`)과 함께 사용하면 좋을 것 같다.
 
 <br>
 
@@ -575,6 +590,8 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 - `address` : 주소. 예전에는 지역 등의 주소를 나타내는 데 많이 사용했으나, 현재는 메일이나 사이트 주소를 모두 통틀어 사용한다.
 - `cite` : 인용의 출처를 밝힐 때 사용하는 태그. `q`, `blockquote` 등의 코드에서 속성 값으로도 사용하지만 눈에 보이도록 출처를 남기도록 할 땐 `cite` 태그를 사용한다.
 - `bdo` : 양방향. 텍스트를 반대 방향으로 표현할 때 사용한다. `dir`(디렉션) 속성에 `ltr`, `rtl` 등으로 방향을 지정해서 사용한다.
+
+> `address`를 제외하고는 전부 생소한 태그라서 잘 기억해둬야 할 것 같다. 자주 사용하지 않더라도 잘 기억해두면 필요할 때 활용할 수 있을 듯! 특히 `abbr`이나 `cite`는 잘 기억해두면 활용도가 좋을 것 같다!
 
 <br>
 <br>
@@ -658,6 +675,8 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
   - `_parent` : 현재 영역의 창의 부모 영역에 표시(iframe 등)하나, 부모가 없을 경우 `_self`와 동일하게 동작.
   - `_top` : 최상단 브라우징 맥락에 표시하며, 없을 경우 `_self`와 동일하게 동작함
   - `<a href="https://www.mozilla.com" target="_blank">Mozilla</a>`
+
+> `title` 속성을 이용해 툴팁을 작성한다. 특히 `target="_blank"`와 같이 새 창으로 열리는 경우, 새창으로 열린다는 사실을 고지하는 것이 사용자 경험에 좋다.
 
 
 <br>
@@ -832,4 +851,536 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 </section>
 ```
 
+> `section`과 `article`이 구분하기 어렵기도 하고, 잘못 사용하게 될까봐 확실한 상황이 아니면 잘 사용하지 않았는데 이번 기회에 확실하게 정리가 된 것 같다! 잘 활용해보는 습관을 길러야겠다.
+> 기본적으로 `section`, `article`을 포함해 `main`, `header`, `footer` 등 시멘틱하게 고안된 태그들은 제목 요소(h태그)를 활용하여 해당 영역을 밝혀주는 것이 접근성상 좋다.
+
 <br>
+<br>
+<br>
+<br>
+
+### 목록과 표
+#### 목록
+##### ol
+**[순서가 있는 목록]**
+- **O**rdered **L**ist, 정렬 목록 : 기본적으로 숫자 목록으로 표현됨
+- 순위를 나타내거나 단계적 수행이 필요한 요리 레시피 등에 사용!
+
+###### ol 속성
+**type**
+- 리스트를 나타내는 타입(기본값: 1)
+```html
+<!-- type : A, a, I, i, 1 등이 있음 -->
+<ol type="A">
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+  <li>fourth</li>
+</ol>
+```
+<br>
+
+**start**
+- 리스트를 시작하는 번호(기본값: 1)
+- 숫자로 입력한다.
+```html
+<!-- start -->
+<ol type="A" start="4">
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+  <li>fourth</li>
+</ol>
+
+<!-- 다른 방법 -->
+<ol type="A">
+  <li value="3">first</li>
+  <li>second</li>
+  <li>third</li>
+  <li>fourth</li>
+</ol>
+
+<ol type="A">
+  <li>first</li>
+  <li>second</li>
+  <li value="100">third</li>
+  <li>fourth</li>
+</ol>
+```
+<br>
+
+**reversed**
+- 목록 순서가 역전되어 표기된다.
+```html
+<!-- reversed -->
+<ol reversed>
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+  <li>fourth</li>
+</ol>
+```
+
+> `ol`의 속성과 관련된 부분들을 아예 처음 알았다. 지금까지는 스타일 지정 외에도 줄머리 번호를 변경하고 싶을 때도 매번 `css`로 지우고 `li` 내부 텍스트나, `li`의 `:before` 등을 이용해 처리했는데 이렇게 간단하고 접근성에도 좋은 방법이 있었다니 😥...
+
+> [ol, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/ol)
+
+<br>
+
+##### ul
+**[순서가 없는 목록]**
+- **U**nordered **L**ist, 비정렬 목록
+- 메뉴 등 순서가 정해지지 않은, 아이템을 나열할 때 사용하는 태그!
+- 요소 중첩(Nesting)이 가능함(ul과 ol을 섞어서 표현할 수도 있다.)
+- 불렛 포인트가 들어가며 깊이에 따라 브라우저가 차등 지급한다.
+
+```html
+<ul>
+  <li>Top</li>
+  <li>Left</li>
+  <li>Right</li>
+  <li>Bottom</li>
+</ul>
+
+<ul>
+    <li>Milk</li>
+    <li>Cheese
+        <ul>
+            <li>Blue cheese
+                <ul>
+                    <li>Blue cheese</li>
+                    <li>Feta</li>
+                </ul>
+            </li>
+            <li>Feta</li>
+        </ul>
+    </li>
+</ul>
+
+<ol>
+  <li>first item</li>
+  <li>second item
+    <ul>
+      <li>second item first subitem</li>
+      <li>second item second subitem</li>
+      <li>second item third subitem</li>
+    </ul>
+  </li>
+  <li>third item</li>
+</ol>
+```
+
+> [ul, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/ul)
+
+<br>
+
+##### li
+- **L**ist **I**tem
+- ul과 ol 에서 사용하는 아이템 태그
+
+<br>
+
+#### 정의 목록
+##### dl, dt, dd
+**[정의형 목록, 정의 목록]**
+- **D**efinition **L**ist or **D**escription **L**ist
+- 용어를 정의하거나 설명하는 목록
+- 자식으로 dt(- term)와 dd(- description)를 갖는다.
+- 용어(key)와 설명(value)를 쌍으로 갖는다.
+- 사전 구현이나 메타데이터를 표시할 때 주로 사용한다.
+- 스타일링이나 레이아웃을 위해 `dt`와 `dd`를 `div`로 감쌀 수 있다. (단, 형제 요소로 사용할 수는 없다.)
+- `dt`와 `dd`의 형제는 언제나 `dt`와 `dd`만 가능(웹 표준에 의거)하다.
+
+> `dl`의 자식으로는 `dt`와 `dd`만 가능하다고 알고 있었어서 매번 스타일링을 할 때 어려움을 겪었는데 `div`로 묶을 수 있다는 걸 진작 알았으면 좋았을 것 같다😥...! 이번에라도 알아서 다행이다. 잘 기억해두자!
+
+```html
+<!-- 1:1매칭 -->
+<dl>
+  <dt>ol</dt>
+  <dd>순서가 있는 목록</dd>
+  <dt>ul</dt>
+  <dd>순서가 없는 목록</dd>
+  <dt>dl</dt>
+  <dd>정의형 목록</dd>
+</dl>
+
+<!-- 여러 용어와 하나의 정의 -->
+<dl>
+  <dt>계란</dt>
+  <dt>달걀</dt>
+  <dd>닭이 낳은 알. 이것이 부화하면 병아리가 된다.</dd>
+</dl>
+
+<!-- 하나의 용어와 여러 정의 -->
+<dl>
+  <dt>눈</dt>
+  <dd>사람이나 동물의 몸에서, 빛의 자극을 받아 물체를 볼 수 있는 기관.</dd>
+  <dd>주로, 겨울에 대기 중의 수증기가 찬 기운을 만나 얼어서 하늘에서 땅 위로 떨어지는 흰빛의 얼음의 결정.</dd>
+</dl>
+
+<!-- 하나의 용어와 여러 정의 -->
+<dl>
+  <div>
+    <dt>ol</dt>
+    <dd>순서가 있는 목록</dd>
+  </div>
+  <div>
+    <dt>ul</dt>
+    <dd>순서가 없는 목록</dd>
+  </div>
+  <div>
+    <dt>dl</dt>
+    <dd>정의형 목록</dd>
+    <!-- 아래 div는 웹표준에 맞지 않음! -->
+    <div>추가 정보</div>
+  </div>
+</dl>
+```
+
+<br>
+
+#### 표
+##### table, tr, th, td
+- 이전에는 표를 이용해서 레이아웃을 잡기도 했다(...)
+- **절대 레이아웃을 잡기 위해 표를 사용하지 말 것!**
+- `table > tr(table row : 행) > th, td`
+<br>
+
+**[th]**
+- table head라는 뜻으로 행이나 열을 대표하는 태그.
+- 기본적으로 굵은 글씨로 표현된다.
+- `scope` 속성 : col(열 대표), row(행 대표) / `th`에만 사용한다.
+- scope 속성은 보이는 부분이 변경되는 건 아니고 스크린 리더 등의 단말에서 접근성을 높일 수 있다.
+
+<br>
+
+**[th, td]**
+- `colspan` : 열 묶음 (ex: `<td colspan="2">`)
+- `rowspan` : 행 묶음 (ex: `<td rowspan="2">`)
+
+```html
+<table>
+  <tr>
+    <th scope="col">나라</th>
+    <th scope="col">수도</th>
+    <th scope="col">인구</th>
+  </tr>
+  <tr>
+    <th scope="row">한국</th>
+    <td>서울</td>
+    <td>5100만</td>
+  </tr>
+  <tr>
+    <th scope="row">미국</th>
+    <td>워싱턴 D.C.</td>
+    <td>3억</td>
+  </tr>
+  <tr>
+    <th scope="row">태국</th>
+    <td>방콕</td>
+    <td>6900만</td>
+  </tr>
+  <tr>
+    <td colspan="2">합계</td>
+    <td>4억 2000만</td>
+  </tr>
+</table>
+```
+
+
+<br>
+
+##### thead, tbody, tfoot
+- 테이블의 구획을 나누는 부분
+- 테이블의 헤더 영역, 본문 영역, 푸터 영역을 나눈다.
+- `thead`의 형제는 무조건 `tbody`혹은 `tfoot`이어야 한다.
+- `tbody`는 **여러 개**가 나올 수 있다.
+
+> tbody가 한 테이블에 여러 개 나올 수 있다는 건 처음 알았다. 앞으로는 유용하게 쓸 수 있을 것 같다😂...
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th scope="col">품목</th>
+      <th scope="col">지출</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" colspan="2">식재료</th>
+    </tr>
+    <tr>
+      <th scope="row">대파</th>
+      <td>3,000</td>
+    </tr>
+    <tr>
+      <th scope="row">달걀</th>
+      <td>4,000</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" colspan="2">생활용품</th>
+    </tr>
+    <tr>
+      <th scope="row">칫솔</th>
+      <td>1,000</td>
+    </tr>
+    <tr>
+      <th scope="row">쓰레기통</th>
+      <td>3,000</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row">합계</th>
+      <td>11,000</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+<br>
+
+##### caption
+- 표를 설명하기 위한 태그
+- 별도 스타일링을 하지 않으면 중앙에 가운데 정렬로 들어감!
+- `table`의 첫번째 자식이어야 함
+
+```html
+<table>
+  <caption>일일 가계부</caption>
+  <thead>
+    <tr>
+      <th scope="col">품목</th>
+      <th scope="col">지출</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" colspan="2">식재료</th>
+    </tr>
+    <tr>
+      <th scope="row">대파</th>
+      <td>3,000</td>
+    </tr>
+    <tr>
+      <th scope="row">달걀</th>
+      <td>4,000</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <th scope="row" colspan="2">생활용품</th>
+    </tr>
+    <tr>
+      <th scope="row">칫솔</th>
+      <td>1,000</td>
+    </tr>
+    <tr>
+      <th scope="row">쓰레기통</th>
+      <td>3,000</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row">합계</th>
+      <td>11,000</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+> [caption, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/caption)
+
+<br>
+<br>
+<br>
+<br>
+
+### 임베디드 요소
+#### img
+- 빈 요소
+- 속성을 통해 어떤 이미지를 사용할지 지정할 수 있음
+
+> [img, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/img)
+
+##### src
+- `img` 태그의 필수 속성으로, 이미지의 경로를 지정한다.
+- 절대 경로/상대 경로 모두 가능.
+
+```html
+<!-- 절대 경로 -->
+<img src="https://via.placeholder.com/350x150">
+
+<!-- 상대 경로 -->
+<img src="images/sample-dogs.jpeg">
+```
+
+<br>
+
+##### alt, width, height
+**[alt]**
+- 대체 텍스트(alternative text)
+- 이미지에 대한 설명을 넣으며, 접근성을 위해 넣는다.
+- 스크린 리더, 네트워크 오류, 콘텐츠 차단 등에서 어떤 이미지인지, 혹은 어떤 이미지가 있었는지를 표현해준다.
+
+> title을 이용하면 마우스를 올렸을 때 뜨는 툴팁을 작성할 수 있다.
+
+```html
+<!-- 상대 경로 -->
+<img src="images/sample-dogs.jpeg" alt="강아지 두 마리" title="강아지 두 마리">
+```
+
+**[width, height]**
+- 이미지의 픽셀기준 고유 너비 및 높이를 지정한다.
+- width 혹은 height 하나만 지정하면 비율대로 같이 줄어든다.
+
+> css로 지정해도 되나, width, height 속성을 사용할 경우 별도 css없이 이미지의 크기 처리가 가능하다.
+
+```html
+<!-- width -->
+<img src="images/sample-dogs.jpeg" width="100" alt="강아지 두 마리" title="강아지 두 마리">
+
+<!-- width, height -->
+<img src="images/sample-dogs.jpeg" width="100" height="200" alt="강아지 두 마리" title="강아지 두 마리">
+```
+
+<br>
+
+#### 이미지 유형
+- svg를 제외하곤 전부 래스터 타입 이미지다.
+
+|유형|MIME 타입|확장자|내용|
+|--|--|--|-----|
+|JPEG|image/jpeg|`.jpg`, `.jpeg`, `.jfif`, `.pjpeg`, `.pjp`|정지 이미지 손실 압축에 적합 (가장 많이 사용됨!)|
+|PNG|image/png|`.png`|배경 투명 파일, 로고 등 투명도가 필요한 경우, 혹은 원본 이미지를 jpg보다 더 정확하게 보여주고자 할 때 사용|
+|GIF|image/gif|`.gif`|애니메이션, 혹은 간단한 단색 아이콘 표현 등에 적합|
+|WEBP|image/webp|`.webp`|구글에서 만든 이미지 포맷. 품질, 압축률 등이 우수하나 지원 브라우저가 [제한적](https://caniuse.com/?search=webp)이다.|
+|SVG|image/svg+xml|`.svg`|다양한 크기로 정확하게 나타나야 하는 아이콘, 다이어그램 등에 사용된다. (벡터 타입!)|
+
+<br>
+
+#### 반응형 이미지
+##### srcset
+> [img[srcset], MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/img#attr-srcset)
+
+- !! IE에서는 지원되지 않는 속성으로, `src` 속성을 함께 작성해 IE에서도 이슈가 없도록 한다!
+- 캐싱되는 환경에서는 css 미디어쿼리처럼 바로바로 변경되지는 않는다.
+- 가장 큰 해상도의 이미지를 불러온 후에는 작은 해상도의 이미지로 변경하지 않는다. (브라우저가 불필요하다 판단/작은 해상도에서 큰 해상도로 늘려보고 반대로도 해보면 바로 알 수 있다!)
+
+<br>
+
+1. 이미지의 URL
+2. (선택) 공백과 함께 아래 서술자를 기입한다. (기입하지 않는 경우 기본값인 1x로 간주)
+    - 너비 서술자(NNNw)
+    - 픽셀 밀도 서술자(N.Nx)
+
+```html
+<img src="images/sample-large.png"
+     srcset="images/sample-small.png 300w,
+             images/sample-medium.png 450w
+             images/sample-large.png 600w"
+     alt="responsive images">
+```
+
+> css의 미디어쿼리를 통해서만 이미지를 작업해서, 뷰포트에 따라 다른 크기의 이미지를 보여줘야 할 땐 이미지 태그를 두 개 넣어두고 미디어쿼리를 통해 `display:none;` <-> `display:block(or inline-block);` 처리를 해줬는데 `srcset` 속성을 사용하면 이미지 태그를 굳이 여러개 사용하지 않고도 처리할 수 있어 좋을 것 같다! 안 그래도 포털사이트에서 사용하는 걸 보고 배워서 써야지.. 하고 있던 속성이라 앞으로 잘 사용할 수 있을 것 같다!
+
+<br>
+
+##### sizes
+> [img[sizes], MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/img#attr-sizes)
+
+1. 미디어 조건(마지막 항목 생략)
+    - 이미지에 대한 게 아니라 뷰포트 속성을 말함(css 미디어쿼리와 유사)!
+2. 소스크기 값
+
+```html
+<img src="images/sample-large.png"
+     srcset="images/sample-small.png 300w,
+             images/sample-medium.png 450w
+             images/sample-large.png 600w"
+     sizes="(min-width:600px) 600px,
+            (min-width:450px) 450px,
+            300px"
+     alt="responsive images">
+```
+<br>
+
+> css 미디어쿼리와 유사하게 작동한다. css를 통해 작업했을 때 더 할 수 있는 부분이 많아서 srcset까지는 최적화를 위해 사용되나, sizes보다는 css 미디어쿼리를 통한 작업을 더 많이한다.
+
+> css media query 와 img 속성의 차이
+> - `img[sizes]`는 `html`단에서 뷰포트별 이미지 크기를 지정해준다.
+> - `img` 태그의 속성(width, height, srcset, sizes 등)이 명시되어 있으면 페이지 로딩 시 이미지의 크기를 고려해 미리 적절한 공간을 남겨두지만 그렇지 않은 경우 로딩이 완료된 후 이미지 크기가 적용되는 이슈가 있을 수 있다.
+> - `img` 태그의 속성으로 이미지를 선택할 경우, 큰 해상도의 이미지를 다운로드 받으면 작은 해상도의 이미지는 추가로 다운받지 않으며, 큰 해상도에서 작은 해상도로 줄일 때는 다른 해상도의 이미지가 적용되지 않는다.
+> - 기본적으로 브라우저가 페이지를 읽는 것을 최적화하기 위해 `srcset`이나 `sizes`, `width`, `height` 등의 속성을 사용해 명시하는 것이 좋지만, 뷰포트에 따라 이미지가 반드시 달라져야 하는 경우 css의 media query를 함께 사용한다.
+
+<br>
+
+#### video
+- 이미지와 달리 빈 요소가 아니며, `<video>` 태그 안의 내용은 비디오 태그를 정상적으로 노출할 수 없는 상황에서 보여진다!
+- `src` 속성이 필수사항이 아니며, `src`를 사용하지 않는 경우 자식 요소로 `<source>` 태그를 사용해 비디오 경로를 넣어준다.
+<br>
+
+```html
+<video src="video/sample-mp4-file.mp4">
+Sorry, your browser doesn't support embedded videos.
+</video>
+
+<!-- source 태그 이용 -->
+<video>
+  <source src="video/sample-mp4-file.mp4">
+  Sorry, your browser doesn't support embedded videos.
+</video>
+```
+<br>
+
+**[ 비디오 태그 속성 ]**
+|속성|값|내용|
+|--|--|--|
+|`controls`|boolean (기본값:false)|비디오의 컨트롤 패널 노출 여부|
+|`autoplay`|boolean (기본값:false)|비디오 자동 재생. 영상이 소리를 가지고 있는 경우 `autoplay`를 브라우저에서 막기 때문에, `muted` 속성과 함께 사용한다.|
+|`muted`|boolean (기본값:false)|비디오 음소거. 영상이 소리를 가지고 있는 경우 `autoplay`를 브라우저에서 막기 때문에, 이 속성과 함께 사용한다.|
+|`loop`|boolean (기본값:false)|반복 재생 여부|
+|`poster`|이미지 경로|동영상 썸네일. 없는 경우 첫번째 프레임을 poster로 사용한다.|
+
+> `poster` 속성이 없는 경우 모바일 일부 브라우저에서는 재생 버튼만 노출되는 현상이 있어 가능한 꼭 넣어주도록 한다.
+> 또한 video에 `playsinline` 속성을 넣어줄 경우 IOS 환경에서 비디오가 전체화면으로 뜨는 현상을 막을 수 있다.
+
+> [video, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/video)
+<br>
+
+#### audio
+- 비디오와 비슷한 속성을 갖고 있음!
+- 여러 소스를 같이 사용할 수 있으며, 위에서 아래로 내려가며 사용 가능한 형식의 오디오를 재생한다.
+- `autoplay` 속성이 제대로 동작하지 않는다: 사용자 환경에 좋지 않기 때문.
+
+```html
+<!-- figure 태그로 감싸고 figcaption 태그를 이용해 컨텐츠 설명과 함께 한 덩어리로 작성 가능하다. -->
+<figure>
+  <figcaption>audio sample:</figcaption>
+  <!-- source 태그 이용 -->
+  <audio>
+    <source src="audio/foo.opus" type="audio/ogg; codecs=opus">
+    <source src="audio/foo.ogg" type="audio/ogg; codecs=vorbis">
+    <source src="audio/foo.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</figure>
+```
+
+> [audio, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/audio)
+<br>
+
+#### canvas
+> [canvas, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/canvas)
+> 이런 마크업 정보가 있다 정도로 알아두면 좋다. javascript로 그리는 내용!
+
+#### iframe
+- 인라인 프레임 요소
+- 외부 소스를 불러와서 프레임 안에 띄워주는 형태.
+- `width`, `height`, `title`, **`src`** 등의 속성이 있다.
+- *지도나 웹페이지, pdf 등의 자료*를 띄우는 데 주로 쓰이나, 외부 사이트의 지도 등은 api를 사용하기 때문에 보안상의 이유로 보이지 않는 경우도 더러 있다.
+
+> [iframe, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/iframe)
