@@ -20,8 +20,8 @@
   - [목록과 표](./html/00_html-summary.md#%EB%AA%A9%EB%A1%9D%EA%B3%BC-%ED%91%9C)
   - [임베디드 요소](./html/00_html-summary.md#%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C-%EC%9A%94%EC%86%8C)
 - [2021-09-03]
-  - [form](./html/00_html-summary.md#%form)
-  - [전역 속성](./html/00_html-summary.md#%%EC%A0%84%EC%97%AD-%EC%86%8D%EC%84%B1)
+  - [form](./html/00_html-summary.md#form)
+  - [전역 속성](./html/00_html-summary.md#%EC%A0%84%EC%97%AD-%EC%86%8D%EC%84%B1)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용
