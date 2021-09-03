@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <h1>Form</h1>
+  <h2>input</h2>
+  <form action="" method="get">
+    <div>
+      <label for="username">이름 :</label>
+      <input type="text" name="username" id="username" placeholder="예: 홍길동" autocomplete="off" required>
+    </div>
+    <div>
+      <label for="job">직업 :</label>
+      <input type="text" name="job" id="job" placeholder="예: 교사" autocomplete="on" required>
+    </div>
+    <div>
+      <label for="age">나이 :</label>
+      <input type="number" name="age" id="age" placeholder="예: 10" disabled>
+    </div>
+    <div>
+      <label for="score">평점 :</label>
+      <!-- <input type="number" name="score" id="score" min="0" max="10" step="2"> -->
+      <input type="range" name="score" id="score" min="0" max="10" step="2">
+    </div>
+
+    <input type="reset">
+    <input type="submit">
+  </form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <h1>Form</h1>
+  <!-- action : 양식 데이터를 처리할 페이지, 서버의 주소(URI) / 상대경로 가능 -->
+  <!-- method : get  : 보내려는 페이지의 주소 뒤에 붙음! 비밀번호 등 보안이 필요한 정보는 get으로 처리하면 보안상 좋지 않고, 검색 등에 사용한다.
+                post : 보안이 필요한 경우 사용하며, 요청한 서버에 값을 전달한다. -->
+  <!-- <form action="http://server.com/join"> -->
+  <!-- <form action="join.html" method="get"> -->
+  <form action="" method="get">
+    <fieldset disabled>
+      <legend>범례1</legend>
+      <div>
+        <label for="foodname">음식 이름 : </label>
+        <input type="text" name="foodname" id="foodname">
+      </div>
+      <div>
+        <label for="color">좋아하는 색 : </label>
+        <input type="text" name="color" id="color">
+      </div>
+    </fieldset>
+    
+    <fieldset>
+      <legend>범례2</legend>
+      <div>
+        <label for="foodname">음식 이름 : </label>
+        <input type="text" name="foodname" id="foodname">
+      </div>
+      <div>
+        <label for="color">좋아하는 색 : </label>
+        <input type="text" name="color" id="color">
+      </div>
+    </fieldset>
+    
+    <!-- <div>
+      <label>좋아하는 색 :
+        <input type="text" name="color">
+      </label>
+    </div> -->
+    <button type="submit">제출</button>
+  </form>
+</body>
+</html>

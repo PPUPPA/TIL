@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <h1>Form</h1>
+  <h2>input</h2>
+  <form action="" method="get">
+    <div>
+      <label for="movie">좋아하는 영화 :</label>
+      <select id="movie" name="movie">
+        <!-- 후보군 -->
+        <option value="">--Please choos an option--</option>
+        <optgroup label="animation">
+          <option value="toystory">토이스토리</option>
+          <option value="zootopia">주토피아</option>
+          <option value="insideout">인사이드 아웃</option>
+        </optgroup>
+        <optgroup label="sf">
+          <option value="matrix">매트릭스</option>
+          <option value="interstellar">인터스텔라</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <input type="submit">
+  </form>
+</body>
+</html>

@@ -25,11 +25,11 @@
 
 #### HTML, CSS 그리고 JavaScript
 
-**[구조]** HTML : 웹 문서의 기본적인 **골격**을 담당
+**[ 구조 ]** HTML : 웹 문서의 기본적인 **골격**을 담당
 
-**[표현]** CSS : 각 요소들의 **레이아웃, 스타일링** 담당 (각 웹페이지의 아이덴티티를 강조할 수 있음)
+**[ 표현 ]** CSS : 각 요소들의 **레이아웃, 스타일링** 담당 (각 웹페이지의 아이덴티티를 강조할 수 있음)
 
-**[동작]** JavaScript : **동적** 요소로, 사용자와의 **인터랙션**을 담당 (웹 어플리케이션의 형태를 띄게 할 수 있음)
+**[ 동작 ]** JavaScript : **동적** 요소로, 사용자와의 **인터랙션**을 담당 (웹 어플리케이션의 형태를 띄게 할 수 있음)
 
 > 지금은 javascript가 할 수 있는 영역이 커져서 html과 css로 하는 역할을 어느 정도 위임하고 있다. 하지만 자바스크립트의 범위가 늘어났을 뿐 각각의 문법과 역할을 정확하게 알고 있어야 한다.
 <br>
@@ -862,7 +862,7 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 ### 목록과 표
 #### 목록
 ##### ol
-**[순서가 있는 목록]**
+**[ 순서가 있는 목록 ]**
 - **O**rdered **L**ist, 정렬 목록 : 기본적으로 숫자 목록으로 표현됨
 - 순위를 나타내거나 단계적 수행이 필요한 요리 레시피 등에 사용!
 
@@ -928,7 +928,7 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 <br>
 
 ##### ul
-**[순서가 없는 목록]**
+**[ 순서가 없는 목록 ]**
 - **U**nordered **L**ist, 비정렬 목록
 - 메뉴 등 순서가 정해지지 않은, 아이템을 나열할 때 사용하는 태그!
 - 요소 중첩(Nesting)이 가능함(ul과 ol을 섞어서 표현할 수도 있다.)
@@ -982,7 +982,7 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 
 #### 정의 목록
 ##### dl, dt, dd
-**[정의형 목록, 정의 목록]**
+**[ 정의형 목록, 정의 목록 ]**
 - **D**efinition **L**ist or **D**escription **L**ist
 - 용어를 정의하거나 설명하는 목록
 - 자식으로 dt(- term)와 dd(- description)를 갖는다.
@@ -1046,7 +1046,7 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 - `table > tr(table row : 행) > th, td`
 <br>
 
-**[th]**
+**[ th ]**
 - table head라는 뜻으로 행이나 열을 대표하는 태그.
 - 기본적으로 굵은 글씨로 표현된다.
 - `scope` 속성 : col(열 대표), row(행 대표) / `th`에만 사용한다.
@@ -1221,7 +1221,7 @@ Lights will guide you home, And ignite your bones, And I will try to fix you.
 <br>
 
 ##### alt, width, height
-**[alt]**
+**[ alt ]**
 - 대체 텍스트(alternative text)
 - 이미지에 대한 설명을 넣으며, 접근성을 위해 넣는다.
 - 스크린 리더, 네트워크 오류, 콘텐츠 차단 등에서 어떤 이미지인지, 혹은 어떤 이미지가 있었는지를 표현해준다.
@@ -1384,3 +1384,293 @@ Sorry, your browser doesn't support embedded videos.
 - *지도나 웹페이지, pdf 등의 자료*를 띄우는 데 주로 쓰이나, 외부 사이트의 지도 등은 api를 사용하기 때문에 보안상의 이유로 보이지 않는 경우도 더러 있다.
 
 > [iframe, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/iframe)
+
+<br>
+<br>
+<br>
+<br>
+
+### form
+> [form, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/form)
+> 디테일한 유효성 체크는 자바스크립트로! required 속성을 사용하면 최소한의 체크는 가능하다!
+
+- [form 연습](210903_form.html)
+<br>
+
+#### `<form>`
+- 사용자에게 값을 전달받아 페이지나 서버로 전송할 수 있게끔 하는 요소로, 인터렉션(대화형) 요소이다.
+- `action` : 양식 데이터를 처리할 페이지, 서버의 주소(URI)
+- `method` : 데이터 처리 방식
+    - `get`  : 보내려는 페이지의 주소 뒤에 붙음! 비밀번호 등 보안이 필요한 정보는 `get`으로 처리하면 보안상 좋지 않고, **검색** 등에 사용한다.
+    - `post` : 보안이 필요한 경우 주로 사용. post가 정보를 받는 건 **서버**로, 회원가입, 설문 등 보안이 필요한 경우 사용한다.
+<br>
+
+#### input과 label
+- `label`의 `for` 속성과 `input`의 `id` 값이 세트!
+- `input`의 `name`은 서버에 전송할 때 폼데이터를 구분하기 위한 값이고 `id`는 전체 문서 내에서의 구분 값. 아예 다른 속성이기 때문에 동일할 필요는 없다!
+- 인라인 요소!
+- label 안에는 텍스트로 정확하게 요소를 설명해줘야 인식 가능.
+
+```html
+<!-- 별개로 사용 -->
+<label for="foodname">음식 이름 :</label>
+<input type="text" name="foodname" id="foodname">
+
+<!-- label의 자식으로 사용 -->
+<!-- label[for], input[id] 생략 가능! -->
+<label>색깔 :
+  <input type="text" name="color">
+</label>
+```
+
+<br>
+
+#### fieldset, legend
+> [fieldset, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/fieldset)
+
+- `fieldset` : form 요소를 그룹핑함 (블록 요소).
+- `legend` : form 그룹의 범례. `fieldset`의 첫번째 자식요소!
+
+
+<br>
+
+#### input[type]
+> [input, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Element/input)
+
+- [form 연습](210903_input.html)
+- 타입에 따라 형태도 달라지고, 타입에 따라 사용 가능한 속성도 달라진다.
+- `text` : 한 줄만 작성되며, 엔터를 치면 데이터가 전송된다.
+  - `minlength` : 최소 입력 글자수
+  - `maxlength` : 최대 입력 글자수
+- `password` : 마스킹 처리 됨 / get메소드를 사용하면 주소 영역에 비밀번호가 노출됨.
+  - `minlength`, `maxlength` 사용 가능
+- `email` : @가 없는 경우 형식 안내 툴팁이 뜸. / 모바일에서 자동으로 영문입력창이 기본으로 노출됨
+  - 기본적으로 한글이 입력되며, 이후 스크립트로 처리해주지 않으면 유효성 체크가 되진 않음
+- `tel` : 모바일에서 자동으로 입력창이 숫자로 노출됨
+  - 기본적으로 숫자 외 문자도 입력되며, 이후 스크립트로 처리해주지 않으면 유효성 체크가 되진 않음
+- `number` : 숫자를 입력할 수 있음
+  - 간혹 영문이 입력되기도 하지만 툴팁으로 숫자만 이용 가능 안내가 뜨니 걱정하지 않아도 됨!
+- `range` : 기본값은 0-100으로, 숫자로 반환되어 제출된다.
+- `date`, `month`, `week`, `time`
+  - `date`, `month`, `week` : 대쉬 형태로 전송됨 (ex: 2021-09-03)
+  - `time` : `:`문자가 이스케이프 처리되어 들어감(16:30)
+- `checkbox` : 체크된 값만 'on'으로 전송된다.
+  - `checked` : 기본 값을 체크상태로 만든다.
+- `radio` : 체크된 값의 `value`만 전송된다. (ex: `radio=r2`)
+  - 동일 `name` 중 하나만 체크 가능.
+  - `checked` : 기본 값을 체크상태로 만든다.
+
+> [canIuse](https://caniuse.com/)에서 호환 범위를 확인 후 사용하자!
+
+<br>
+
+> `input[type="hidden"]` 이라고 전역속성 hidden과 유사하게 동작하는 타입도 있다.
+> 페이지 내에서 보이지 않으며, 숨겨진 입력필드로 작동한다.
+> 사용자가 변경해서는 안되지만 폼 제출 시 함께 제출되어야 하는 값에 유용하게 사용된다!
+
+
+<br>
+
+#### input의 다른 속성들
+- `placeholder` : 넣어야 할 값에 대한 힌트.
+- `autocomplete` : 자동완성 기능 on/off
+- `required` : 필수 입력 값.
+- `disabled` : 필드 비활성화
+  - dimmed 처리되며, 아예 전송되지 않는 값.
+- `readonly` : 보기 전용 값
+  - 입력은 안 되지만 전송은 된다.
+  - 기본 값을 그대로 사용하고자 할 때 `value`와 함께 사용한다.
+
+<br>
+
+##### 숫자 관련 속성
+- [숫자 관련 연습](210903_input-2.html)
+- `min`,`max` : 최솟값과 최댓값. 텍스트로 범위 밖의 값을 입력 시 툴팁으로 범위를 알려주며, 제출되지 않는다.
+- `step` : 기본적으로 1씩 범위가 조정되나, step을 입력 시 조정되는 숫자가 달라진다. (ex: step="2"> 2-4-6-...)
+
+<br>
+
+#### iuput 버튼
+- `input[type="submit"]`과 `button[type="submit"]`이 유사하다.
+- `input[type="submit"]`의 기본 텍스트 값은 '제출'이며, 텍스트를 변경하고자 할 땐 `value` 속성을 통해 변경할 수 있다.
+- `input[type="button"]`은 기본 텍스트 값이 없다.
+- `input[type="reset"]`은 기본 텍스트 값이 '초기화'이며, 텍스트를 변경하고자 할 땐 `value` 속성을 통해 변경할 수 있다.
+  - 폼 내용을 초기화한다.
+
+<br>
+
+#### button
+- `input`에서와 같이 타입은 `button`, `submit`, `reset`이 있다.
+- `input`과 달리 자식 요소를 가질 수 있다. (빈 요소가 아니다)
+  - 단순 문자열이 아니라 이미지나 다른 태그를 가질 수 있다.
+  - 이미지 버튼을 사용할 경우 텍스트를 함께 사용해 접근성을 높인다.
+
+<br>
+
+#### select, option, optgroup
+- [select 연습](210903_input-3.html)
+- `option` 태그 내에 `value` 속성이 없는 경우 옵션의 값을 그대로 제출하며, `value` 속성을 추가한 경우 `value` 값이 전송된다.
+  - **빈 value값을 사용할 경우 선택되지 않는 항목이 된다!**
+  - `selected` : 기본 선택값을 지정할 수 있다.
+- `optgroup` : `option`값을 그룹핑할 때 사용하며, label 속성으로 그룹명을 지정할 수도 있다.
+
+> 빈 value값을 사용하면 선택되지 않는 항목이 된다는 걸 몰라서 자바스크립트로 해결하려고 애먹었던 기억이 난다...😥... 생각보다 단순한 거였구나...😂😂.. 잘 기억해둬야겠다.
+
+<br>
+
+#### input - list속성과 datalist
+- [datalist 연습](210903_input-4.html)
+- datalist : 가능한 선택지 **추천** 기능!
+  - 추천 값을 입력할 수도 있고, 추천 값에 내용을 더 추가하거나, 추천 값을 사용하지 않아도 된다.
+
+> 처음 사용하는 기능인데, 생각해보니 다른 페이지에서 본 적은 있는 기능이었다. 스크립트를 통해 개발된 기능인 줄 알았는데 html 태그로 있는 기능이었구나..😥 배웠으니 유용하게 사용할 수 있을 것 같다!
+
+<br>
+
+#### textarea
+- [textarea 연습](210903_input-4.html)
+- `input`과 달리 빈 요소가 아니며, `pre`태그처럼 내부에 글을 쓰면 그대로 반영된다.
+- `disabled`, `placeholder`, `readonly` 등의 속성은 동일하게 사용 가능!
+- `rows`, `cols`를 통해 보여지는 행/열의 크기를 조정할 수 있다.
+
+
+<br>
+<br>
+<br>
+<br>
+
+### 전역 속성
+> [전역 속성, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes)
+
+<br>
+
+#### class, id
+- 식별자.
+  - id : 고유 식별자.
+    - 문서 내에 유일하게 하나만 가질 수 있는 식별자.
+    - 공백 사용 불가.
+    - 숫자나 특수문자(-, _, .)가 아닌 영소문자로 시작한다.
+  - class
+    - 문서 내에 여러개 사용 가능한 식별자(중복 가능).
+    - 한 요소가 여러 클래스를 가질 수 있으며, 공백을 통해 구분한다.
+
+<br>
+
+> [class, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/class)
+> [id, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/id)
+
+<br>
+
+#### style
+- 인라인 스타일.
+  - **외부 파일에서 사용하는 것을 권장**함.
+  - 테스트 등 빠른 스타일링을 위한 목적 혹은, 자바스크립트를 통한 일시적 스타일로 사용.
+
+<br>
+
+> [style, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/style)
+
+<br>
+
+#### title
+- 툴팁으로 설명하는 문구를 안내해줌.
+  - pre 태그처럼 띄어쓰기나 줄바꿈을 모두 인식함.
+  - 상속되는 속성.
+    - 부모 요소로부터 중첩될 경우 가장 하위 요소의 타이틀이 우선적으로 뜸.
+<br>
+
+```html
+<div title="부모 요소">
+  <div title="첫 번째 요소">
+  안녕하세요.
+  </div>
+  <div>반갑습니다.</div>
+</div>
+```
+
+<br>
+
+> [title, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/title)
+
+<br>
+
+#### lang
+- 웹 접근성을 높이기 위한 수단.
+- 상속이 되는 속성.
+- `html` 태그에 사용될 경우:
+  - 전체 문서가 어느 문서로 작성되었는지 안내
+- 일부 태그에 사용할 경우, 해당 태그에 한해 언어 설정을 해줄 수 있음.
+  - ```html
+  <html lang="ko">
+  ...
+  <div lang="en">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  ...
+  </html>
+  ```
+
+<br>
+
+> [lang, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/lang)
+
+<br>
+
+#### data
+- `data-*` : 지정된 속성이 아니라 사용자가 지정하는 속성.
+- 스크립트를 적용할 때 사용함.
+  - 사용자 눈에는 보이지 않지만 암시적으로 요소가 가지고 있어야 하는 정보를 넣는 곳.
+
+<br>
+
+```html
+<article
+  id="test"
+  data-columns="3"
+  data-index-number="12313"
+  data-parent="markup">
+  ...
+</article>
+```
+
+<br>
+
+> [data, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/data)
+
+<br>
+
+#### draggable
+- 드래그가 가능한지 여부를 명시해줌.
+- 태그별로 기본값이 다르기 때문에 값을 꼭 명시해줘야 함.
+  - true, false
+- 자바스크립트 이벤트로 활용할 수 있다.
+<br>
+
+```html
+<img src="images/small.png" draggable="false">
+```
+
+<br>
+
+> [draggable, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/draggable)
+
+<br>
+
+#### hidden
+- 블라인드 속성
+  - 보안상 정보를 가리고자 할 땐 hidden을 사용하지 않는다.
+- css로 재정의해서 보이게 할 수도 있다.
+
+<br>
+
+> 🤔.. input 등에서 사용자 눈에는 보이지 않지만 폼 제출 시 함께 제출되어야 하는 값에 유용하게 사용된다.. 고 한다! 아직은 input에서의 사용을 제외한 hidden 속성의 용법을 잘 모르겠다🤔.......
+
+<br>
+
+```html
+<img src="images/medium.png">
+<img src="images/small.png" hidden>
+```
+<br>
+
+> [hidden, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/hidden)
