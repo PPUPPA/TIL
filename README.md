@@ -22,6 +22,9 @@
 - [2021-09-03]
   - [form](./html/00_html-summary.md#form)
   - [전역 속성](./html/00_html-summary.md#%EC%A0%84%EC%97%AD-%EC%86%8D%EC%84%B1)
+- [2021-09-04]
+  - [개인 복습, html 테스트 01](./html/210904_html-test.html)
+  - [개인 복습, W3Schools](./html/210904_html-review.html)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

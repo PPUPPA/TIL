@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 test</title>
+  
+  <style>
+    .header{margin-bottom:3em;}
+    .header .title{margin-bottom:4px;}
+    .header .title-sub{display:block;margin:0;}
+
+    .question-wrap{margin:1em 4px;}
+    .question-wrap:not(:first-child){margin-top:4em;}
+    .question-box{margin-bottom:20px;border-bottom:1px dashed;}
+    .question-num{margin:0 0 .5em;}
+    .question-inner{margin:0;padding:1em;background:#f2f2f2;}
+    .question-text{margin:0;line-height:1.6;}
+    .question-code{margin:10px 0 0;padding:1em;background:#ddd;border-radius:4px;line-height:1.6;-webkit-box-sizing:border-box;box-sizing:border-box;white-space:-moz-pre-wrap;white-space:-o-pre-wrap;white-space:pre-wrap;word-wrap:break-word;}
+    .answer-section{display:inline-block;width:40px;height:1.2em;margin:0 2px;border:0 none;border-radius:4px;background:#fff;vertical-align:middle;outline:0;}
+
+    .answer{margin:1em 0;}
+    .answer-content{display:inline-block;padding:4px 8px;background:#e5e5e5;border-radius:4px;}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">HTML5 테스트</h1>
+    <cite class="title-sub">By <a href="__source/210903_htmlTest.pdf" target="_blank">zerobase</a></cite>
+  </header>
+
+  <!-- main --> 
+  <main class="main" role="main">
+    <!-- question-wrap : 주제 -->
+    <section class="question-wrap">
+      <h2 class="question-subject">HTML Atributes</h2>
+      
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 01</h3>
+        <blockquote class="question-inner">
+          <p class="question-text">
+            HTML 을 사용하여 위 이미지와 같이 표현해보세요.
+            <br>
+            <cite>[ <a href="__source/210903_htmlTest.pdf" target="_blank">zerobase</a> 문제 1 ]</cite>
+          </p>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content">
+            <h1>다람쥐 헌 쳇바퀴에 타고파</h1>
+            <h2>다람쥐 헌 쳇바퀴에 타고파</h2>
+            <h3>다람쥐 헌 쳇바퀴에 타고파</h3>
+            <h4>다람쥐 헌 쳇바퀴에 타고파</h4>
+            <h5>다람쥐 헌 쳇바퀴에 타고파</h5>
+            <h6>다람쥐 헌 쳇바퀴에 타고파</h6>
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 02</h3>
+        <blockquote class="question-inner">
+          <p class="question-text">
+            ul, ol, li를 사용하여 위 리스트를 구현해보세요.
+            <br>
+            <cite>[ <a href="__source/210903_htmlTest.pdf" target="_blank">zerobase</a> 문제 2 ]</cite>
+          </p>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content">
+            <ul>
+              <li>사과</li>
+              <li>오렌지</li>
+              <li>포도</li>
+              <li>체리</li>
+            </ul>
+            <ol>
+              <li>가지</li>
+              <li>감자</li>
+              <li>당근</li>
+              <li>대파</li>
+            </ol>
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 03</h3>
+        <blockquote class="question-inner">
+          <p class="question-text">
+            다음 조건을 만족하는 input 창을 만들어보세요 (단 value, onchange속성은 생략합니다)
+            <ul>
+              <li>최소 길이 6자</li>
+              <li>최대 길이 20자</li>
+              <li>Input 이 비어 있을 시에는 “비밀번호를 입력해주세요” 텍스트 노출 되어야 합니다.</li>
+              <li>텍스트 입력 시 •••• 와 같이 실제 값이 숨겨서 표시 되어야합니다</li>
+            </ul>
+            <br>
+            <cite>[ <a href="__source/210903_htmlTest.pdf" target="_blank">zerobase</a> 문제 3 ]</cite>
+          </p>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content">
+            <input type="password" minlength="6" maxlength="20" placeholder="비밀번호를 입력해주세요">
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 04</h3>
+        <blockquote class="question-inner">
+          <p class="question-text">
+            HTML 을 사용하여 다음 표를 만드시오.
+            <br>
+            <cite>[ <a href="__source/210903_htmlTest.pdf" target="_blank">zerobase</a> 문제 4 ]</cite>
+          </p>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content">
+            <table>
+              <caption>주식회사 HTML 매출</caption>
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">/</th>
+                  <th scope="colgroup" colspan="2">반기</th>
+                  <th scope="col" rowspan="2">합계</th>
+                  <th scope="col" rowspan="2">비고</th>
+                </tr>
+                <tr>
+                  <th scope="col">전반기</th>
+                  <th scope="col">후반기</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">2019</th>
+                  <td>10억</td>
+                  <td>20억</td>
+                  <td>30억</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">2020</th>
+                  <td>22억</td>
+                  <td>33억</td>
+                  <td>55억</td>
+                  <td rowspan="2">1)</td>
+                </tr>
+                <tr>
+                  <th scope="row">2021</th>
+                  <td colspan="2">집계중</td>
+                  <td>집계중</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 05</h3>
+        <blockquote class="question-inner">
+          <p class="question-text">
+            다음 수식을 HTML 만 사용하여 표현해 봅시다.
+            <br>
+            <cite>[ <a href="__source/210903_htmlTest.pdf" target="_blank">zerobase</a> 문제 5 ]</cite>
+          </p>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content">
+            <var>∫</var><sub>0</sub><var><sup>t</sup></var> 2<sup>5</sup>x<var>log</var><sub>2</sub>x
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+    </section>
+    <!-- // question-wrap -->
+  </main>
+</body>
+</html>
