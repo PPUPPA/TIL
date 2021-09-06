@@ -1,0 +1,10 @@
+/*
+Pseudo-Class Selector (가상 클래스 선택자)
+*/
+
+/* :not() */
+input:not([placeholder]){background:indianred;}
+
+/* link, visited */
+a:link{color:tomato;}
+a:visited{color:yellowgreen;}

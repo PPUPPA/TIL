@@ -1,0 +1,24 @@
+/*
+Pseudo-Class Selector (가상 클래스 선택자)
+
+hover, active, focus
+*/
+
+input[type=button]{
+  background-color:skyblue;
+  border:none;
+}
+
+input[type=button]:hover{
+  background-color:teal;
+  color:white;
+}
+
+input[type=button]:active{
+  background-color:red;
+}
+
+input[type=text]:focus{
+  background-color:blue;
+  color:white;
+}

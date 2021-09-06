@@ -1,0 +1,9 @@
+/* Type Selector */
+h2{color:purple;}
+
+/* ID Selector */
+#welcome-title{color:green;}
+
+/* Class Selector */
+.blue{color:blue;}
+.red{color:red;}

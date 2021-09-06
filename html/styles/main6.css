@@ -1,0 +1,7 @@
+/*
+Universal Selector(범용 선택자)
+*/
+
+*{font-style:italic;}
+p + *{color:red;}
+div > *{font-weight:700;}

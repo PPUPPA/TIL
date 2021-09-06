@@ -1674,3 +1674,103 @@ Sorry, your browser doesn't support embedded videos.
 <br>
 
 > [hidden, MDN](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/hidden)
+
+<br>
+<br>
+<br>
+<br>
+
+## CSS
+### 개요
+#### CSS 소개
+- **C**ascading **S**tyle **S**heets
+- css3 내에서도 모듈이 각각의 버전을 갖고 있다.
+  - 브라우저마다 모듈의 지원 범위가 다를 수 있다.
+  - [MDN](https://developer.mozilla.org/ko/docs/Web/CSS), [canIuse](https://caniuse.com/) 등의 사이트에서 확인 후 적용
+- cascading : 위에서 아래로 흐른다
+  - 하나의 요소에 여러개의 스타일을 적용할 수 있다.
+  - 위에서 정의한 스타일이 계속 적용되며, 법칙에 따라 스타일이 적용된다.
+- 룰 기반(Rule-based) 언어
+- 특정 요소나 특정 요소들의 집합에 대한 스타일 규칙을 선언할 수 있다.
+  - 주석 `/* 주석 내용 */`
+  - ```css
+  /* 선택자(selector) */
+  h1{
+    /* 선언블럭- 속성:값; */
+    color:red;
+    font-size:12px;
+  }
+  ```
+- css는 인라인 스타일, 내부 스타일, 외부 스타일이 있지만 외부 스타일을 가장 권장하며, 인라인 스타일은 사용을 지양한다.
+  - 외부 스타일
+    - ```html
+    ...
+    <head>
+    ...
+    <link rel="stylesheet" href="style/main.css">
+    <!-- rel : 현재 문서와 불러오는 파일(문서)의 관계
+    href : 경로 -->
+    </head>
+    ...
+    ```
+
+> [실습 파일](210906_index.html)
+
+<br>
+<br>
+
+#### Cascading
+1. 스타일 우선 순위
+    - 선언된 위치에 따라 우선 순위가 정해진다.
+      - 브라우저에 의해 정의된 스타일 < 개발자가 선언한 스타일 < 사용자가 구성한 스타일
+    - 소스 코드의 순서가 뒤에 있으면 덮어 쓴다.
+    - 특정도가 높을수록(적용범위가 적을수록) 우선시된다.
+      - `tag` 스타일 < `class` 스타일 < `id` 스타일 < 인라인 스타일
+2. 스타일 상속
+    - 부모 요소에 있는 스타일 속성이 자식 요소로 전달된다.
+      - 자식요소에서 재정의할 경우 부모 스타일을 덮어쓴다.
+    - 상속되지 않는 속성도 있다.
+      - `background-color`, `background-image` 등...
+
+#### CSS 선택자
+> [CSS 선택자, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Selectors)
+
+<br>
+
+- `*` : 전체 선택자, 모든 요소를 선택함.
+- `tag` : 유형 선택자, 동일한 유형(태그)을 모두 선택함
+- `.class` : 클래스 선택자, 동일한 클래스를 가진 요소를 모두 선택함
+- `#id` : 아이디 선택자, 해당 아이디를 가진 요소를 선택함
+  - 아이디는 한 문서 내 한번만 사용하며, 다른 문서에서 동일한 아이디를 사용하는 건 가능하다.
+- `[attr]` : 특성 선택자, `input[type="name"]`, `input[type]`, `[type]`, 등등. 특성과 관련된 내용을 지정해 선택할 수 있으며, `[type]`의 경우 `[type]`의 값과는 상관 없이 같은 속성을 가진 요소를 모두 선택함.
+
+<br>
+
+> [주요 선택자, css연습-01](210906_css-01.html)
+> [속성 선택자, css연습-02](210906_css-02.html)
+> [가상 클래스 선택자 01, css연습-03-1](210906_css-03-1.html)
+> [가상 클래스 선택자 02, css연습-03-2](210906_css-03-2.html)
+> [가상 클래스 선택자 03, css연습-03-3](210906_css-03-3.html)
+> [가상 클래스 선택자 04, css연습-03-4](210906_css-03-4.html)
+> [가상 클래스 선택자 05, css연습-03-5](210906_css-03-5.html)
+> [가상 요소 선택자, css연습-04](210906_css-04.html)
+> [선택자 결합(하위, 자식, 형제, 그룹화), css연습-05](210906_css-05.html)
+> [범용 선택자, css연습-06](210906_css-06.html)
+> [상속 제어, css연습-07](210906_css-07.html)
+
+<br>
+
+#### CSS 우선 순위
+1. 선언된 곳
+2. 명시도 (적용 범위가 적을 수록 높은 것!)
+3. 코드 위치
+
+> !important >>
+> inline style >
+> id >
+> class/attribute/Pseudo class >
+> type(tag) > 
+> * >
+> inherited
+
+> [우선 순위, css연습-08](210906_css-08.html)

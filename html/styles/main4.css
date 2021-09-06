@@ -1,0 +1,15 @@
+/* Pseudo-Element Selector (가상 요소 선택자) */
+
+/* before, after */
+.movie::before{content:'MOVIE';color:indianred;}
+.favorite::after{content:'🤍'}
+
+/* first-letter */
+.lorem::first-letter{color:red;font-size:30px;}
+.lorem::before{content:'BEFORE';}
+
+/* first-line */
+.lorem::first-line{color:blue;font-size:30px;}
+
+/* selection */
+.lorem::selection{background-color:red;color:white;}

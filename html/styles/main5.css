@@ -1,0 +1,21 @@
+/*
+Selector Combinators(선택자 결합)
+
+하위( ), 자식(>), 형제 선택자, 그룹화
+*/
+
+#list li:last-of-type{
+  color:red;
+}
+#list > li:last-of-type{
+  color:blue;
+}
+
+/* 1. 일반 형제 선택자 결합(~) */
+.item ~ li{font-style:italic;}
+
+/* 2. 인접 형제 선택자 결합(+) */
+.item + li{background-color:blue;}
+
+/* 그룹화 */
+.item1, .item2{color:purple;}
