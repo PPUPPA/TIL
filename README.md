@@ -33,6 +33,18 @@
 - [2021-09-06]
   - [CSS 소개](./html/00_html-summary.md#CSS-%EC%86%8C%EA%B0%9C)
   - [CSS 선택자](./html/00_html-summary.md#CSS-%EC%84%A0%ED%83%9D%EC%9E%90)
+- [2021-09-07]
+  - [폰트 관련 속성](./html/00_html-summary.md#%ED%8F%B0%ED%8A%B8-%EA%B4%80%EB%A0%A8-%EC%86%8D%EC%84%B1)
+  - [단위와 값](./html/00_html-summary.md#%EB%8B%A8%EC%9C%84%EC%99%80-%EA%B0%92)
+  - [박스 모델](./html/00_html-summary.md#%EB%B0%95%EC%8A%A4-%EB%AA%A8%EB%8D%B8)
+
+### JavaScript (preview)
+#### 바닐라 JS로 크롬 앱 만들기
+<cite><a href="https://nomadcoders.co/javascript-for-beginners">by nomadcoders</cite>
+
+- [2021-09-07]
+  - [INTRODUCTION](./javascript/00_javascript-summary.md#JavaScript%3F)
+  - [WELCOME TO JAVASCRIPT 2.0 ~ 2.6](./javascript/01_practice.js)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

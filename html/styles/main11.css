@@ -1,0 +1,122 @@
+/*
+박스 모델 (Box Model)
+*/
+
+.text{
+  width:200px;
+  height:200px;
+  padding:20px;
+  border:20px solid blue;
+  margin:20px;
+}
+
+/* 크기 */
+/* width, height */
+.text1{
+  width:300px;
+  height:100px;
+  background-color:wheat;
+}
+.text2{
+  width:300px;
+  height:100px;
+  background-color:yellowgreen
+}
+
+/*
+max-width, min-width,
+max-height, min-height
+*/
+.box {
+  width:800px;
+  height:300px;
+  background-color:lightcoral;
+}
+.child-box{
+  width:50%;
+  min-width:100px;
+  max-width:300px;
+  height:100px;
+  background-color:lightgreen;
+}
+
+/* 여백 */
+/* margin */
+.box1{
+  width:200px;
+  height:200px;
+  border:5px solid blue;
+}
+.child-box1{
+  width:50px;
+  height:50px;
+  margin:10px;
+  border:5px solid tomato;
+}
+
+/* 마진 상쇄 */
+.margin-box .box{
+  width:50px;
+  height:50px;
+  background-color:hotpink;
+
+  margin:20px;
+}
+.margin-box2{
+  width:100px;
+  height:100px;
+  margin-top:30px;
+  padding:1px; /* 부모-자식 요소의 사이를 끊어줄 수 있는 요소가 1px 이라도 있으면 마진 상쇄가 일어나지 않음! */
+  background-color:cadetblue;
+}
+.margin-box2 .box{
+  width:30px;
+  height:30px;
+  background-color:indianred;
+
+  margin-top:40px;
+}
+
+/* padding */
+.padding-box {
+  width:200px;
+  height:200px;
+  background-color:skyblue;
+}
+.padding-box .child {
+  width:100px;
+  height:100px;
+  background-color:orange;
+
+  padding:10%;
+}
+.padding-box .grand-child {
+  width:50px;
+  height:50px;
+  background-color:red;
+}
+
+/* border */
+.border{
+  width:300px;
+  height:300px;
+  border-style:dotted solid;
+  border-width:10px;
+  border-color:red blue;
+  border-radius:10px;
+
+  background-color:lightgrey;
+}
+
+/* box-model */
+.box-model{
+  width:300px;
+  height:200px;
+  
+  padding:20px;
+  border:30px solid blue;
+  
+  box-sizing:border-box;
+  
+  background-color:skyblue;
+}

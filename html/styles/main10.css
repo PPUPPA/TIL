@@ -1,0 +1,75 @@
+/*
+단위와 값
+*/
+
+/* 절대길이 - px, in, pt */
+.text{font-size:24px;}
+
+/* 상대길이 - em */
+/* 1em === 부모의 font-size */
+.text1{font-size:24px;color:blue;}
+.text1 .child {
+  font-size:1em;
+  font-size:.5em;
+  color:red;
+}
+
+/* 상대길이 - rem */
+/* 1rem === root의 font-size */
+.text2{font-size:2rem;color:green;}
+.text2 .child {
+  font-size:1rem;
+  color:pink;
+}
+
+/* 상대길이 - vw, vh */
+body{margin:0;}
+.text3{
+  background:coral;
+
+  width:50vw;
+  height:100vh;
+}
+
+/* 상대길이 - vmin, vmax */
+.square{
+  background:blue;
+  width:100vmin;
+  height:100vmin;
+}
+
+/* 상대길이 - % */
+.square1{
+  width:50%;
+  height:100px;
+  background:hotpink;
+}
+.square1 .child{
+  width:50%;
+  height:30%;
+  background:indianred;
+}
+
+/* 함수 표기법 */
+/* calc() */
+.text4{
+  width:calc(100 - 50px);
+  height:200px;
+  background-color:wheat;
+}
+
+/* min() */
+/* 둘 중 더 작은 값 선택 반영 */
+.text5{
+  width:min(100%, 500px);
+  height:200px;
+  background-color:bisque;
+}
+
+/* max() */
+/* 둘 중 더 큰 값 선택 반영 */
+.text6{
+  width:max(100%, 500px);
+  height:200px;
+  background-color:beige;
+}

@@ -1717,7 +1717,6 @@ Sorry, your browser doesn't support embedded videos.
 > [실습 파일](210906_index.html)
 
 <br>
-<br>
 
 #### Cascading
 1. 스타일 우선 순위
@@ -1732,7 +1731,10 @@ Sorry, your browser doesn't support embedded videos.
     - 상속되지 않는 속성도 있다.
       - `background-color`, `background-image` 등...
 
-#### CSS 선택자
+<br>
+<br>
+
+### CSS 선택자
 > [CSS 선택자, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Selectors)
 
 <br>
@@ -1746,18 +1748,111 @@ Sorry, your browser doesn't support embedded videos.
 
 <br>
 
-> [주요 선택자, css연습-01](210906_css-01.html)
-> [속성 선택자, css연습-02](210906_css-02.html)
-> [가상 클래스 선택자 01, css연습-03-1](210906_css-03-1.html)
-> [가상 클래스 선택자 02, css연습-03-2](210906_css-03-2.html)
-> [가상 클래스 선택자 03, css연습-03-3](210906_css-03-3.html)
-> [가상 클래스 선택자 04, css연습-03-4](210906_css-03-4.html)
-> [가상 클래스 선택자 05, css연습-03-5](210906_css-03-5.html)
-> [가상 요소 선택자, css연습-04](210906_css-04.html)
-> [선택자 결합(하위, 자식, 형제, 그룹화), css연습-05](210906_css-05.html)
-> [범용 선택자, css연습-06](210906_css-06.html)
-> [상속 제어, css연습-07](210906_css-07.html)
+#### 주요 선택자
+- 우선 순위 : type selector < class selector < id selector
+- 아래와 같이 작성한다.
+  - `type{css속성}`
+  - `.class{css속성}`
+  - `#id{css속성}`
+<br>
 
+> [주요 선택자, css연습-01](210906_css-01_Selector.html)
+<br>
+<br>
+
+#### 속성 선택자
+- `[attr]`, `[attr=value]`, `[attr^=value]`, `[attr$=value]`, `[attr*=value]` 형태로 작성 가능하다.
+  - `[attr]{css속성}` : 해당 속성을 가진 모든 요소에 적용(속성의 값은 상관X)
+  - `[attr=value]{css속성}` : 해당 속성과 값을 가진 모든 요소에 적용(속성의 값 상관O)
+  - `[attr^=value]{css속성}` : 해당 속성의 값이 value에 입력한 값으로 시작하는 요소에 적용
+  - `[attr$=value]{css속성}` : 해당 속성의 값이 value에 입력한 값으로 끝나는 요소에 적용
+  - `[attr*=value]{css속성}` : 해당 속성의 값이 value에 입력한 값이 포함된 요소에 적용
+<br>
+
+> [속성 선택자, css연습-02](210906_css-02_Attr.html)
+<br>
+<br>
+
+#### 가상 클래스 선택자
+- `:가상 클래스` 형태로 작성한다
+- `first-child`, `last-child`, `nth-child(n)`
+  - 타입과 관계없이 각각 요소의 첫번째 자식, 마지막 자식, n번째 자식을 선택한다.
+- `first-of-type`, `last-of-type`, `nth-of-type(n)`
+  - `-child`와 유사하나 선택한 타입 중에서 선택한다. (타입 관계O)
+- `not(선택자)`
+  - 선택자 영역에는 타입, 속성, 가상클래스 등 거의 모든 종류의 선택자가 들어갈 수 있다.
+  - 해당 선택자 요소를 제외하고 적용한다.
+- `link`, `visited`
+  - `link` : 아직 방문하지 않은 링크 요소
+  - `visited` : 방문한 링크 요소
+- `hover`, `active`, `focus`
+  - `hover` : 마우스를 올렸을 때
+  - `active` : 클릭한 순간
+  - `focus` : 탭키를 통한 접근 혹은 클릭 후 등 포커스가 맞춰져 있는 상태
+    - 접근성을 위해 hover에서 준 스타일을 동일하게 적용해주는 경우가 많다.
+- `enabled`, `disabled`, `checked`
+  - `enabled` : (주로 input의) 활성 요소
+  - `disabled` : (주로 input의) 비활성 요소
+  - `checked` : (input type - checkbox, radio) 체크된 상태
+<br>
+
+> [가상 클래스 선택자 01, css연습-03-1](210906_css-03-1_nth-child.html)
+> [가상 클래스 선택자 02, css연습-03-2](210906_css-03-2_nth-of-type.html)
+> [가상 클래스 선택자 03, css연습-03-3](210906_css-03-3_not+a.html)
+> [가상 클래스 선택자 04, css연습-03-4](210906_css-03-4_hover.html)
+> [가상 클래스 선택자 05, css연습-03-5](210906_css-03-5_abled.html)
+<br>
+<br>
+
+#### 가상 요소 선택자
+- `::가상 요소` 형태로 작성한다
+  - 구형 브라우저 이슈로 인해 `:가상 요소` 형태로 작성하는 경우도 많다.
+- 실제로 html 문서 내에 존재하지 않는 가상의 요소로, 주로 장식용으로 사용된다.
+- `before`, `after`
+  - `before` : 태그의 첫 번째 자식으로 생성
+  - `after` : 태그의 마지막 자식으로 생성
+  - `content` : `before`, `after`의 필수 공통 속성으로 추가할 컨텐츠(텍스트)를 작성한다.
+- `first-letter`, `first-line`
+  - 각각 첫 번째 글자, 첫 번째 줄을 선택하며, `first-line`의 줄은 뷰포트 기준으로 자동 적용된다.
+- `selection` : 드래그 등을 통해 선택한 영역
+<br>
+
+> [가상 요소 선택자, css연습-04](210906_css-04_before+selection.html)
+<br>
+<br>
+
+#### 선택자 결합
+- `선택자 선택자` : 공백을 통해 자손 선택자를 선택할 수 있다.
+- `선택자>선택자` : `>`를 통해 자식 선택자를 선택할 수 있다.
+- `선택자~선택자` : `~`을 통해 형제 선택자를 선택할 수 있다.
+- `선택자+선택자` : `+`를 통해 맞닿아있는 바로 다음 형제 선택자를 선택할 수 있다.
+- `선택자,선택자` : `,`를 통해 다른 요소를 함께 선택할 수 있다.
+<br>
+
+> [선택자 결합(하위, 자식, 형제, 그룹화), css연습-05](210906_css-05_combinators.html)
+<br>
+<br>
+
+#### 범용 선택자
+- `*` : 범용 선택자로, 선택자 결합을 함께 사용할 수 있다.
+<br>
+
+> [범용 선택자, css연습-06](210906_css-06_universal.html)
+<br>
+<br>
+
+#### 상속 제어
+- 상속 내용을 상속 받지 않을 수(초기화 할 수) 있다.
+  - `all` 속성 : 태그의 모든 속성에 대한 내용으로, 아래 값들을 함께 사용할 경우 전부 초기화해 태그의 기본 상태로 돌린다.
+  - `initial` : 브라우저가 지정한 속성의 초기 기본값을 적용한다.
+  - `inherit` : 부모의 값을 상속한다(명시함)
+  - `unset`
+    - 부모로부터 상속받을 값이 없을 경우 `initial` 처럼 작동한다
+    - 부모로부터 상속받을 값이 있을 경우 `inherit` 처럼 작동한다
+<br>
+
+> [상속 제어, css연습-07](210906_css-07_initial.html)
+<br>
 <br>
 
 #### CSS 우선 순위
@@ -1773,4 +1868,167 @@ Sorry, your browser doesn't support embedded videos.
 > * >
 > inherited
 
-> [우선 순위, css연습-08](210906_css-08.html)
+> [우선 순위, css연습-08](210906_css-08_important.html)
+
+<br>
+<br>
+
+### 폰트 관련 속성
+> [폰트/텍스트 관련 속성, css연습-09](210907_css-09_font.html)
+<br>
+
+- `font-size`는 키워드로도 적용이 가능하다.
+  - > [font-size, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/font-size)
+- `line-height` : 줄간격, 기본적으로 폰트에 지정되어 있다.
+  - 숫자, 픽셀 등으로 적용 가능하다
+  - > [line-height, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/line-height)
+- `font` : 축약형으로 폰트 관련 속성을 적용할 수 있다.
+  - 숫자, 픽셀 등으로 적용 가능하다.
+  - `font-family`, `font-size`는 기본 속성, 나머지는 선택적으로 작성한다.
+  - 폰트 상세 속성을 추가하고 싶은 경우 아래에서 선언하지 않으면 초기화 한다.
+  - > [font, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/font)
+- `letter-spacing`, `word-spacing`
+  - 글자 간 / 단어 간 여백 조정
+    - 기본 간격은 폰트에 기본적으로 지정되어 있다.
+  - `word-spacing`은 % 값을 사용 가능하다.
+- `text-align` : 글자 정렬
+  - 블록 요소에만 적용 가능.
+- `text-indent` : 들여쓰기
+  - 상속 요소.
+  - 블록 요소에만 적용 가능
+- `text-decoreation` : shorthand
+  - 대부분 단축 형태로 사용
+  - 멀티플 적용 가능.
+  - `line` : 선 종류
+    - `underline` : 밑줄
+    - `overline` : 윗줄
+    - `line-through` : 삭제선
+  - `style` : 선 유형
+    - `solid` : 기본 값. 실선
+    - `double` : 두줄 실선.
+    - `dotted` : 점선
+    - `dashed` : 긴 점선
+    - `wavy` : 물결 표시
+  - `color` : 선 색상
+  - `width` : 선 두께
+- `word-break` : 줄바꿈
+  - `normal` : 기본 값, 나라마다 기본값의 형태는 다르다(아래 참고)
+  - `break-all` : 모든 단어를 글자별로 쪼갠다. (CJK의 기본 형태)
+  - `keep-all` : 모든 단어를 유지한 채 줄을 바꾼다. (CJK 제외 기본 형태)
+- `text-transform` : 사용 가능 언어가 정해져 있으며, 주로 영문, 일본어 일부, 수식용 언어 등에 쓰인다.
+  - `uppercase` : 대문자
+  - `lowercase` : 소문자
+  - `capitalize` : 첫 글자 대문자
+- `font-variant` : `text-transform` 처럼 사용 가능 언어가 정해져있다.
+  - `normal` : 기본값
+  - `small-caps` : 소문자를 소문자 크기의 대문자로 변경함
+
+<br>
+<br>
+
+### 단위와 값
+
+- 기본적으로 속성별로 적용되는 단위는 다르기 때문에 각 속성에 대해 MDN 등에 검색해보고 사용한다!
+- > [CSS 단위와 값, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Values_and_Units)
+- > [폰트/텍스트 관련 속성, css연습-10](210907_css-10_units.html)
+
+#### 절대 길이
+`px`, `cm`, `mm`, `in`, `pc`, `pt` 등등 여러 단위가 있으나, 사실상 웹 환경에서는 픽셀`px` 단위만 사용한다.
+- 전통적으로 장치의 픽셀(점)을 의미한다.
+- 절대 길이를 사용하면 사용자 에이전트(크롬의 설정 등)의 글자 크기 조정에 영향을 받지 않으므로, 접근성이 떨어질 수 있다.
+- 그래서 특히 `font-size`를 설정할 땐 `em`, `rem` 등의 상대 길이를 사용하는 게 좋다.
+<br>
+
+#### 상대 길이
+- `em` : 부모의 폰트 사이즈를 기준으로 폰트 사이즈가 조정됨.
+  - `1em` === 부모의 폰트 사이즈
+- `rem` : root의 폰트 사이즈를 기준으로 폰트 사이즈가 조정됨.
+  - `1rem` === 루트의 폰트 사이즈
+- `vw`, `vh` : 뷰포트 대비 백분율 길이
+  - 디바이스마다 다른 뷰포트를 기준으로 퍼센테이지 값을 설정한다.
+  - `vw` : 뷰포트 가로 너비 기준
+  - `vh` : 뷰포트 세로 높이 기준
+- `vmin`, `vmax` : `vw`, `vh`와 함께 이해해야 함!
+  - `vmin` : 뷰포트 기준 작은 값 기준
+  - `vmax` : 뷰포트 기준 큰 값 기준
+  - 가로모드/세로모드에 대응해야 할 때 주로 쓰임!
+- `%` : 부모요소 기준
+
+<br>
+
+#### 함수 표기법
+- `calc()` : 서로 다른 단위의 값을 연산해서 적용
+  - 연산자 사이 띄어쓰기 필수!
+- `min()` : 두 개의 기준 중 더 작은 값을 선택해서 적용
+- `max()` : 두 개의 기준 중 더 큰 값을 선택해서 적용
+
+> IE에서는 `min()`, `max()`가 아예 적용되지 않으며, `calc()`도 적용 범위가 좁으니 확인 후 적용하도록 한다!
+
+<br>
+<br>
+
+### 박스 모델
+> [박스 모델 정리](boxmodel/box-model.html)
+> [박스 모델, css연습-11](210907_css-11_boxmodel.html)
+<br>
+
+- 크기
+  - 초기값 : `auto`
+  - 상속 되지 않음
+  - inline 요소는 display 속성을 바꿔주지 않는 이상 자신의 값만큼만 크기를 갖기 때문에 `width`, `height` 속성 사용 불가
+  - `width` : 요소의 너비
+  - `height` : 요소의 높이
+  - `max-width`, `max-height` : 최대 너비/높이
+  - `min-width`, `min-height` : 최소 너비/높이
+    - IE7 이상부터 사용 가능한 요소!
+- 여백
+  - margin : 바깥쪽 여백
+    - 음수 값 사용 가능!
+    - 단일 값 입력 시 : 상하좌우 동일 margin 적용
+    - `값 값` 입력 시 : 상하/좌우 margin 으로 적용
+    - `값 값 값` 입력 시 : 상/좌우/하 margin 으로 적용
+    - `값 값 값 값` 입력 시 : 상/우/하/좌(시계방향) margin 으로 적용
+    - margin 값에 `%` 값을 사용할 시, 부모의 `width` 값을 사용
+    - margin 상쇄(겹칩, 중복)
+      - 두 값 중 더 큰 값으로 합쳐지는 현상.
+      - 인접형제 : 위아래 여백이 만나 상쇄됨 (좌우 여백은 합쳐지지 않음)
+      - 부모-자식 간
+        - 부모 블록에 border, padding, inline content가 없어 부모와 자식의 margin-top이 만나는 경우
+        - 부모 블록에 border, padding, inline content가 없고, 부모와 자식을 분리할 height값이 지정되지 않아 margin-bottom이 만나는 경우
+      - 빈 블록 : border, padding, inline-content가 없고, height가 0이라면 해당 블록의 margin-top과 margin-bottom이 상쇄된다.
+  - padding : 안쪽 여백
+    - 음수 값 사용 불가
+    - 단일 값 입력 시 : 상하좌우 동일 padding 적용
+    - `값 값` 입력 시 : 상하/좌우 padding 으로 적용
+    - `값 값 값` 입력 시 : 상/좌우/하 padding 으로 적용
+    - `값 값 값 값` 입력 시 : 상/우/하/좌(시계방향) padding 으로 적용
+    - padding 값에 `%` 값을 사용할 시, 부모의 `width` 값을 사용
+- 테두리 : border
+  - 단일 값 입력 시 : 상하좌우 동일 값 적용
+  - `값 값` 입력 시 : 상하/좌우 값으로 적용
+  - `값 값 값` 입력 시 : 상/좌우/하 값으로 적용
+  - `값 값 값 값` 입력 시 : 상/우/하/좌(시계방향) 값으로 적용
+  - border-style : 테두리 스타일
+    - border-style이 `none`일 경우 border가 적용되지 않음!
+    - solid : 실선
+    - doubled : 두줄 실선
+    - dotted : 점선
+    - dashed : 긴 점선
+    - [그 외 보더 스타일, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/border-style) 참고.
+  - border-width : 테두리 두께
+    - 값 지정 혹은 키워드로 사용 가능하나, 키워드는 정해진 명세가 없기 때문에 가능한 값을 지정해 사용한다.
+  - border-color : 테두리 색상
+  - border-radius : 둥근 테두리
+    - 다른 속성과 마찬가지로 단일 값, 혹은 여러 값을 지정할 수 있으며, 기준이 상/우/하/좌가 아닌 ***좌상단/우상단/우하단/좌하단*** 으로 적용된다.
+- box-sizing : 크기 기준
+  - `content-box` : 기본 값
+    - padding, border, margin을 포함하지 않는, 컨텐츠의 너비를 기준으로 한다.
+  - `border-box`
+    - padding과 border를 포함한 너비를 기준으로 한다.
+<br>
+
+> outline과 border는 다르다!
+> outline은 레이아웃에 영향을 미치지 않으나, border는 레이아웃에 영향을 미친다.
+
+<br>
+<br>

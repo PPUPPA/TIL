@@ -7,5 +7,5 @@ li:first-child{color:green;}
 /* 2. last-child */
 span:last-child{color:tomato;}
 
-/* 3. nth-child */
+/* 3. nth-child() */
 li:nth-child(even){color:hotpink;}
