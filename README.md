@@ -37,6 +37,9 @@
   - [폰트 관련 속성](./html/00_html-summary.md#%ED%8F%B0%ED%8A%B8-%EA%B4%80%EB%A0%A8-%EC%86%8D%EC%84%B1)
   - [단위와 값](./html/00_html-summary.md#%EB%8B%A8%EC%9C%84%EC%99%80-%EA%B0%92)
   - [박스 모델](./html/00_html-summary.md#%EB%B0%95%EC%8A%A4-%EB%AA%A8%EB%8D%B8)
+- [2021-09-08]
+  - [개인 복습, 게시글 레이아웃 카피-AhnLab](./html/_project/01_ahn/210908_example-ahnlab.html)
+  - [개인 복습, 웹접근성연구소 메인 일부 카피-AhnLab](./html/_project/02_wah/210908_example-wah.html)
 
 ### JavaScript (preview)
 #### 바닐라 JS로 크롬 앱 만들기
@@ -45,6 +48,11 @@
 - [2021-09-07]
   - [INTRODUCTION](./javascript/00_javascript-summary.md#JavaScript%3F)
   - [WELCOME TO JAVASCRIPT 2.0 ~ 2.6](./javascript/01_practice.js)
+- [2021-09-08]
+  - [자바스크립트 객체](./javascript/00_javascript-summary.md#Function)
+  - [WELCOME TO JAVASCRIPT 2.7 ~ 2.10](./javascript/02_practice.js)
+  - [WELCOME TO JAVASCRIPT 2.11](./javascript/03_practice-calculator.js)
+  - [WELCOME TO JAVASCRIPT 2.12](./javascript/04_practice.js)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

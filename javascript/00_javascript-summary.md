@@ -16,7 +16,7 @@ alert('hi')
 1+1
 ```
 
-### 자바스크립트 객체
+## 자바스크립트 객체
 자바스크립트의 객체는 크게 내장 객체, 브라우저 객체 모델(BOM), 문서 객체 모델(DOM)로 나누어 볼 수 있음.
 
 - 내장 객체 : 브라우저의 자바스크립트 엔진에 내장된 객체를 의미. (9개의 객체 생성자가 있음.)
@@ -39,7 +39,7 @@ alert('hi')
 <br>
 <br>
 
-#### 변수(variable)
+### 변수(variable)
 - 값을 저장하거나 유지하는 역할을 함.
 - `const`(상수; constant) 를 통해 선언.
   - 상수 : 바뀌지 않는 값
@@ -74,7 +74,7 @@ alert('hi')
 <br>
 <br>
 
-#### Boolean
+### Boolean
 - 0, -0, null, false, NaN, undefined, 빈 문자열 은 false로 취급된다.
 ```javascript
 const amIFat = null; // null : 절대 자연적으로는 생기지 않음. 아무것도 없다는 걸 의도적으로 표현한 것.
@@ -86,13 +86,14 @@ console.log(amIFat, something);
 <br>
 <br>
 
-#### Array
+### Array
 기본적으로는 `new` 키워드와 `Array()` 생성자 함수를 사용하여 배열 인스턴스(객체)를 생성한다.
 - 배열은 값을 순서대로 나열한 목록이며, 0부터 시작하는 색인(index)값을 통해 배열안에 값을 저장하고 가져다 사용한다.
 - 배열의 값으로는 문자, 숫자, 불리언(Boolean), 개체, 배열, 함수 등 모든 것이 올 수 있다.
   - ```javascript
       nonsense = [1, 2,'hello', false, null, true, undefined, "sunny"]
     ```
+- `push(값)`를 통해 배열 끝에 요소 추가도 가능하다.
 
 <br>
 <br>
@@ -113,7 +114,7 @@ daysOfWeek.push('sun');
 <br>
 <br>
 
-#### Objects
+### Objects
 객체 안의 속성(property)는 `이름:값`(name:value) 으로 표현하고, 속성과 속성사이는 `,`로 구분함.
 <br>
 
@@ -130,3 +131,34 @@ player.fat = false;
 console.log(player);
 player.lastName = 'potato';
 ```
+
+<br>
+<br>
+
+### Function
+반복해서 사용할 수 있는 코드 조각. 어떤 코드를 캡슐화해서 여러번 실행할 수 있게 만들어줌.
+<br>
+- 인수(argument) : 함수를 실행하는 동안 어떤 정보를 함수에 보낼 수 있는 방법.
+
+<br>
+
+```javascript
+function sayHello(nameOfPerson, age){
+  console.log('Hello my name is ' + nameOfPerson + ' and I\'m ' + age);
+}
+sayHello('sunny', 26);
+sayHello('dada', 22);
+```
+```javascript
+const player = {
+  name:'sunny',
+  sayHello: function(otherPersonsName){
+    console.log('hello '+otherPersonsName+' nice to meet you!');
+  }
+}
+console.log(player.name);
+player.sayHello('lynn');
+```
+
+<br>
+<br>
