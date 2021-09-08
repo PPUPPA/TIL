@@ -43,7 +43,7 @@
 
 ### JavaScript (preview)
 #### 바닐라 JS로 크롬 앱 만들기
-<cite><a href="https://nomadcoders.co/javascript-for-beginners">by nomadcoders</cite>
+<cite><a href="https://nomadcoders.co/javascript-for-beginners">by nomadcoders</a></cite>
 <br>
 
 - [2021-09-07]
