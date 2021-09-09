@@ -2032,3 +2032,159 @@ Sorry, your browser doesn't support embedded videos.
 
 <br>
 <br>
+
+### 레이아웃
+- `inline`
+  - 영역의 크기 = 내부 콘텐츠 크기
+  - `margin`, `padding`의 `top`/`bottom` 지정 불가
+  - 여러 요소가 가로 배치된다.
+- `block`
+  - 영역의 크기(`width`, `height`, `margin`, `padding`) 지정 가능
+  - `width`를 따로 지정하지 않으면 한 줄을 차지한다.
+  - 여러 요소가 세로 배치된다.
+- `inline-block`
+  - 영역의 크기(`width`, `height`, `margin`, `padding`) 지정 가능
+  - 여러 요소가 가로 배치된다.
+
+<br>
+
+> `display` 속성을 통해 값 변경 `block` -> `inline-block` / `inline` -> `block` 등으로 변경 가능
+
+<br>
+<br>
+
+#### 화면 내 요소 없애기
+> [요소 없애기, css연습-12](210909_css-12_visible.html)
+
+<br>
+
+- `display:none;`
+  - 레이아웃에서 지워짐
+- `visibility:hidden;` / `opacity:0;`
+  - 레이아웃은 유지한 채로 보이지만 않는 형태.
+
+<br>
+<br>
+
+#### float
+- `display:flex` 가 나오면서 잘 사용하지 않지만 이전에는 레이아웃 요소로 많이 사용함.
+- 기존에 `block`이 갖고 있던 속성을 무시하고(기본적 흐름에서 빠져나와) 별도의 배치 효과(float된, 부유하는 형태)를 갖는다.
+<br>
+
+> `display:flex;` 를 사용할 수 없는 환경(구형 브라우저 지원)에서는 여전히 레이아웃 요소로 사용한다.
+> [float, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/float)
+> [float, css연습-13](210909_css-13_float.html)
+
+<br>
+<br>
+
+#### position
+> [Normal Flow, MDN](https://developer.mozilla.org/ko/docs/Learn/CSS/CSS_layout/Normal_Flow)
+> Normal Flow : 레이아웃을 변경하지 않았을 때 웹페이지가 배치되는 방법(일반적인 문서 배열)
+
+<br>
+
+- `static` : 기본값. 일반적인 문서흐름(Normal Flow)을 따름.
+- `relative`
+  - 일반적인 문서흐름에 따라 배치 후, **자기 자신**을 기준으로 이동함.
+  - 기존 자신의 영역을 유지함.
+  - 먼저 입력한 기준 값을 사용한다(`left` 선언 후 `right` 선언 시, `left`값 사용)
+- `absolute`
+  - 일반적인 문서흐름에서 **제거**함
+  - 가장 가까운 위치의 지정 조상 요소(`position`값이 `static`이 아닌 조상 요소)를 기준으로 **상대적**으로 배치됨.
+    - 단, 조상 요소 중 지정된 값이 없다면(전부 `position:static`) 초기 컨테이너 블록(`body`)을 기준으로 위치.
+  - 주로 부모(`relative`) - 자식(`absolute`) 형태로 사용됨!
+- `fixed`
+  - 일반적인 문서흐름에서 **제거**함
+  - 뷰포트를 기준으로 위치.
+    - 스크롤해도 움직이지 않음!
+      - top버튼 같은 플로팅 버튼이나 상단 고정 메뉴에 주로 쓰임!
+- `sticky`
+  - 일반적인 문서흐름에 따라 배치 후, 가장 가까운 **스크롤 되는 조상**이나 **테이블 관련 요소를 포함한 컨테이너 블록을 기준**으로 이동
+  - 어느 시점에 *끈끈하게 붙어서*, fixed처럼 동작함.
+<br>
+
+- `top`, `bottom`, `left`, `right`
+  - 오프셋 값 지정, `static`에서는 유효하지 않다.
+- `z-index`
+  - z축의 우선순위(인덱스)를 지정한다. 마찬가지로 `static`에서는 유효하지 않다.
+
+> [position, css연습-14](210909_css-14_position.html)
+<br>
+<br>
+
+#### overflow
+넘치는 값 노출 여부/노출 방식에 대한 속성
+
+- visible : 기본값
+- hidden : 잘라내기
+- scroll : 스크롤바 노출
+- auto : 넘치는 경우 자동으로 스크롤바 노출
+<br>
+
+> [overflow, css연습-15](210909_css-15_overflow.html)
+<br>
+<br>
+
+### 색상과 배경
+#### 색상
+> [color, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/color_value)
+
+- 키워드 사용
+- rgb 3차원 좌표 사용
+  - `#` + 16진수 표기, 축약형 허용 (ex: #000000, #000 등)
+    - 00(R)00(G)00(B) (00 어두운색 ~ FF 밝은색)
+  - rgb표기 (ex: rgb(0,0,0))
+    - 0~255까지의 좌표를 사용(0 어두운색 ~ 255 밝은색)
+  - rgba표기 (ex: rgba(0,0,0,.2))
+    - 투명도 지원(0~1)
+    - 구형브라우저 지원X
+- hsl 실린더 좌표 사용
+
+<br>
+<br>
+
+#### 불투명도
+- opacity : 0~1 (0 투명 ~ 1 불투명)
+- 요소 내 하위 모든 값에 영향을 줌
+
+<br>
+<br>
+
+#### background
+축약형 사용 가능
+<br>
+
+- `background-color`
+  - 배경색 지정.
+- `background-image`
+  - 배경색보다 이미지가 위에 뜬다.
+  - url(이미지 경로)로 사용.
+- `background-repeat` : 백그라운드 이미지 반복 설정
+  - repeat : 기본 값. 가로/세로 반복
+  - repeat-x : 가로 반복
+  - repeat-y : 세로 반복
+  - no-repeat : 반복하지 않음
+- `background-position` : 백그라운드 위치
+  - 0 0 : 기본 값
+  - x y : x축 방향, y축 방향을 각각 지정한다.
+    - 키워드(top, bottom, left, right, center) 혹은 단위(px, %) 지정 가능.
+    - 키워드 사용 시 하나만 입력할 경우 나머지 값은 자동으로 center 값이 들어간다.
+- `background-origin` : 백그라운드 적용 영역
+  - 키워드 지정
+    - border-box : border 기준
+    - padding-box : 기본 값, padding 기준
+    - content-box : content 영역 기준
+- `background-size` : 백그라운드 크기
+  - 키워드 혹은 단위(px, %) 지정 가능.
+  - 키워드
+    - auto : 기본 값, 백그라운드로 사용된 이미지의 오리지널 사이즈.
+    - contain : 영역 기준 이미지를 무조건 포함하는 사이즈 (비율 유지, 가로, 세로 중 작은 값 기준)
+    - cover : 영역이 가득차도록 적용되는 사이즈 (비율 유지, 가로, 세로 중 큰 값 기준)
+<br>
+
+> **[ 축약형 사용 시 ]**
+> `background-size`는 `background-position` 바로 뒤에, `/`로 구분해 입력한다. (ex: center/60%)
+
+> [background, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/background)
+<br>

@@ -40,6 +40,9 @@
 - [2021-09-08]
   - [개인 복습, 게시글 레이아웃 카피-AhnLab](./html/_project/01_ahn/210908_example-ahnlab.html)
   - [개인 복습, 웹접근성연구소 메인 일부 카피-AhnLab](./html/_project/02_wah/210908_example-wah.html)
+- [2021-09-09]
+  - [레이아웃](./html/00_html-summary.md#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83)
+  - [색상과 배경](./html/00_html-summary.md#%EC%83%89%EC%83%81%EA%B3%BC-%EB%B0%B0%EA%B2%BD)
 
 ### JavaScript (preview)
 #### 바닐라 JS로 크롬 앱 만들기
@@ -54,6 +57,9 @@
   - [WELCOME TO JAVASCRIPT 2.7 ~ 2.10](./javascript/02_practice.js)
   - [WELCOME TO JAVASCRIPT 2.11](./javascript/03_practice-calculator.js)
   - [WELCOME TO JAVASCRIPT 2.12](./javascript/04_practice.js)
+- [2021-09-09]
+  - [조건문](./javascript/00_javascript-summary.md#Conditionals)
+  - [WELCOME TO JAVASCRIPT 2.13 ~ 2.16, Conditionals](./javascript/05_practice.js)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

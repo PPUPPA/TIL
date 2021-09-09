@@ -1,0 +1,16 @@
+/*
+레이아웃
+
+float
+*/
+
+.image{
+  width:100px;
+  height:100px;
+  
+  background-color:hotpink;
+  border:5px solid blue;
+
+  float:left;
+  margin:10px;
+}

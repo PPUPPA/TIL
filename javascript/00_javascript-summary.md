@@ -162,3 +162,47 @@ player.sayHello('lynn');
 
 <br>
 <br>
+
+### Conditionals
+`if`, `else if`, `else` 를 사용한 조건문.
+- 조건 내에 여러 조건을 함께 체크할 수 있다.
+  - `&&`(and) : 여러 조건을 동시에 만족해야 함.
+  - `||`(or) : 여러 조건 중 하나만 만족해도 됨.
+
+```javascript
+// else 생략 가능
+if(condition){
+  // condition === true
+}else{
+  // condition === false
+}
+```
+<br>
+
+**[ 조건문 예제 ]**
+
+```javascript
+const age = parseInt(prompt("How old are you?"));
+if(isNaN(age) || age < 0){
+  console.log("Please write a real positive number.");
+}else if(age < 18){
+  console.log("You are too young.");
+}else if(age >= 18 && age <= 50){
+  console.log("You can drink.")
+}else if(age > 50 && age <= 80){
+  console.log("You should exercise.");
+}else if(age === 100){
+  console.log("Wow. You are wise.")
+}else if(age > 80){
+  console.log("You can do whatever you want.")
+}
+```
+
+> prompt는 구형이라 사용하지 않는 추세임.
+> 1. 커스텀 불가. 2. 브라우저나 사용자가 막을 수 있음. 3. 값 입력 전까지 로딩을 중지함.
+>
+> parseInt : String -> Number 타입 변환
+>
+> isNaN 함수 : boolean 값을 리턴함. (true : NaN, false : Number)
+<br>
+<br>

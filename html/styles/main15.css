@@ -1,0 +1,13 @@
+/*
+레이아웃
+
+overflow
+*/
+
+div{
+  background-color:bisque;
+
+  width:200px;
+  height:200px;
+  overflow:auto;
+}

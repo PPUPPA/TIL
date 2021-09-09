@@ -1,0 +1,18 @@
+/*
+레이아웃
+
+요소를 없애는 방법
+display:none;
+visibility:hidden;
+*/
+
+.box{
+  height:200px;
+  border:solid;
+}
+.box1{background-color:darkorange;}
+.box2{background-color:greenyellow;}
+.box3{background-color:dodgerblue;}
+
+.display-box .box2{display:none;}
+.visible-box .box2{visibility:hidden;}

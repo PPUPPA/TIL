@@ -1,0 +1,96 @@
+/*
+레이아웃
+
+position
+*/
+
+/* relative */
+.relative-box div{
+  width:200px;
+  height:200px;
+  border:5px solid orangered;
+  margin-left:150px;
+}
+
+.relative-box .box{
+  background-color:peachpuff;
+  position:relative;
+  top:50px;
+  left:-80px;
+}
+
+/* absolute */
+.absolute-box div{
+  width:200px;
+  height:200px;
+  border:5px solid orangered;
+  margin-left:150px;
+}
+.absolute-box .parent {
+  position:relative;
+}
+.absolute-box .box {
+  width:150px;
+  height:100px;
+  border-color:darkblue;
+  background-color:cornflowerblue;
+  border-radius:30px;
+  position:absolute;
+  top:100px;
+}
+.absolute-box .box1{
+  top:40px;
+  left:20px;
+  z-index:100;
+}
+.absolute-box .box2{
+  top:100px;
+  left:40px;
+  z-index:10;
+}
+.absolute-box .box3{
+  top:70px;
+  left:60px;
+  z-index:-1;
+}
+
+/* fixed */
+.fixed-box div{
+  width:200px;
+  height:200px;
+  border:5px solid orangered;
+  margin-left:150px;
+}
+.fixed-box .parent {
+  position:relative;
+}
+.fixed-box .box {
+  width:150px;
+  height:100px;
+  border-color:darkblue;
+  background-color:cornflowerblue;
+  border-radius:30px;
+  position:fixed;
+  top:0;
+  left:0;
+}
+
+/* sticky */
+.sticky-box div{
+  width:200px;
+  height:200px;
+  border:5px solid orangered;
+  margin-left:150px;
+}
+.sticky-box .parent {
+  position:sticky;
+  top:100px;
+  left:100px;
+}
+.sticky-box .box {
+  width:150px;
+  height:100px;
+  border-color:darkblue;
+  background-color:cornflowerblue;
+  border-radius:30px;
+}
