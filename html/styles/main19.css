@@ -1,0 +1,38 @@
+/*
+animation
+*/
+
+div{
+  width:100px;
+  height:100px;
+  border:10px solid silver;
+  background-color:#fdd;
+  border-radius:30px;
+  animation:my-first-animation 1s infinite;
+}
+
+.box1{
+  background-color:rgb(204, 253, 225);
+  animation-delay:-.3s;
+}
+.box2{
+  background-color:rgb(255, 221, 198);
+  animation-delay:0;
+}
+.box3{
+  background-color:rgb(186, 239, 255);
+  animation-delay:.3s;
+}
+
+@keyframes my-first-animation{
+  0%{
+    font-size:20px;
+  }
+  50%{
+    width:300px;
+    font-size:40px;
+  }
+  100%{
+    font-size:20px;
+  }
+}

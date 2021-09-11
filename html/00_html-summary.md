@@ -2188,3 +2188,121 @@ Sorry, your browser doesn't support embedded videos.
 
 > [background, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/background)
 <br>
+<br>
+<br>
+<br>
+
+### transform
+> [transform, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/transform)
+회전, 크기 조정, 기울이기, 이동 등 요소를 변형해 노출하는 속성.
+<br>
+
+- 기존 컨텐츠 사이즈는 그대로 사용한 채(지정된 width, height 값 반영), 보여지는 형태만 변형한다(다음 요소와 겹쳐질 수 있음)
+- 여러 개를 한꺼번에 사용 가능하며, 함수를 적용하는 순서가 반영된다.
+- X축 : 가로좌표 | Y축 : 세로좌표
+- `none` : 기본 값.
+- `scale` : 크기 조절, 3d로는 사용 불가(scale3d() 사용)
+  - `scale()` : 2D 크기 조정 가능. 단일 값 입력시 가로, 세로 동시 적용, 두가지 값을 입력 시(x, y) 각각 X축, Y축 조정.
+  - `scaleX()` : X축 기준으로만 크기 조정 가능.
+  - `scaleY()` : Y축 기준으로만 크기 조정 가능.
+- `rotate` : 회전 속성. angle 값을 받음. (deg, grad, rad, turn 등. 기본적으로 deg, turn을 많이 사용한다.) 음수 값 사용 가능.
+- `translate` : 위치 이동. 음수 값 사용 가능.
+  - `translate()` : 2D 크기 조정 가능. 단일 값 입력 시, 가로 값으로만 적용되며, 두가지 값을 입력 시(x, y) 각각 X축, Y축 조정.
+  - `translateX()` : X축 기준으로 이동.
+  - `translateY()` : Y축 기준으로 이동.
+- `skew` : 기울기 속성. angle 값을 받음. (deg, grad, rad, turn 등. 기본적으로 deg, turn을 많이 사용한다.) 음수 값 사용 가능.
+  - 단일 값 사용 시 (x, 0) 으로 적용되며, 두가지 값(x, y)입력 시 각각 X축, Y축 기준 조정됨.
+  - `skewX()` : X축 기준으로 기울임
+  - `skewY()` : Y축 기준으로 기울임
+  - > `skew(45deg,45deg)`, `skewX(90deg)`, `skewY(90deg)` 는 완전히 뒤집어져 화면에서 보여지지 않음.
+<br>
+
+#### transform origin
+변형 기준점 설정을 위한 속성.
+<br>
+
+- center : 50%, 50%가 기본 값.
+- top, left, bottom, right, 단위 값 지정을 통해 지정 가능.
+- 기준점에 따라 보여지는 형태가 완전히 다르니 주의해서 사용할 것!
+<br>
+
+> [transform, css연습-16](210911_css-16_transform.html)
+<br>
+<br>
+
+### transition
+전환, 전이. 전환되는 과정(시간, 전환 효과 등)에 대한 속성.
+<br>
+
+- 기본 상태의 요소에 입력하는 게 적합함 : 호버 등 상태선택자에 부여할 경우, 상태가 사라지는 순간 전환에 대한 속성이 사라지기 때문!
+- `transition-property` : 전환할 요소
+  - none : 아무것도 전환하지 않음
+  - all : 모두 전환함
+  - `,` 를 통해 여러 속성을 지정할 수 있다(ex: margin-right, color ...)
+- `transition-duration` : 전환에 걸리는 시간
+  - `NNs`(second), `NNms`(millisecond) 형태로 작성함.
+- `transition-delay` : 전환되기 전 대기 시간.
+  - `NNs`(second), `NNms`(millisecond) 형태로 작성함.
+- `transition-timing-function` : 전환 과정의 시간에 대한 함수.
+  - ease : 기본값
+  > [transition-timing-function, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function) 참고.
+<br>
+
+> shorthand 입력 법
+> transition : property duration timing-function delay;
+> 순서를 지켜야 함! timing-funtion과 delay는 순서가 바뀔 수 있지만 위 순서를 권장.
+<br>
+
+> [transition, css연습-17](210911_css-17_transition.html)
+> [transform + transition](210911_css-18_transform_transition.html)
+<br>
+<br>
+
+### 애니메이션
+> [animation, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/animation)
+다수의 스타일을 전환하는 애니메이션 속성. (transition과 유사하지만 다수의 스타일 세트를 만들어 실행시킬 수 있다.)
+<br>
+
+**[ `@keyframes` ]**
+애니메이션 과정을 설정할 수 있다.
+```css
+@keyframes 애니메이션이름{
+  애니메이션 과정
+}
+```
+형태로 작성한다.
+
+<br>
+- `animation-name` : 대소문자 구분, 0-9, -, _ 만 사용 가능.
+- `animation-duration` : 키프레임 사이클이 한번 돌아가는 데 걸리는 시간.
+  - `NNs`(second), `NNms`(millisecond) 형태로 작성함. 음수값 사용불가
+- `animation-delay` : 애니메이션 시작되기 전 대기 시간.
+  - 음수값을 지정 시 즉시 시작되나, 애니메이션의 음수값만큼 먼저 실행된 것처럼 중간부터 재생된다.
+- `animation-timing-function` : 애니메이션 효과/과정. `transition-timing-function`과 유사하며, 기본값은 `ease`이다.
+- `animation-iteration-count` : 애니메이션 재생횟수
+  - 1 : 기본값
+  - 숫자 : 숫자만큼 반복
+  - `infinite` : 무한 반복
+- `animation-direction` : 애니메이션 재생 방향
+  - `normal` : 기본값. 반복될 때 언제나 정방향으로 재생
+  - `reverse` : 역방향. 반복될 때 언제나 역방향으로 재생.
+  - `alternate` : 정방향으로 시작해 반복될 때마다 방향을 바꾸어 재생. (정>역>정>역 ...)
+  - `alternate-reverse` : 역방향으로 시작해 반복될 때마다 방향을 바꾸어 재생. (역>정>역>정 ...)
+- `animation-play-state` : 재생 상태 조정
+  - `running` : 기본값, 재생
+  - `paused` : 정지
+- `animation-fill-mode` : 애니메이션 실행 전이나 후의 스타일 적용 방법(대기 상태)
+  - `none` : 기본값, 애니메이션 관련 스타일 적용X
+  - `forwards` : 마지막 키프레임 값(=애니메이션이 끝난 상태의 스타일)을 유지
+  - `backwards` : 처음 키프레임 값(=애니메이션이 시작하는 상태의 스타일)을 유지
+  - `both` : 처음프레임값과 마지막 프레임값을 모두 따름.
+<br>
+
+> shorthand 입력 법
+> animation : duration timing-function delay direction fill-mode play-state name;
+> 순서를 지켜야 함! timing-funtion과 delay는 순서가 바뀔 수 있지만 위 순서를 권장.
+> 애니메이션 이름을 가장 마지막에 작성!
+<br>
+
+> [animation, css연습-19](210911_css-19_animation.html)
+> [animation02, css연습-20](210911_css-20_animation2.html)

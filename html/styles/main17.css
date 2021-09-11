@@ -1,0 +1,30 @@
+/*
+transition (전환)
+
+transition-property,
+transition-duration,
+transition-delay,
+transition-timing-function
+*/
+
+.box{
+  width:300px;
+  height:80px;
+  border:2px dashed teal;
+  background-color:darkslategray;
+  font-size:50px;
+  color:white;
+
+  /* transition-property:all;
+  transition-duration:.5s;
+  transition-delay:1s;
+  transition-timing-function:ease-in-out; */
+  transition:all .5s ease-in-out 1s;
+}
+
+.box:hover{
+  width:340px;
+  background-color:indianred;
+  color:black;
+  font-size:60px;
+}

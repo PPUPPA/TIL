@@ -206,3 +206,73 @@ if(isNaN(age) || age < 0){
 > isNaN 함수 : boolean 값을 리턴함. (true : NaN, false : Number)
 <br>
 <br>
+
+### Document
+자바스크립트에는 document라는 오브젝트가 이미 내장되어 있고, 해당 html에 접근할 수 있음.
+(ex: console창에서 document.title을 입력하면 페이지의 타이틀 값을 불러오며, 재정의할 수 있음.)
+
+```javascript
+// 페이지의 타이틀 값을 불러옴
+document.title
+// 페이지 타이틀 재정의 가능
+document.title = "Hello! From JS!"
+```
+
+#### getElement
+html element 가져오기
+<br>
+
+```javascript
+// 요소도 불러올 수 있음
+document.body
+document.getElementById("title");
+document.getElementsByClassName("hello");
+document.getElementsByTagName("h1");
+// css와 유사한 형태로 사용하는 querySelector
+// 최초의 하나만 가져옴!
+document.querySelector(".hello");
+// 전부 가져옴!
+document.querySelectorAll(".hello");
+```
+<br>
+<br>
+
+### events
+#### addEventListener 아규먼트 사용.
+- 첫번째 인자 : "이벤트"
+- 두번째 인자 : 실행시킬 함수
+  - 함수()는 함수를 즉시 실행시킬 때 사용하는 형태로, **()를 통해 실행버튼을 누른 것과 같은 효과.** 따라서, ***지금은 이벤트가 발생했을 때 실행되는 것으로, ()를 넣지 않는다.***
+<br>
+
+```javascript
+const title = document.getElementsByTagName("h1");
+// 이벤트 함수
+function handleTitleClick(){
+  console.log("title was clicked!");
+}
+// 이벤트
+// 요소.addEvnetListener("이벤트", 실행시킬 함수);
+title.addEventListener("click", handleTitleClick);
+console.dir(title) // 사용 가능한 이벤트 확인 가능, on~ 이벤트로, 이벤트로 사용시 on을 제외하고 넣는다.
+```
+<br>
+
+> [HTMLHeadingElemtn, MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLHeadingElement)
+
+<br>
+<br>
+
+#### oneventname 사용
+`addEventListener` 아규먼트 대신 사용할 수 있으나, 권장하지는 않는다.
+> `addEventListener`는 이후 `removeEventListener`를 통해서 제거 가능하기 때문.
+<br>
+
+```javascript
+const title = document.getElementsByTagName("h1");
+// 이벤트 함수
+function handleTitleClick(){
+  console.log("title was clicked!");
+}
+// 이벤트
+title.onclick =  handleTitleClick;
+```

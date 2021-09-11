@@ -1,0 +1,40 @@
+/*
+transform (변형)
+*/
+
+/* scale */
+.scale .dogs{
+  width:400px;
+  transform:scale(1.4);
+  transform:scale(1.5, 0.5); /* x축, y축 */
+  transform:scaleX(0.5); /* x축만 조정하고 싶을때 */
+  transform:scaleY(0.5); /* x축만 조정하고 싶을때 */
+  transform-origin:top left; /* 변형 기준점 */
+  transform-origin:50px 100px; /* 변형 기준점 */
+}
+
+/* rotate */
+.rotate .dogs {
+  width:400px;
+  transform:rotate(0.5turn);
+  transform:rotate(0.5turn) scale(0.5); /* 다른 변형 속성과 함께 사용 가능 */
+  transform-origin:top left;
+}
+
+/* translate */
+.translate .dogs {
+  width:400px;
+  transform:translate(100px); /* translate(100px, 0)과 동일 */
+  transform:translate(40px, 50px); /* x축, y축 */
+  transform:translateX(70px); /* x축만 조정하고 싶을때 */
+  transform:translateY(50px); /* x축만 조정하고 싶을때 */
+}
+
+/* skew */
+.skew .dogs {
+  width:400px;
+  transform:skew(25deg); /* skew(25deg, 0)과 동일 */
+  transform:skew(20deg, 40deg); /* x축, y축 */
+  transform:skewX(25deg); /* x축만 조정하고 싶을때 */
+  transform:skewY(20deg); /* x축만 조정하고 싶을때 */
+}
