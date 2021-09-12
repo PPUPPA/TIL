@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 test</title>
+  
+  <style>
+    .header{margin-bottom:3em;}
+    .header .title{margin-bottom:4px;}
+    .header .title-sub{display:block;margin:0;}
+
+    .question-wrap{margin:1em 4px;}
+    .question-wrap:not(:first-child){margin-top:4em;}
+    .question-box{margin-bottom:20px;border-bottom:1px dashed;}
+    .question-num{margin:0 0 .5em;}
+    .question-inner{margin:0;padding:1em;background:#f2f2f2;}
+    .question-text{margin:0;line-height:1.6;}
+    .question-code{margin:10px 0 0;padding:1em;background:#ddd;border-radius:4px;line-height:1.6;-webkit-box-sizing:border-box;box-sizing:border-box;white-space:-moz-pre-wrap;white-space:-o-pre-wrap;white-space:pre-wrap;word-wrap:break-word;}
+    .answer-section{display:inline-block;width:40px;height:1.2em;margin:0 2px;border:0 none;border-radius:4px;background:#fff;vertical-align:middle;outline:0;}
+
+    .answer{margin:1em 0;}
+    .answer-content{display:inline-block;padding:4px 8px;background:#e5e5e5;border-radius:4px;}
+
+    /* answer style section */
+    /* question01 */
+    .question01 .content{
+      width:100px;
+      height:100px;
+      margin:10px 15px 20px;
+      padding:10px;
+      border:1px solid black;
+    }
+
+    /* question02 */
+    .question02{display:block;font-size:0;}
+    .question02 .nav-q2{
+      padding:0 16px;
+      border-bottom:1px solid rgb(231,231,231);
+      line-height:64px;
+    }
+    .question02 .nav-q2::after{
+      display:block;
+      clear:both;
+      content:'';
+    }
+    .question02 .title-q2{
+      display:inline-block;
+      margin:0;
+      padding:0;
+      font-size:24px;
+      font-weight:bold;
+      vertical-align:middle;
+    }
+    .question02 .util-q2{
+      float:right;
+      margin:0;
+      padding:0;
+      font-size:0;
+      vertical-align:middle;
+    }
+    .question02 .util-item-q2{
+      display:inline-block;
+      margin:0 10px;
+      font-size:12px;
+      line-height:1;
+    }
+
+    /* question03 */
+    .question03 .gridbox-q3{
+      width:400px;
+      height:400px;
+    }
+    .question03 .list-q3{
+      list-style:none;
+      margin:0;
+      padding:0;
+
+      display:grid;
+      height:100%;
+      grid-template-columns:repeat(3, 100px);
+      align-content:space-around;
+      justify-content:space-evenly;
+    }
+    .question03 .item-q3{
+      display:block;
+      height:100px;
+      border:1px solid black;
+      border-radius:10px;
+      box-sizing:border-box;
+      overflow:hidden;
+    }
+    .question03 .item-q3 img{width:100%;}
+
+    /* question04 */
+    .question04 .stocks-container{
+      position:relative;
+      /* 답안 작성 페이지 특성상 html,body width,height 100%을 할 수 없어 비율로 높이 추가 */
+      height:52.5vw;
+      padding-right:300px;
+      background-color:white;
+      box-sizing:border-box;
+    }
+    .question04 .stocks-header{
+      padding:30px 20px 20px;
+      background-color:blue;
+      color:white;
+    }
+    .question04 .stocks-title{
+      margin:0;
+      padding:0;
+      font-size:2rem;
+      font-weight:700;
+    }
+    .question04 .stocks-code-list{
+      margin:20px 0 0;
+      padding:0;
+      font-size:0;
+      font-weight:400;
+    }
+    .question04 .stocks-code-title{
+      display:inline-block;
+      font-size:.9rem;
+    }
+    .question04 .stocks-code-title::after{
+      margin-right:.3em;
+      content:' :';
+    }
+    .question04 .stocks-code{
+      display:inline-block;
+      margin:0;
+      padding:0;
+      font-size:.9rem;
+    }
+    .question04 .stocks-info{
+      margin:0;
+      padding:30px 20px;
+    }
+    .question04 .stocks-info-title{
+      margin:0;
+      padding:0;
+      font-size:1.2rem;
+      font-weight:700;
+    }
+    .question04 .stocks-info-desc{
+      font-size:.9rem;
+      line-height:1.4;
+    }
+    .question04 .stocks-info-desc p:first-child{
+      margin:20px 0 0;
+    }
+    .question04 .stocks-info-desc p:not(:first-child){
+      margin:10px 0 0;
+    }
+    .question04 .stocks-rank{
+      position:absolute;
+      top:0;
+      right:0;
+      width:300px;
+      padding:30px 20px;
+      box-sizing:border-box;
+    }
+    .question04 .stocks-rank-list{
+      padding:0 0 0 2em;
+      margin:20px 0 0;
+    }
+    .question04 .stocks-rank-title{
+      margin:0;
+      padding:0;
+      font-size:1.2rem;
+      font-weight:700;
+    }
+    .question04 .stocks-rank-item{
+      margin:0;
+      padding:6px 0;
+      border-bottom:1px solid black;
+      font-size:1rem;
+      font-weight:500;
+    }
+    @media screen and (max-width:720px) {
+      .question04 .stocks-container{
+        height:auto;
+        padding-right:0;
+      }
+      .question04 .stocks-rank{
+        position:static;
+        width:100%;
+      }
+    }
+
+    /* question05 */
+    .question05{display:block;}
+    .question05 .comment{
+      background-color:white;
+      line-height:1.5;
+    }
+
+    .question05 .comment-header{
+      margin:0;
+      padding:18px 20px;
+      font-size:1.2rem;
+    }
+    .question05 .comment-title{
+      display:inline-block;
+      vertical-align:middle;
+    }
+    .question05 .comment-num{
+      display:inline-block;
+      vertical-align:middle;
+      color:#06a27d;
+    }
+
+    .question05 .comment-list{
+      margin:0;
+      padding:0;
+      border-top:1px solid black;
+      list-style:none;
+    }
+    .question05 .comment-item{
+      width:100%;
+      padding:18px 20px;
+      border-bottom:1px solid #ddd;
+      box-sizing:border-box;
+    }
+
+    .question05 .comment-info{
+      font-size:1rem;
+    }
+    .question05 .comment-info-item{
+      display:block;
+    }
+    .question05 .comment-author{
+      font-weight:700;
+    }
+    .question05 .comment-date{
+      font-weight:400;
+      color:#939393;
+    }
+    
+    .question05 .comment-content{
+      margin-top:10px;
+      font-size:1rem;
+    }
+    .question05 .comment-content p{
+      margin:0;
+      word-break:keep-all;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">HTML5 테스트</h1>
+    <cite class="title-sub">By <a href="__source/210911_htmlTest.pdf" target="_blank">zerobase</a></cite>
+  </header>
+
+  <!-- main --> 
+  <main class="main" role="main">
+    <!-- question-wrap : 주제 -->
+    <section class="question-wrap">
+      <h2 class="question-subject">HTML Atributes</h2>
+      
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 01</h3>
+        <blockquote class="question-inner">
+          <div class="question-text">
+            다음 조건을 만족하는 HTML 마크업, css 코드를 작성하세요.
+            <ol>
+              <li>margin은 상단 10px, 하단 20px, 왼쪽 오른쪽 15px</li>
+              <li>width 100px, height 100px</li>
+              <li>padding 은 10px</li>
+              <li>border 는 검정색 1px</li>
+            </ol>
+            <br>
+            <cite>[ <a href="__source/210911_htmlTest.pdf" target="_blank">zerobase</a> 문제 1 ]</cite>
+          </div>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content question01">
+            <div class="content"></div>
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 02</h3>
+        <blockquote class="question-inner">
+          <div class="question-text">
+            위 이미지와 같은 네비게이션 메뉴를 만들어보세요.
+            <ul>
+              <li>네비게이션 바 높이 64px</li>
+              <li>하단 border 크기: 1px, 색상: rgb 231, 231, 231</li>
+              <li>네비게이션 바 우측 좌측 padding 16px</li>
+              <li>제목 폰트 크기 24px</li>
+              <li>제목 굵기: bold</li>
+              <li>메뉴 아이템 좌우측 margin 10px</li>
+            </ul>
+            <br>
+            <cite>[ <a href="__source/210911_htmlTest.pdf" target="_blank">zerobase</a> 문제 2 ]</cite>
+          </div>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content question02">
+            <nav class="nav-q2">
+              <h1 class="title-q2"><a href="#">네카라쿠배</a></h1>
+              <ul class="util-q2">
+                <li class="util-item-q2"><a href="#">로그인</a></li>
+                <li class="util-item-q2"><a href="#">회원가입</a></li>
+                <li class="util-item-q2"><a href="#">마이페이지</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 03</h3>
+        <blockquote class="question-inner">
+          <p class="question-text">
+            HTML/CSS 를 사용해 다음과 같은 화면을 만들어보세요. 이미지는 이미지 출처.txt를 참고해주세요.
+            <br>
+            <cite>[ <a href="__source/210911_htmlTest.pdf" target="_blank">zerobase</a> 문제 3 ]</cite>
+          </p>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content question03">
+            <div class="gridbox-q3">
+              <ul class="list-q3">
+                <li class="item-q3"><img src="https://play-lh.googleusercontent.com/ccWDU4A7fX1R24v-vvT480ySh26AYp97g1VrIB_FIdjRcuQB2JP2WdY7h_wVVAeSpg=s180-rw" alt="Facebook"></li>
+                <li class="item-q3"><img src="https://play-lh.googleusercontent.com/h9jWMwqb-h9hjP4THqrJ50eIwPekjv7QPmTpA85gFQ10PjV02CoGAcYLLptqd19Sa1iJ=s180-rw" alt="Instagram"></li>
+                <li class="item-q3"><img src="https://play-lh.googleusercontent.com/Ob9Ys8yKMeyKzZvl3cB9JNSTui1lJwjSKD60IVYnlvU2D" alt="Kakaotalk"></li>
+                <li class="item-q3"><img src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBT" alt="Github"></li>
+                <li class="item-q3"><img src="https://play-lh.googleusercontent.com/lMoItBgdPPVDJsNOVtP26EKHePkwBg-PkuY9NOrc-fumRtTFP4XhpUNk_22syN4Datc=s180-rw" alt="Youtube"></li>
+                <li class="item-q3"><img src="https://play-lh.googleusercontent.com/eN0IexSzxpUDMfFtm-OyM-nNs44Y74Q3k51bxAMhTvrTnuA4OGnTi_fodN4cl-XxDQc=s180-rw" alt="Spotify"></li>
+                <li class="item-q3"><img src="https://play-lh.googleusercontent.com/z5nin1RdQ4UZhv6fa1FNG7VE33imGqPgC4kKZIUjgf_up" alt="TikTok"></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 04</h3>
+        <blockquote class="question-inner">
+          <div class="question-text">
+            위 이미지와 같은 종목 소개페이지를 만들어보세요.<br>본문 내용한 첨부한 본문내용.txt 를 참고해주세요.
+            <ul>
+              <li>종목 명, 종목코드, 회사 소개, 시가총액 순위 표시</li>
+              <li>모바일 페이지, 데스크탑 페이지 반응형(변경되는 기준 width는 720px)으로 표시되어야 합니다</li>
+            </ul>
+            <br>
+            <cite>[ <a href="__source/210911_htmlTest.pdf" target="_blank">zerobase</a> 문제 4 ]</cite>
+          </div>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content question04">
+            <div class="stocks-container">
+              <article class="stocks-contents">
+                <section class="stocks-header">
+                  <h2 class="stocks-title">삼성전자</h2>
+                  <dl class="stocks-code-list">
+                    <dt class="stocks-code-title">종목코드</dt>
+                    <dd class="stocks-code">005930</dd>
+                  </dl>
+                </section>
+                <section class="stocks-info">
+                  <h2 class="stocks-info-title">회사 소개</h2>
+                  <div class="stocks-info-desc">
+                    <p>한국 및 CE, IM부문 해외 9개 지역총괄과 DS부문 해외 5개 지역총괄, Harman 등 241개의 종속기업으로 구성된 글로벌 전자기업임. 세트사업에는 TV, 냉장고 등을 생산하는 CE부문과 스마트폰, 네트워크시스템, 컴퓨터 등을 생산하는 IM부문이 있음. 부품사업(DS부문)에서는 D램, 낸드 플래쉬, 모바일AP 등의 제품을 생산하는 반도체 사업과 TFT-LCD 및 OLED 디스플레이 패널을 생산하는 DP사업으로 구성됨.</p>
+                  </div>
+                </section>
+              </article>
+              <aside class="stocks-rank">
+                <h2 class="stocks-rank-title">시가총액 순위</h2>
+                <ol class="stocks-rank-list">
+                  <li class="stocks-rank-item">삼성전자</li>
+                  <li class="stocks-rank-item">SK하이닉스</li>
+                  <li class="stocks-rank-item">NAVER</li>
+                  <li class="stocks-rank-item">카카오</li>
+                  <li class="stocks-rank-item">삼성바이오로직스</li>
+                  <li class="stocks-rank-item">삼성전자우</li>
+                  <li class="stocks-rank-item">삼성SDI</li>
+                  <li class="stocks-rank-item">LG화학</li>
+                  <li class="stocks-rank-item">현대차</li>
+                  <li class="stocks-rank-item">셀트리온</li>
+                </ol>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+      <!-- question-box : 문제 -->
+      <article class="question-box">
+        <h3 class="question-num">Question 05</h3>
+        <blockquote class="question-inner">
+          <div class="question-text">
+            위 이미지 처럼 댓글리스트를 만들어보세요.<br>댓글내용은 첨부한 댓글내용.txt 파일을 참고해주세요.
+            <ul>
+              <li>각 댓글 컨테이너의 width는 100%, 좌우 padding 은 20px 로 합니다. (단 boxsizing은 border-box 기준)</li>
+              <li>댓글 컨테이너의 상하 padding은 18px 입니다.</li>
+              <li>댓글 수 텍스트의 색상은 #06a27d 로 합니다.</li>
+              <li>날짜 텍스트의 색상은 #939393 으로 합니다.</li>
+              <li>줄간격은 1.5로 합니다.</li>
+              <li>댓글 내용 줄을 바꿀 때 단어가 끊기지 않도록 css 속성을 설정해 주세요.</li>
+            </ul>
+            <br>
+            <cite>[ <a href="__source/210911_htmlTest.pdf" target="_blank">zerobase</a> 문제 5 ]</cite>
+          </div>
+        </blockquote>
+        
+        <section class="answer">
+          <h4 class="answer-title">Answer : </h4>
+          <div class="answer-content question05">
+            <section class="comment">
+              <h2 class="comment-header">
+                <span class="comment-title">댓글</span>
+                <strong class="comment-num">923</strong>
+              </h2>
+              <ul class="comment-list">
+
+                <li class="comment-item">
+                  <div class="comment-info">
+                    <span class="comment-info-item comment-author">정*석</span>
+                    <span class="comment-info-item comment-date">2021.03.16</span>
+                  </div>
+                  <div class="comment-content">
+                    <p>1차 합격하고 실제 네이버간 본인입니다 ㅎㅎ 저는 전공자긴 하지만 학점은 3.0 아래고 나이도 30세가 넘었습니다. 제가 가진건 끈기 단 하나였어요. 목표를 잡고 일부는 성취하고, 일부는 실패하더라도 전략을 수정하여 계속 도전해 결국엔 목표를 이루려고 하였습니다. '이쯤 했으면 됐다' 생각할 때 포기하지 마시고 한발자국씩 더 나아가보세요. 분명히 좋은 결과가 있을거에요! 화이팅입니다.</p>
+                  </div>
+                </li>
+
+                <li class="comment-item">
+                  <div class="comment-info">
+                    <span class="comment-info-item comment-author">한*현</span>
+                    <span class="comment-info-item comment-date">2021.03.21</span>
+                  </div>
+                  <div class="comment-content">
+                    <p>포기하기마시고 즐거운 개발하셔서 꽃길 걸을 수 있길 바랍니다!</p>
+                  </div>
+                </li>
+
+                <li class="comment-item">
+                  <div class="comment-info">
+                    <span class="comment-info-item comment-author">이*자</span>
+                    <span class="comment-info-item comment-date">2021.03.21</span>
+                  </div>
+                  <div class="comment-content">
+                    <p>능력있고 열심히 하는 분들에게 좋은 결과 있기를 바랍니다. 항상 좋은 일만 가득하셨으면 좋겠습니다. 멋진 앞날을 기원하겠습니다.</p>
+                  </div>
+                </li>
+
+                <li class="comment-item">
+                  <div class="comment-info">
+                    <span class="comment-info-item comment-author">이*윤</span>
+                    <span class="comment-info-item comment-date">2021.03.21</span>
+                  </div>
+                  <div class="comment-content">
+                    <p>네카라쿠배 1기 모집 글을 본게 엊그제 같은데 벌써 최종 15명이네요. 꼭 네카라쿠배 가셔서 즐겁게 개발일 하시면 좋겠습니다! 앞으로의 길을 응원해요. 저도 2기 지원할게요~!!</p>
+                  </div>
+                </li>
+
+                <li class="comment-item">
+                  <div class="comment-info">
+                    <span class="comment-info-item comment-author">박*호</span>
+                    <span class="comment-info-item comment-date">2021.03.21</span>
+                  </div>
+                  <div class="comment-content">
+                    <p>최종 15분이 멋진 길을 이뤄주시면 다음에 시도하시는 분들도 앞선 지원자들을 보고 더욱 열심히 공부를 하며 동기부여가 될거라고 생각합니다. 최선을 다하신것에 보답이라고 생각하시면서 꽃길만 걸으시기 바랍ㄴ디ㅏ.</p>
+                  </div>
+                </li>
+
+                <li class="comment-item">
+                  <div class="comment-info">
+                    <span class="comment-info-item comment-author">김*성</span>
+                    <span class="comment-info-item comment-date">2021.03.21</span>
+                  </div>
+                  <div class="comment-content">
+                    <p>존버필승입니다 화이팅하십쇼</p>
+                  </div>
+                </li>
+
+              </ul>
+            </section>
+          </div>
+        </section>
+      </article>
+      <!-- // question-box -->
+
+    </section>
+    <!-- // question-wrap -->
+  </main>
+</body>
+</html>

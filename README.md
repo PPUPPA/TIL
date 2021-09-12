@@ -47,6 +47,10 @@
   - [transfrom](./html/00_html-summary.md#transform)
   - [transition](./html/00_html-summary.md#transition)
   - [애니메이션](./html/00_html-summary.md#%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98)
+- [2021-09-12]
+  - [개인 복습, html 테스트 02](./html/210912_html-test.html)
+  - [개인 복습, transform 정리](./html/210912_html-transform.html)
+  - [개인 복습, transform, 애니메이션](./html/210912_html-cube.html)
 
 ### JavaScript (preview)
 #### 바닐라 JS로 크롬 앱 만들기
@@ -70,6 +74,10 @@
   - [JAVASCRIPT ON THE BROWSER 3.0 ~ 3.2, searching for elements](./javascript/06_practice.js)
   - [events](./javascript/00_javascript-summary.md#events)
   - [JAVASCRIPT ON THE BROWSER 3.3 ~ 3.5, events](./javascript/07_practice.js)
+- [2021-09-12]
+  - [css in javascript](./javascript/00_javascript-summary.md#css-in-javascript)
+  - [JAVASCRIPT ON THE BROWSER 3.6 ~ 3.8, css](./javascript/08_practice.js)
+  - [LOGIN 4.0 ~ 4.3, input, events](./javascript/09_practice.js)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

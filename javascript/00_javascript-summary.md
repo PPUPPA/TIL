@@ -276,3 +276,104 @@ function handleTitleClick(){
 // 이벤트
 title.onclick =  handleTitleClick;
 ```
+<br>
+<br>
+
+### css in javascript
+#### change color
+**[ only javascript ]**
+```javascript
+function handleTitleClick(){
+  const currentColor = h1.style.color;
+  let newColor;
+  if(currentColor === "blue"){
+    newColor = "tomato";
+  }else{
+    newColor = "blue";
+  }
+  h1.style.color = newColor;
+}
+```
+<br>
+
+**[ with css ]**
+> className : getter & setter
+> 값을 가져올 수도 있고, 새로 값을 세팅해줄 수도 있음!
+```css
+h1{
+  color:cornflowerblue;
+  transition:color .5s ease-in-out;
+}
+.clicked{
+  color:tomato;
+}
+```
+```javascript
+function handleTitleClick(){
+  const clickedClass = "clicked";
+  if(h1.classList.contains(clickedClass)){
+    h1.classList.remove(clickedClass);
+  }else{
+    h1.classList.add(clickedClass);
+  }
+}
+```
+<br>
+
+**[ with css more simply ]**
+> use `classList.toggle()`
+<br>
+
+```javascript
+function handleTitleClick(){
+  h1.classList.toggle("clicked");
+}
+```
+
+<br>
+<br>
+
+#### check input value
+```html
+<div id="login-form">
+  <input type="text" placeholder="What is your name?">
+  <button type="button">Log In</button>
+</div>
+```
+```javascript
+const loginInput = document.querySelector('#login-form input')
+const loginButton = document.querySelector('#login-form button')
+function onLoginBtnClick(){
+  const username = loginInput.value;
+  if(username === ""){
+    alert("Please write your name!")
+  }else if(username.length > 15){
+    alert("Your name is too long.")
+  }
+}
+loginButton.addEventListener("click", onLoginBtnClick);
+```
+<br>
+
+**[ with html ]**
+```html
+<form id="login-form">
+  <input type="text" placeholder="What is your name?" required maxlength="15">
+  <button type="submit">Log In</button>
+</form>
+```
+> `form` 태그를 사용하면 유효성(길이, 빈값) 체크를 따로 javascript로 하지 않아도 됨
+> 더불어 submit 버튼(or Enter키)을 통해 폼이 작동하므로 click 이벤트를 신경쓰지 않아도 됨!
+```javascript
+const loginForm = document.querySelector('#login-form')
+const loginInput = document.querySelector('#login-form input')
+function onLoginSubmit(event){
+  event.preventDefault(); // 어떤 이벤트의 기본 행동(브라우저의 기본동작)이든 실행되지 않도록 막음.
+  console.log(loginInput.value);
+}
+loginForm.addEventListener("submit", onLoginSubmit);
+```
+<br>
+
+> `addEventListener`로 호출된 함수의 첫번째 인자 `x` 해당 이벤트에 대한 정보를 갖고 있음!
+> `x.preventDefault()`를 통해 이벤트의 기본 행동(브라우저의 기본 동작)이 실행되지 않게 막을 수 있음.

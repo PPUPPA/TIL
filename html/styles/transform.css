@@ -1,0 +1,54 @@
+section{
+  text-align:center;
+  border-bottom:1px dashed lightblue;
+}
+.section{
+  width:100px;
+  height:100px;
+  margin:100px auto;
+  border:5px solid #333;
+  perspective:100px; /* 원근감 */
+}
+.wrap{
+  width:100px;
+  height:100px;
+  background:#ccc;
+  text-align:center;
+  line-height:100px;
+}
+.box1{
+  transform:translateX(50%);
+}
+.box2{
+  transform:translateX(-25px);
+}
+.box3{
+  transform:translateY(100%);
+}
+.box4{
+  transform:translateY(-50px);
+}
+.box5{
+  transform:translateZ(50px);
+}
+.box6{
+  transform:translateZ(-50px);
+}
+.box7{
+  transform:scaleX(2);
+}
+.box8{
+  transform:scaleY(0.5) scaleX(2);
+}
+.box9{
+  transform:skewX(20deg);
+}
+.box10{
+  transform:skewY(20deg) skewX(45deg);
+}
+.box11{
+  transform:translateX(100px) rotateZ(60deg);
+}
+.box12{
+  transform:rotateZ(60deg) translateX(100px);
+}

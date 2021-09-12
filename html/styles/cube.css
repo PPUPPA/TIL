@@ -1,0 +1,56 @@
+.cube{
+  position:relative;
+  width:200px;
+  height:200px;
+  margin:200px auto;
+  animation:rint 6s infinite;
+  transform-style:preserve-3d;
+}
+.cube:hover{
+  animation-play-state:paused;
+}
+.cube>div{
+  position:absolute;
+  top:0;
+  left:0;
+  width:200px;
+  height:200px;
+  font-size:3em;
+  line-height:200px;
+  text-align:center;
+  opacity:0.6;
+  backface-visibility:hidden;
+}
+.box1{
+  background:#f00;
+  transform:translateZ(100px);
+}
+.box2{
+  background:#99f;
+  transform:rotateY(90deg) translateZ(100px);
+}
+.box3{
+  background:#ff9;
+  transform:rotateY(180deg) translateZ(100px);
+}
+.box4{
+  background:#9f9;
+  transform:rotateY(270deg) translateZ(100px);
+}
+.box5{
+  background:#f9f;
+  transform:rotateX(90deg) translateZ(100px);
+}
+.box6{
+  background:#f90;
+  transform:rotateX(270deg) translateZ(100px);
+}
+
+@keyframes rint{
+  from{
+    transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to{
+    transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
