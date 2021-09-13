@@ -2306,3 +2306,102 @@ Sorry, your browser doesn't support embedded videos.
 
 > [animation, css연습-19](210911_css-19_animation.html)
 > [animation02, css연습-20](210911_css-20_animation2.html)
+<br>
+<br>
+<br>
+<br>
+
+### Flexbox
+> [Flexbox의 기본 개념, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+레이아웃상 *요소가 나열(정렬)*되어야 할 때 사용하는 1차원 속성, 기존에는 `inline-block`이나 `float` 속성을 많이 사용했지만 좋은 세팅은 아님. (각각의 이슈가 있으며, 이슈 해결을 위한 추가 코드 작성이 필요함.)
+
+<br>
+
+- 컨테이너와 아이템이 필요.
+- flex container : 정렬할 아이템을 감싼 부모요소
+- flex item : 정렬할 아이템들
+- main axis : 주축. 수평(가로)축이 기본 값.
+- cross axis : 교차축. 수직(세로)축이 기본 값.
+
+<br>
+
+#### flex container
+- 부모 요소에 `display:flex;`를 적용해 사용.
+  - 여기서 display는 `block`, `inline` 같은 `display-outside` 속성이 아니라 `display-inside` 속성으로, 안쪽에 배치할 요소들에 대한 속성에 가깝다.
+  - `display`는 `outside`와 `inside` 속성이 합쳐진 개념으로, `display-outside`를 `inline`으로 지정하면서 `display-inside`를 `flex`로 정의하고자 할 때는 `display:inline-flex;` 형태로 사용한다.
+- `flex-direction` : 주축과 교차축 및 축의 방향 설정
+  - `row`: 기본값. 주축: 수평 / 방향: 왼쪽 -> 오른쪽
+  - `row-reverse` : 주축: 수평 / 방향: 오른쪽 -> 왼쪽
+  - `column` : 주축: 수직 / 방향: 위 -> 아래
+  - `column-reverse` : 주축: 수직 / 방향: 아래 -> 위
+- `flex-wrap` : 래핑하는 속성. 한줄/여러줄 배치 여부 지정.
+  - `nowrap` : 기본값. 강제로 한 줄에 배치시키며, 아이템의 너비가 변경된다.
+  - `wrap` : 여러행에 걸쳐 배치되며, 정해진 direction값에 따라 배치됨.
+  - `wrap-reverse` : 여러행에 걸쳐 배치되며, direction값의 시작점과 끝점이 역전된 상태로 배치됨.
+- `flex-flow` : `flex-direction`과 `flex-wrap` 속성을 함께 입력함.
+  - `flex-direction flex-wrap` 형태로 작성.
+
+<br>
+
+**[ 정렬 관련 속성 ]**
+- `justify-content` : 컨테이너의 컨텐츠가 있는 영역을 기준으로, 아이템들을 어디에 정렬할지에 대한 속성(여러개의 아이템에 대한 속성)
+  - `flex-start` : 주축이 시작되는 지점부터 정렬
+  - `flex-end` : 주축이 끝나는 지점부터 정렬
+  - `center` : 주축을 기준으로 중앙에 정렬
+  - `space-between` : 컨테이너 기준으로, 양끝에 붙인 후 아이템 사이의 여백을 동일하게 둔다.
+  - `space-around` : 컨테이너 기준으로, 아이템 양옆으로 여백을 균등하게 둔다. (컨테이너 양끝에도 여백이 생김!)
+- `align-items` : 교차축을 기준으로 아이템들을 어디에 정렬할지에 대한 속성 (**한 줄**에 대한 속성)
+  - `stretch` : 기본값, 위에서 아래까지 전부 채움(아이템에 별도 높이가 지정되지 않은 경우)
+  - `flex-start` : 교차축이 시작되는 지점부터 정렬
+  - `flex-end` : 교차축이 끝나는 지점부터 정렬
+  - `center` : 교차축의 중앙에 정렬
+- `align-content` : 교차축을 기준으로 아이템들을 어떻게 정렬할지에 대한 속성 (**여러 줄**에 대한 속성)
+  - `flex-start` : 교차축이 시작되는 지점부터 정렬
+  - `flex-end` : 교차축이 끝나는 지점부터 정렬
+  - `center` : 교차축을 기준으로 중앙에 정렬
+  - `space-between` : 컨테이너 기준으로, 양끝에 붙인 후 아이템 사이의 여백을 동일하게 둔다.
+  - `space-around` : 컨테이너 기준으로, 아이템 양옆으로 여백을 균등하게 둔다. (컨테이너 양끝에도 여백이 생김!)
+
+
+<br>
+<br>
+
+#### flex item
+- `order` : **눈에 보이는** 정렬 순서 변경, `z-index`의 값과 동일하게 음수값도 사용 가능하며, 값이 작을 수록 앞으로 배치된다.
+  - 기본값 : 0
+- `flex-grow` : 한 줄에서 할당 가능한 공간이 남았을 때, 그 공간을 어떻게 배분할지(비율)에 대한 속성.
+  - 기본값 : 0
+  - ex) 모든 플렉스 아이템이 동일한 flex-grow값(not 0)을 가지면 : 같은 줄의 아이템이 동일한 크기를 차지함
+- `flex-shrink` : 플렉스 아이템들이 플렉스 컨테이너보다 클 때, 플렉스 아이템의 크기를 어떻게 줄일 것인지(비율)에 대한 속성.
+  - 기본값 : 1 (자동으로 줄어들게 이미 설정되어 있음!)
+  - 소숫점도 사용 가능.
+  - 0 : 줄이지 않음!
+- `flex-basis` : 플렉스 아이템의 초기 크기를 설정함. (설정하지 않으면 기본 너비값이 flex-basis로 동작함)
+  - 값은 `width`로 사용하는 모든 값들과 키워드(auto, content 등)값 입력 가능.
+  - `auto` : 기본값. 기본 너비값 혹은 컨텐츠 크기로 적용.
+  - 0 : basis 값이 없는 상태, 할당된 기본 너비값이 0인 상태로, 원하는 `flex-grow`값으로 비율 조정을 할 때 용이함.
+- `flex` shorthand로 사용 가능
+  - `flex-grow flex-shrink flex-basis` 순으로 작성하며, 각각 기본값이 0, 1, auto이다.
+  - `flex-basis`값을 입력하지 않았을 때, auto로 적용되지는 않는다.
+  - 단일 값 입력 시,
+    - [숫자] : `flex-grow`로 적용 > *이 경우 flex-basis 값은 0으로 적용됨.*
+    - [length(px, em, rem ...)혹은 percent(%)] 값 적용 : `flex-basis`로 적용
+    - 혹은 none(0 0 auto로 적용), auto(1 1 auto로 적용), initial(0 1 auto로 적용) 의 키워드 적용 가능.
+  - 값이 두 개 일 때, **첫번째 값은 무조건 숫자여야 하며, `flex-grow`**가 된다.
+    - [숫자 숫자] : `flex-grow flex-shrink`
+    - [숫자 length(or percentage)] : `flex-grow flex-basis`
+  - 세 개 값 모두 입력 시 : `flex-grow flex-shrink flex-basis`
+  - > [flex shorthand, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/flex)
+
+<br>
+
+**[ 정렬 관련 속성 ]**
+- `align-self` : 각 아이템에게 `align-items`를 설정해줌
+  - `stretch` : 기본값, 위에서 아래까지 전부 채움(아이템에 별도 높이가 지정되지 않은 경우)
+  - `flex-start` : 교차축이 시작되는 지점부터 정렬
+  - `flex-end` : 교차축이 끝나는 지점부터 정렬
+  - `center` : 교차축의 중앙에 정렬
+
+
+<br>
+> [Flexbox, css연습-21](210913_css-21_flexbox.html)

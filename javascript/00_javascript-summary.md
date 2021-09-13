@@ -377,3 +377,25 @@ loginForm.addEventListener("submit", onLoginSubmit);
 
 > `addEventListener`로 호출된 함수의 첫번째 인자 `x` 해당 이벤트에 대한 정보를 갖고 있음!
 > `x.preventDefault()`를 통해 이벤트의 기본 행동(브라우저의 기본 동작)이 실행되지 않게 막을 수 있음.
+
+### combine string
+```javascript
+// 1
+greeting.inputText = "Hello "+username;
+// 2
+greeting.inputText = ` Hello ${username}!`;
+```
+<br>
+
+기본적으로 string은 1번 방식으로 합쳤다. 물론 변수는 string 뿐만 아니라 다른 것도 가능하다.
+2번 방식은 새롭게 고안된 방식이며, 아래와 같은 규칙을 따른다.
+- 변수 + string을 하고 싶다면 `${변수명}`의 형태로 사용한다.
+- 백틱(<code>`</code>)기호로 시작하고 끝낸다.
+
+### localStorage
+> [localStorage, MDN](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)
+<br>
+
+- `setItem(key, value)` : 정보 저장하기
+- `getItem(key, value)` : 정보 불러오기
+- `removeItem(key, value)` : 정보 삭제하기

@@ -1,0 +1,82 @@
+/*
+flexbox
+*/
+
+.container{
+  height:500px;
+  border:5px dashed orange;
+
+  display:flex;
+  /* flex-direction:row-reverse; */
+  /* flex-direction:column; */
+  /* flex-direction:column-reverse; */
+
+  flex-wrap:wrap;
+  /* flex-wrap:wrap-reverse; */
+
+  /* flex-flow: direction wrap; */
+  /* flex-flow:column wrap; */
+
+  align-content:space-around;
+}
+
+.item{
+  width:50px;
+  height:50px;
+  margin:5px;
+  background-color:palegoldenrod;
+  border:3px solid blue;
+
+  /* display:inline-block; */
+  /* float:left; */
+}
+/* .item:nth-child(3){
+  order:1;
+}
+.item:nth-child(5){
+  order:5;
+}
+.item:nth-child(4){
+  order:-10;
+} */
+
+/* flex-grow */
+/* .item{flex-grow:1;} */
+/* .item:nth-child(1){
+  flex-grow:2;
+}
+.item:nth-child(2){
+  flex-grow:1;
+} */
+
+
+/* flex-shrink */
+/* .item:nth-child(1){
+  flex-shrink:0;
+}
+.item:nth-child(3){
+  flex-shrink:2;
+} */
+.item:nth-child(4), .item:nth-child(5){display:none;}
+
+/* flex-basis */
+.item{
+  width:auto;
+  flex-grow:1;
+  /* flex-basis:100px; */
+  flex-basis:0;
+}
+.item:nth-child(1){
+  flex-grow:5;
+}
+.item:nth-child(2){
+  flex-grow:1;
+}
+.item:nth-child(3){
+  flex-grow:3;
+}
+
+/* flex */
+.item{
+  flex:1 2; /* 1 2 auto가 아닌 1 2 0으로 적용됨! */
+}

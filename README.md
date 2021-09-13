@@ -51,6 +51,8 @@
   - [개인 복습, html 테스트 02](./html/210912_html-test.html)
   - [개인 복습, transform 정리](./html/210912_html-transform.html)
   - [개인 복습, transform, 애니메이션](./html/210912_html-cube.html)
+- [2021-09-13]
+  - [Flexbox](./html/00_html-summary.md#Flexbox)
 
 ### JavaScript (preview)
 #### 바닐라 JS로 크롬 앱 만들기
@@ -77,7 +79,12 @@
 - [2021-09-12]
   - [css in javascript](./javascript/00_javascript-summary.md#css-in-javascript)
   - [JAVASCRIPT ON THE BROWSER 3.6 ~ 3.8, css](./javascript/08_practice.js)
+  - [chek input value](./javascript/00_javascript-summary.md#check-input-value)
   - [LOGIN 4.0 ~ 4.3, input, events](./javascript/09_practice.js)
+- [2021-09-13]
+  - [combine string](./javascript/00_javascript-summary.md#combine-string)
+  - [HTML, LOGIN 4.4 ~ 4.7, username](./javascript/test2.js)
+  - [LOGIN 4.4 ~ 4.7, username](./javascript/10_practice.js)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용
