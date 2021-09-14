@@ -93,7 +93,7 @@
 - [2021-09-14]
   - [intervals](./javascript/00_javascript-summary.md#intervals)
   - [CLOCK 5.0 ~ 5.3](./javascript/11_practice.js)
-  - [CLOCK](./javascript/js/clock.js)
+  - [CLOCK](./javascript/index.html)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용
