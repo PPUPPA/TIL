@@ -11,13 +11,17 @@
   <title>Momentum</title>
 </head>
 <body>
-  <form id="login-form">
+  <form id="login-form" class="hidden">
     <input type="text" placeholder="What is your name?" required maxlength="15">
     <button type="submit">Log In</button>
   </form>
-  <a href="https://nomadcoders.co">Go to courses</a>
+
+  <h1 id="greeting" class="hidden"></h1>
+
+  <h2 id="clock">00:00:00</h2>
+
   <!-- project javascript -->
-  <script src="app.js"></script>
-  <script src="09_practice.js"></script>
+  <script src="greetings.js"></script>
+  <script src="11_practice.js"></script>
 </body>
 </html>

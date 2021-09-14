@@ -53,6 +53,10 @@
   - [개인 복습, transform, 애니메이션](./html/210912_html-cube.html)
 - [2021-09-13]
   - [Flexbox](./html/00_html-summary.md#Flexbox)
+  - [flexbox 예제](./html/210913_css-21_flexbox.html)
+- [2021-09-14]
+  - [Grid](./html/00_html-summary.md#Grid)
+  - [grid 예제](./html/210914_css-22_grid.html)
 
 ### JavaScript (preview)
 #### 바닐라 JS로 크롬 앱 만들기
@@ -83,8 +87,13 @@
   - [LOGIN 4.0 ~ 4.3, input, events](./javascript/09_practice.js)
 - [2021-09-13]
   - [combine string](./javascript/00_javascript-summary.md#combine-string)
-  - [HTML, LOGIN 4.4 ~ 4.7, username](./javascript/test2.js)
+  - [HTML, LOGIN 4.4 ~ 4.7, username](./javascript/test2.html)
   - [LOGIN 4.4 ~ 4.7, username](./javascript/10_practice.js)
+  - [LOGIN](./javascript/js/greetings.js)
+- [2021-09-14]
+  - [intervals](./javascript/00_javascript-summary.md#intervals)
+  - [CLOCK 5.0 ~ 5.3](./javascript/11_practice.js)
+  - [CLOCK](./javascript/js/clock.js)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

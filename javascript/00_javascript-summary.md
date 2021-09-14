@@ -391,6 +391,9 @@ greeting.inputText = ` Hello ${username}!`;
 2번 방식은 새롭게 고안된 방식이며, 아래와 같은 규칙을 따른다.
 - 변수 + string을 하고 싶다면 `${변수명}`의 형태로 사용한다.
 - 백틱(<code>`</code>)기호로 시작하고 끝낸다.
+<br>
+<br>
+<br>
 
 ### localStorage
 > [localStorage, MDN](https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage)
@@ -399,3 +402,20 @@ greeting.inputText = ` Hello ${username}!`;
 - `setItem(key, value)` : 정보 저장하기
 - `getItem(key, value)` : 정보 불러오기
 - `removeItem(key, value)` : 정보 삭제하기
+<br>
+<br>
+<br>
+
+### intervals
+특정 시간마다 함수 호출.
+`setInterval(함수명, N(ms));` 형태로 작성, Nms 마다 함수를 호출한다.
+
+### setTimeout()
+특정 시간이 지난 후 함수 호출.
+`setTimeout(함수명, N(ms));` 형태로 작성, Nms 마다 함수를 호출한다.
+
+### padStart(), padEnd()
+String 타입에 사용 가능하며, 글자 수가 x개가 아니라면 y를 앞에 붙여주거나(padStart), 뒤에 붙여주는(padEnd)함수.
+```javascript
+"1".padStart(2,"0") // 01 / 1이 2글자가 아니라면 앞에 0을 붙인다
+```

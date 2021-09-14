@@ -1,0 +1,74 @@
+/* Grid */
+
+.container{
+  border: 5px dashed orange;
+  width:500px;
+  height:400px;
+
+  display:grid;
+  /* display:inline-grid; */
+  
+  grid-template-columns:repeat(2, 1fr);
+  grid-template-rows:repeat(4, 1fr);
+
+  /* grid-template-areas:
+  "hd hd hd hd hd"
+  "ma ma ma . sb"
+  "ft ft ft ft ft"; */
+  
+  /* gap:20px 40px; */
+
+  grid-auto-flow:row;
+
+  /* grid shorthand */
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns : 100px 200px;
+  grid-auto-flow:row;
+
+  grid:row 1fr 2fr / 100px 200px;
+  /* grid:1fr 2fr / column 100px 200px; */
+  /* 위 여러줄과 아래 grid는 동일함! */
+  /* grid-auto-flow는 row일 경우 / 앞에, column일 경우 / 뒤에 작성한다. */
+
+  justify-content:space-between;
+  align-content:space-between;
+  justify-items:center;
+  align-items:center;
+}
+
+.item{
+  background-color:palegoldenrod;
+  border:3px solid blue;
+  font-size:24px;
+}
+
+.item:nth-child(2){
+  /* grid-column:span 2; */
+  grid-row:1 / -1;
+  grid-column:2 / 2;
+  grid-area:1 / 2/ -1 / 2;
+}
+
+/* .header{
+  grid-area:hd;
+}
+.main{
+  grid-area:ma;
+}
+.sidebar{
+  grid-area:sb;
+}
+.footer{
+  grid-area:ft;
+} */
+
+.item:nth-child(1){
+  grid-row:1 / span 2;
+  grid-column:1 / span 2;
+  z-index:5;
+}
+.item:nth-child(2){
+  grid-row:1 / 2;
+  grid-column:2 / span 4;
+  z-index:3;
+}

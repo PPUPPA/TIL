@@ -2405,3 +2405,141 @@ Sorry, your browser doesn't support embedded videos.
 
 <br>
 > [Flexbox, css연습-21](210913_css-21_flexbox.html)
+
+<br>
+<br>
+<br>
+<br>
+
+### Grid
+> [Grid, MDN](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Grid_Layout)
+레이아웃상 *요소가 나열(정렬)*되어야 할 때 사용하는 2차원(주축과 교차축 모두 사용하도록 제작된) 속성.
+
+<br>
+
+- 컨테이너와 아이템이 필요.
+- grid container : 정렬할 아이템을 감싼 부모요소
+- grid item : 정렬할 아이템들
+- main axis : 주축. 수평(가로)축이 기본 값.
+- cross axis : 교차축. 수직(세로)축이 기본 값.
+- columns : 행
+- rows : 열
+- gutters(gap) : 행/열 사이의 공백
+
+<br>
+
+#### grid container
+- 부모 요소에 `display:grid;`를 적용해 사용.
+  - 여기서 display는 `block`, `inline` 같은 `display-outside` 속성이 아니라 `display-inside` 속성으로, 안쪽에 배치할 요소들에 대한 속성에 가깝다.
+  - `display`는 `outside`와 `inside` 속성이 합쳐진 개념으로, `display-outside`를 `inline`으로 지정하면서 `display-inside`를 `grid`로 정의하고자 할 때는 `display:inline-grid;` 형태로 사용한다.
+- `grid-template-columns` : 몇 개의 열을 갖게 될 것인지에 대한 속성
+  - `100px 150px 100px` : 각 100px, 150px, 100px 너비를 가진 3열 생성.
+  - `Nfr` : N 비율 적용. (ex: 2fr 1fr, 2:1 비율로 2개의 열 생성)
+  - `repeat(X, Y)` : X는 반복횟수, Y에는 원하는 크기(px등 고정 단위 혹은 fr등의 비율 단위)
+- `grid-template-rows` : 몇 개의 행을 갖게 될 것인지에 대한 속성
+  - `100px 100px` : 각 100px, 100px 너비를 가진 3행 생성.
+  - `Nfr` : N 비율 적용. (ex: 2fr 1fr, 2:1 비율로 2개의 행 생성)
+  - `repeat(X, Y)` : X는 반복횟수, Y에는 원하는 크기(px등 고정 단위 혹은 fr등의 비율 단위)
+- `grid-auto-columns` : 템플릿에 미리 명시하지 못했지만 암시적으로 열의 크기 설정 가능
+  - 아이템을 설정하지 않으면 해당 영역은 미리 자리를 차지하지 않음
+- `grid-auto-rows` : 템플릿에 미리 명시하지 못했지만 암시적으로 행의 크기 설정 가능
+  - 아이템을 설정하지 않으면 해당 영역은 미리 자리를 차지하지 않음
+- `grid-template-areas` : 테이블 colspan, rowspan처럼 영역을 분배하는 속성
+  - > [grid-template-areas, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
+  - `.` 을 사용하면 공간을 띄울 수 있다.
+  - grid item 각각에 지정된 이름(`grid-area`의 값)을 기준으로 아래와 같이 채울 수 있다.
+    ```css
+      .grid-container{ /* ... */
+        grid-template-areas:
+        "hd hd hd hd hd"
+        "ma ma ma . sb"
+        "ft ft ft ft ft";
+      }
+    ```
+- `row-gap(grid-row-gap)` : 행간을 조정할 수 있다.
+- `column-gap(grid-column-gap)` : 열간을 조정할 수 있다.
+- `gap` : `row-gap column-gap` 순으로 한번에 입력할 수 있다.
+- `grid-auto-flow` : 그리드 아이템들이 (흐름에 따라) 자리잡는 것에 대한 속성
+  - `row` : 기본값. 좌->우, 상->하로 흐른다.
+  - `column` : 상->하, 좌->우로 흐른다.
+  - `dense` : 를 붙이면 빈곳에 다음 아이템들이 채워진다.
+- `grid`(shorthand) : `row / column` 형태.
+  - ex) `row 1fr 2fr / 100px 200px;`
+
+<br>
+
+**[ 정렬 관련 속성 ]**
+- `justify-content` : 컨테이너의 컨텐츠가 있는 영역을 기준으로, 아이템들을 어디에 정렬할지에 대한 속성(여러개의 아이템에 대한 속성)
+  - `start` : 주축이 시작되는 지점부터 정렬
+  - `end` : 주축이 끝나는 지점부터 정렬
+  - `center` : 주축을 기준으로 중앙에 정렬
+  - `space-between` : 컨테이너 기준으로, 양끝에 붙인 후 아이템 사이의 여백을 동일하게 둔다.
+  - `space-around` : 컨테이너 기준으로, 아이템 양옆으로 여백을 균등하게 둔다. (컨테이너 양끝에도 여백이 생김!)
+- `align-content` : 교차축을 기준으로 아이템들을 어떻게 정렬할지에 대한 속성 (**여러 줄**에 대한 속성)
+  - `start` : 교차축이 시작되는 지점부터 정렬
+  - `end` : 교차축이 끝나는 지점부터 정렬
+  - `center` : 교차축을 기준으로 중앙에 정렬
+  - `space-between` : 컨테이너 기준으로, 양끝에 붙인 후 아이템 사이의 여백을 동일하게 둔다.
+  - `space-around` : 컨테이너 기준으로, 아이템 양옆으로 여백을 균등하게 둔다. (컨테이너 양끝에도 여백이 생김!)
+- `justify-items` : 주축을 기준으로 아이템들을 어디에 정렬할지에 대한 속성 (**한 칸**에 대한 속성)
+  - `stretch` : 기본값, 위에서 아래까지 전부 채움(아이템에 별도 높이가 지정되지 않은 경우)
+  - `start` : 주축이 시작되는 지점부터 정렬
+  - `end` : 주축이 끝나는 지점부터 정렬
+  - `center` : 주축의 중앙에 정렬
+- `align-items` : 교차축을 기준으로 아이템들을 어디에 정렬할지에 대한 속성 (**한 칸**에 대한 속성)
+  - `stretch` : 기본값, 위에서 아래까지 전부 채움(아이템에 별도 높이가 지정되지 않은 경우)
+  - `start` : 교차축이 시작되는 지점부터 정렬
+  - `end` : 교차축이 끝나는 지점부터 정렬
+  - `center` : 교차축의 중앙에 정렬
+
+
+<br>
+<br>
+
+#### grid item
+- `grid-row` : 칸이 아닌 **선**을 기준으로 결정된다. (거꾸로 치면 음수값으로 체크되나, 명시적으로 추가한 칸에만 음수값이 적용되며, 암시적으로 추가된 영역에는 음수값으로 지정이 불가능하다.)
+  - `grid-row-start / grid-row-end`의 단축 속성
+  - `-end`값에 span을 사용해서 입력할 수 있다. (ex: 3 / span 2 : 3번줄에서 시작해 2줄 후 종료.)
+- `grid-column` : 칸이 아닌 **선**을 기준으로 결정된다. (거꾸로 치면 음수값으로 체크되나, 명시적으로 추가한 칸에만 음수값이 적용되며, 암시적으로 추가된 영역에는 음수값으로 지정이 불가능하다.)
+  - `grid-column-start / grid-column-end`의 단축 속성
+  - `-end`값에 span을 사용해서 입력할 수 있다. (ex: 3 / span 2 : 3번줄에서 시작해 2줄 후 종료.)
+- `grid-area` : 아이템 이름을 지정할 때 사용할 수 있다.
+  - 키워드를 입력해 이름을 지정하면, `grid-template-areas`에서 해당 영역을 지정할 수 있다.
+  - 위에서 작성한 grid-row와 grid-column을 함께 사용하는 shorthand로 사용할 수 있다.
+    - `grid-row-start / grid-column-start / grid-row-end / grid-column-end`로 작성한다.
+- `order` : **눈에 보이는** 정렬 순서 변경, `z-index`의 값과 동일하게 음수값도 사용 가능하며, 값이 작을 수록 앞으로 배치된다.
+  - 기본값 : 0
+- `z-index` : 레이어 순서(z축)
+  - grid-item이 겹쳤을 때 위로 띄울 순서를 결정한다.
+
+<br>
+
+**[ 정렬 관련 속성 ]**
+- `align-self` : 각 아이템에게 `align-items`를 설정해줌
+  - `stretch` : 기본값, 위에서 아래까지 전부 채움(아이템에 별도 높이가 지정되지 않은 경우)
+  - `start` : 교차축이 시작되는 지점부터 정렬
+  - `end` : 교차축이 끝나는 지점부터 정렬
+  - `center` : 교차축의 중앙에 정렬
+
+<br>
+
+**[ 그리드 단위 ]**
+- `fr` : 비율, 다른 단위와 혼합해서 사용 가능.
+  - ex) `2fr 1fr`
+  - ex) `100px 1fr`
+  - ex) `100px 1fr 1fr`
+- `min-content` : 여러 단어 중 가장 긴 단어 길이에 맞춰 너비를 차지한다.
+  - ex) `min-content 1fr`
+- `max-content` : 단어 전부를 자르지 않은 채로 너비를 차지한다.
+  - ex) `max-content 1fr`
+- `auto-fill` : 갯수를 화면 너비(혹은 높이)에 따라 *자동으로 채운다*.
+  - ex) `grid-template-columns: repeat(auto-fill, 100px)`
+  - ex) `grid-template-rows: repeat(auto-fill, 100px)`
+- `minmax(min, max)` : 화면 너비(혹은 높이)에 따라 최솟값과 최댓값을 유연하게 적용한다.
+  - ex) `grid-template-columns: repeat(auto-fill, minmax(100px, 1fr))`
+- `auto-fit` : 유사하게 작동하나, 남는 공간이 생겼을 때 `auto-fill`은 공간을 남겨두고, `auto-fit`은 공간을 *핏되게 채운다*.
+  - ex) `grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))`
+
+<br>
+
+> [Grid, css연습-21](210914_css-22_grid.html)
