@@ -1,6 +1,14 @@
-body{
-  background-color:beige;
+/* background로 적용할 경우 */
+/* html, body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
+body{
+  overflow:hidden;
+} */
 h1{
   color:cornflowerblue;
   transition:color .5s ease-in-out;

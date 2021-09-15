@@ -409,13 +409,69 @@ greeting.inputText = ` Hello ${username}!`;
 ### intervals
 특정 시간마다 함수 호출.
 `setInterval(함수명, N(ms));` 형태로 작성, Nms 마다 함수를 호출한다.
+<br>
+<br>
+<br>
 
 ### setTimeout()
 특정 시간이 지난 후 함수 호출.
 `setTimeout(함수명, N(ms));` 형태로 작성, Nms 마다 함수를 호출한다.
+<br>
+<br>
+<br>
 
 ### padStart(), padEnd()
 String 타입에 사용 가능하며, 글자 수가 x개가 아니라면 y를 앞에 붙여주거나(padStart), 뒤에 붙여주는(padEnd)함수.
 ```javascript
 "1".padStart(2,"0") // 01 / 1이 2글자가 아니라면 앞에 0을 붙인다
 ```
+<br>
+<br>
+<br>
+
+### Math
+
+#### random
+> Math.random();
+<br>
+
+0-1 사이의 숫자(소숫점)를 반환한다.
+```javascript
+Math.random(); // 0 - 1
+Math.random() * 10 // 0 - 10
+```
+<br>
+
+### ceil
+> Math.ceil();
+소숫점 숫자를 올림처리한다.
+```javascript
+Math.ceil(1.1) // 2
+Math.ceil(1.6) // 2
+Math.ceil(Math.random() * 10); // 1 - 11 의 정수
+```
+<br>
+
+### round
+> Math.round();
+소숫점 숫자를 반올림처리한다.
+```javascript
+Math.round(1.1) // 1
+Math.round(1.6) // 2
+Math.round(Math.random() * 10); // 0 - 11 의 정수
+```
+
+<br>
+
+### floor
+> Math.floor();
+소숫점 숫자를 내림처리한다.
+```javascript
+Math.floor(1.1) // 1
+Math.floor(1.6) // 1
+Math.floor(Math.random() * 10); // 0 - 10 의 정수
+```
+
+<br>
+<br>
+<br>
