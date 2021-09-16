@@ -475,3 +475,7 @@ Math.floor(Math.random() * 10); // 0 - 10 의 정수
 <br>
 <br>
 <br>
+
+### object to string
+`JSON.stringify()`
+타입과 관계 없이 string으로 바꿔줌!

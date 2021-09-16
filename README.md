@@ -39,7 +39,7 @@
   - [박스 모델](./html/00_html-summary.md#%EB%B0%95%EC%8A%A4-%EB%AA%A8%EB%8D%B8)
 - [2021-09-08]
   - [개인 복습, 게시글 레이아웃 카피-AhnLab](./html/_project/01_ahn/210908_example-ahnlab.html)
-  - [개인 복습, 웹접근성연구소 메인 일부 카피-AhnLab](./html/_project/02_wah/210908_example-wah.html)
+  - [개인 복습, 웹접근성연구소 메인 일부 카피](./html/_project/02_wah/210908_example-wah.html)
 - [2021-09-09]
   - [레이아웃](./html/00_html-summary.md#%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83)
   - [색상과 배경](./html/00_html-summary.md#%EC%83%89%EC%83%81%EA%B3%BC-%EB%B0%B0%EA%B2%BD)
@@ -60,6 +60,8 @@
 - [2021-09-15]
   - [개인 복습, flexboxfroggy](./html/210915_html-flexboxfroggy.md)
   - [개인 복습, grid garden](./html/210915_html-gridgarden.md)
+- [2021-09-16]
+  - [개인 복습, 웹접근성연구소 메인 카피](./html/_project/03_wah-responsive/index.html)
 
 ### JavaScript (preview)
 #### 바닐라 JS로 크롬 앱 만들기
@@ -103,6 +105,11 @@
   - [HTML, Quotes & Background](./javascript/momentum/index.html)
   - [Quotes 6.0](./javascript/momentum/js/quotes.js)
   - [Background 6.1 ~ 6.2](./javascript/momentum/js/background.js)
+- [2021-09-16]
+  - [to string](./javascript/00_javascript-summary.md#object-to-string)
+  - [HTML, Todo](./javascript/momentum/index.html)
+  - [Todo - add, delete, save 7.0 ~ 7.3](./javascript/momentum/js/todo.js)
+
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

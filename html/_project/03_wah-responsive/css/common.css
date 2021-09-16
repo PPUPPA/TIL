@@ -1,0 +1,562 @@
+@charset "utf-8";
+
+/* base */
+body {
+  font-size: 12px;
+  font-family: "Nanum Gothic", sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background-image: url(../img/common/doc_bg.gif);
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+
+a:link,
+a:visited {
+  color: #454545;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: underline;
+}
+
+.ir_text,.blind{overflow:hidden;position:absolute;top:0;left:0;border:0;width:1px;height:1px;clip:rect(1px,1px,1px,1px)}
+
+.clear_fix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#w_skip > a {
+  position: absolute;
+  left: -9999em;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: #2b35a3;
+}
+#w_skip > a:focus {
+  left: 0;
+}
+
+/* 창 기준으로 가로 중앙 정렬할 요소 공통 클래스 설정
+block contents horizental center */
+.w_center {
+  width: 1000px;
+  margin: 0 auto;
+  /*background:rgba(0,0,0,0.1);*/
+}
+
+/* header */
+/* h1(로고)에 float 적용 */
+.w_logo {
+  float: left;
+}
+
+/* h1의 자식 a에 배경으로 로고 이미지 적용. */
+.w_logo > a {
+  display: block;
+  margin: 16px 177px 16px 2px;
+  width: 171px;
+  height: 49px;
+  text-indent: -9999em;
+  background: url(../img/common/logo.gif) no-repeat;
+}
+
+/* 통합 검색  */
+.w_search {
+  position: relative;
+  float: left;
+  width: 296px;
+  height: 35px;
+  margin-top: 21px;
+  margin-right: 170px;
+  border: 2px solid #00407d;
+  background-color: #fff;
+}
+
+/* 통합 검색 검색어 입력 영역 */
+#w_search_total {
+  width: 230px;
+  height: 21px;
+  margin: 4px 0 0 5px;
+  border-color: transparent;
+}
+
+/* 통합 겁색 검색 버튼 영역 */
+#w_btn_search {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+/* 우측 상단의 유틸 메뉴(로그인, 회원가입, 사이트맵) */
+.w_util {
+  float: left;
+  margin-top: 33px;
+}
+/* 각 유틸 메뉴를 인라인요소로 변경해서 가로로 띄움. */
+.w_util > dd {
+  display: inline;
+  padding-left: 12px;
+  margin-left: 7px;
+  background-image: url(../img/common/line.gif);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+.w_util > dd:nth-child(2) {
+  padding-left: 0;
+  margin-left: 0;
+  background: none;
+}
+
+/* 모바일 주메뉴 제어 버튼 */
+.w_btn_m_nav {
+  display: none;
+}
+
+/* gnb (주 메뉴 전체) */
+#w_gnb {
+  margin-top: 3px;
+  margin-bottom: 17px;
+  /*background:#ccc;*/
+}
+
+/* 각 주메뉴를 가로로 띄우고 각 서브 메뉴(절대위치 지정될 예정)를
+    각 주메뉴 기준으로 위치하게 하기 위해서 relative 적용.
+    너비 설정.*/
+#w_gnb > ul > li {
+  position: relative;
+  float: left;
+  width: 167px;
+}
+
+/* 첫 번째와 마지막 주 메뉴만 너비 1px 적게 설정.
+    그래야 총 너비의 합이 1000px이 됨. */
+#w_gnb > ul > li:first-child,
+#w_gnb > ul > li:last-child {
+  width: 166px;
+}
+
+/* 주 메뉴 평상시 링크 디자인 */
+#w_gnb > ul > li > a:link,
+#w_gnb > ul > li > a:visited {
+  display: block;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  border-left: 1px solid #ddd;
+}
+
+/* 주 메뉴에 마우스 오버시와 포커스일 때 링크 디자인 */
+#w_gnb > ul > li > a:hover,
+#w_gnb > ul > li > a:focus {
+  color: #1e61a8;
+  text-decoration: none;
+}
+/* 마지막 주 메뉴 a의 부모인 li에만 오른쪽 보더 설정  */
+#w_gnb > ul > li:last-child > a {
+  border-right: 1px solid #ddd;
+}
+
+/* 주 메뉴 어디에 마우스 올리더라도 모든 서브 메뉴 보이게 설정 */
+#w_gnb > ul:hover > li > ul {
+  display: block;
+}
+
+/* gnb sub (서브 메뉴 디자인) */
+/* 평상시에 안 보이게 설정하고, 절대위치로 위치 지정.
+    각 부모인 #w_gnb>ul>li 기준으로 절대위치 지정될 것으므로 
+    #w_gnb>ul>li>a 의 높이값 정도만큼 top 값이 아래로 위치해야 함. */
+.w_gnb_sub {
+  display: none;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 185px;
+  padding-top: 10px;
+  border-left: 1px solid #ddd;
+  background: #fff;
+  border-bottom: 3px solid #1e61a8;
+}
+
+/* 마지막 서브 메뉴만 선택해서 너비와 보더 다르게 설정 */
+#w_gnb > ul > li:last-child > ul.w_gnb_sub {
+  width: 164px;
+  border-right: 1px solid #ddd;
+}
+
+/* 서브 메뉴 평상시 링크 디자인 설정 */
+.w_gnb_sub > li > a:link,
+.w_gnb_sub > li > a:visited {
+  display: block;
+  padding: 2px 0 2px 15px;
+}
+
+/* 서브 메뉴에 마우스 오버시나 포커스 일때 링크 디자인 설정 */
+.w_gnb_sub > li > a:hover,
+.w_gnb_sub > li > a:focus {
+  color: #1e61a8;
+  text-decoration: none;
+  background-image: url(../img/common/bluet01.gif);
+  background-repeat: no-repeat;
+  background-position: 7px center;
+}
+#w_gnb > ul > li:hover > ul {
+  background: #eef4ef;
+}
+
+/* footer */
+/* 푸터를 감싸고 width 설정안한 div에 상단 보더와 패딩 설정 */
+.w_footer_wrap {
+  padding: 35px 0;
+  border-top: 1px solid #ccc;
+}
+
+/* 절대위치 지정될 자식들을 .w_footer 기준으로 위치하게 하기 위한
+    relative 설정*/
+.w_footer {
+  position: relative;
+}
+
+/* 하단 로고 절대위치 지정 */
+.w_footer > p {
+  position: absolute;
+  top: 0px;
+  left: 40px;
+}
+
+/* 사이트 이용안내에 왼쪽과 하단 마진 적용 */
+.w_site_info {
+  margin-left: 150px;
+  margin-bottom: 15px;
+}
+
+/* 사이트 이용안내 각 메뉴 가로로 띄우고 배경 이미지 등의 디자인 설정 */
+.w_site_info > ul > li {
+  float: left;
+  padding: 0 10px;
+  font-size: 0.92em;
+  background-image: url(../img/common/line.gif);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+
+/* 사이트 이용안내 마지막 메뉴에 배경 이미지 제거 */
+.w_site_info > ul > li:first-child {
+  padding-left: 0;
+  background-image: none;
+}
+
+/* 하단 주소 부분 */
+.w_addr {
+  margin-left: 150px;
+  margin-bottom: 8px;
+  font-size: 0.92em;
+  color: #767676;
+}
+
+/* 하단 주소 중에서 이메일 링크 */
+.w_addr > span {
+  padding-left: 10px;
+  margin-left: 10px;
+  background-image: url(../img/common/line.gif);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+
+/* 하단 저작권 부분 디자인 설정
+    small 요소가 인라인 요소라 디자인 설정이 잘 안되므로
+    block 로 변경*/
+.w_copy {
+  display: block;
+  margin-left: 150px;
+  color: #666;
+}
+
+/* 우측 하단의 관련 링크 부분 절대 위치 지정 */
+.w_family_link {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.w_family_link > li {
+  float: left;
+  margin-left: 10px;
+}
+.w_family_link > li:last-child > a > img {
+  width: auto;
+  height: 65px;
+}
+
+/*
+******************  tablet  ******************
+*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* pc에서 창 기준으로 블록 콘텐츠 가로 중앙 정렬했던 클래스를 태블릿에 맞게 변경
+    box-sizing:border-box 설정해서 혹시 있을 좌우 보더나 패딩 값을 
+    설정한 width 값에 포함시킴.
+    여기서는 좌우 패딩 15px이 지정한 width:100% 안에 포함되게 설정*/
+  .w_center {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  /* 로고 우측에 있던 마진 제거 */
+  .w_logo > a {
+    margin-right: 0;
+  }
+
+  /* 통합 검색  */
+  /* float 되어 있던 서치 바를 절대위치 지정해서 태블릿 너비에 상관없이
+    항상 가로 중앙 정렬되게 left:50% 설정하고 서치 바의 width 값인 300px의
+    반값만큼 왼쪽에 음수 마진 적용*/
+  .w_search {
+    position: absolute;
+    top: 21px;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -150px;
+  }
+
+  /* 우측 상단의 유틸 메뉴(로그인, 회원가입, 사이트맵) */
+  /* float:left였던 우측 상단 유틸 메뉴를 right로 변경 */
+  .w_util {
+    float: right;
+  }
+
+  /* 각 유틸 메뉴를 인라인요소로 변경해서 가로로 띄움. */
+  /* 각 유틸 메뉴 사이의 여백을 조금 축소 */
+  .w_util > dd {
+    padding-left: 7px;
+    margin-left: 2px;
+  }
+
+  /* 각 주 메뉴의 width 값을 100% 기준으로 6 으로 나눈 값으로 
+    width 값을 % 설정*/
+  #w_gnb > ul > li {
+    width: 16.6666%;
+  }
+
+  /* pc 버전에서 px로 지정했을 때 첫 번째와 마지막 메뉴의 너비 값을 
+    1px 적게 설정했던 부분을 태블릿에서는 똑같이 16.6666% 로 설정.
+    이 부분이 없으면 특정도 문제 때문에 태블릿에서 첫 번째와 마지막 주 메뉴의
+    width 값이 166px로 설정됨.*/
+  #w_gnb > ul > li.first,
+  #w_gnb > ul > li.last {
+    width: 16.6666%;
+  }
+
+  /* 서브 메뉴의 글자 크기와 자간을 약간 축소 */
+  .w_gnb_sub {
+    font-size: 0.92em;
+    letter-spacing: -0.1em;
+  }
+
+  /* 마지막 서브 메뉴의 우측 보더는 그대로 적용하되,
+    box-sizing: border-box; 적용해서 우측 보더가 
+    width:100% 안에 포함되게 설정.
+    이 경우 마지막 서브 메뉴의 상단 패딩 부분도 지정한 height 안에 포함되므로
+    height 값을 pc 버전에서보다 10px 높게 설정해야 함. */
+  #w_gnb > ul > li.last > ul.w_gnb_sub {
+    box-sizing: border-box;
+    width: 100%;
+    height: 198px;
+    border-right: 1px solid #ddd;
+  }
+
+  /* 하단 로고 */
+  /* pc 버전에서 절대위치 지정되었던 하단 로고를 static (일반 흐름) 으로 변경 */
+  .w_footer > p {
+    position: static;
+  }
+
+  /* pc 버저에서 사이트 이용안내에 적용되었던 왼쪽 마진을 0으로 변경하고
+    상단 마진 높게 적용.*/
+  .w_site_info {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+
+  /* 사이트 이용 안내 각 메뉴가 6개 이므로 100%/6 -> 16.6666%로 설정.
+    지정된 패딩 포함하기 위해서 box-sizing:border-box 적용*/
+  .w_site_info > ul > li {
+    box-sizing: border-box;
+    width: 16.6666%;
+    text-align: center;
+  }
+
+  /* 하단 주소 부분의 왼쪽 마진 0으로 변경하고 글자들을 가로 중앙 정렬 */
+  .w_addr {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* 하단 저작권 부분 왼쪽 마진 0으로 변경하고 글자들을 가로 중앙 정렬 */
+  .w_copy {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* 우측 하단의 관련 링크 부분 절대 위치 지정의 right 값을 변경 */
+  .w_family_link {
+    right: 20px;
+  }
+} /* end of tablet */
+
+/*
+******************  mobile  ******************
+*/
+@media screen and (max-width: 767px) {
+  /* pc와 tablet에 적용되었던 body의 배경 이미지(상단의 그라데이션 부분)의 포지션을 
+    위로 옮겨서 로고와 검색 바 사이에 위치하게 설정.*/
+  body {
+    background-position: 0 -28px;
+  }
+
+  /* pc에서 창 기준으로 블록 콘텐츠 가로 중앙 정렬했던 클래스를 모바일에 맞게 변경.
+    box-sizing:border-box 설정해서 혹시 있을 좌우 보더나 패딩 값을 
+    설정한 width 값에 포함시킴.
+    여기서는 좌우 패딩 10px이 지정한 width:100% 안에 포함되게 설정*/
+  .w_center {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
+    /*background:rgba(0,0,0,0.1);*/
+  }
+
+  /* header */
+  /* h1(로고)에 적용되었던 float을 none 처리해서 일반 흐름으로 변경함.
+    이 결과 검색 바도 아래로 떨어지게 됨.*/
+  .w_logo {
+    float: none;
+  }
+
+  /* 모바일에서 로고의 크기를 변경.
+    실제로는 일러스트레이터로 작업한 원본 AI 파일에서 모바일에 적용할 
+    이미지의 크기의 2배 사이즈로 png 혹은 gif 로 저정한 후 사용해야
+    모바일의 고해상도 디스플레이에서 깨지지 않고 이쁘게 보임.
+    백그라운드-사이즈 값을 100% 설정해서 설정한 width, height 만큼 배경 이미지 크기 설정.*/
+  .w_logo > a {
+    width: 120px;
+    height: 35px;
+    margin: 10px auto 15px;
+    background-size: 100% 100%;
+  }
+
+  /* 통합 검색 */
+  /* pc와 tablet 에서 float 되거나 absolute 설정되어 있던 검색 바를
+    모바일에서는 relative로 일반 흐름으로 설정함.
+    static 설정 안하는 이유는 .w_search의 자식 중에서 absolut 지정된 자식이 있는데
+    이 자식을 .w_search 기준으로 가두어야 하기 때문에 static으로 설정하면 안됨.
+    .w_search 에 absolute 설정하면 header의 높이를 강제로 잡아야 해야 하므로
+    relative 설정이 가능 무난함.
+    */
+  .w_search {
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto 20px;
+  }
+
+  /* 우측 상단의 유틸 메뉴(로그인, 회원가입, 사이트맵) */
+  /* 모바일에서는 우측 상단에 존재하던 유틸 메뉴를 안보이게 설정.
+    이 예제에서는 안 보이게 설정했지만 우측 상단에 유틸메뉴 전용 버튼을 
+    만들어서 토글(버튼 클릭하면 보이고 다시 클릭하면 안보이는 형식~) 형식으로 작업해도 됨.*/
+  .w_util {
+    display: none;
+  }
+
+  /* 모바일 전용 네비게이션 버튼 (왼쪽 위) 을 pc와 tablet 에서는 안 보이게 설정했었는데,
+    모바일에서는 보여야 하므로 block 설정.
+    절대위치 지정해서 헤더 좌측 상단에 위치하게 함.
+    후에 jQuery 학습 후 모바일 전용 버튼과 모바일 전용 네비 콘트롤도 학습 함.
+    */
+  .w_btn_m_nav {
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 7%;
+  }
+
+  /* 모바일 전용 네비게이션 버튼의 실제 디자인 */
+  .w_btn_m_nav > a {
+    display: block;
+    text-indent: -9999em;
+    width: 32px;
+    height: 32px;
+    background-image: url(../img/common/btn_m_nav.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  /* 모바일에서 pc와 tablet 용 네비게이션을 안 보이게 설정. */
+  #w_gnb {
+    display: none;
+  }
+
+  /* footer */
+  /* footer_wrap의 상단 패딩 값을 작게 설정 */
+  .w_footer_wrap {
+    padding-top: 20px;
+  }
+
+  /* pc와 tablet에서 절대위치 지정되어 있던 하단 로고를 static 설정해서
+    일반흐름으로 변경.
+    text-align:center로 하단 로고를 문서 중앙에 위치하게 함.*/
+  .w_footer > p {
+    position: static;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* pc에 적용되었던 사이트 이용 안내 왼쪽 마진 제거 */
+  .w_site_info {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  /* 사이트 이용안내 각 메뉴의 너빗 값을 50% 설정해서 한 줄 당 2개의 메뉴가 보이게 설정. */
+  .w_site_info > ul > li {
+    box-sizing: border-box;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 7px;
+  }
+
+  /* 홀수 번째 사이트 이용 안내 메뉴 왼쪽에 있는 세로 막대기 모양의 배경 이미지 제거 */
+  .w_site_info > ul > li.odd {
+    background-image: none;
+  }
+
+  /* 하단 주소 부분 왼쪽에 적용되어 있는 왼쪽 마진 제거하고 글자 가로 중앙 정렬 */
+  .w_addr {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* 저작권 부분 왼쪽에 적용되어 있는 왼쪽 마진 제거하고 글자 가로 중앙 정렬 */
+  .w_copy {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* 우측 하단의 관련 링크 부분을 모바일에서 안 보이게 설정.
+    이 예제에서는 안보이게 설정했지만 디자인을 적절히 적용하는 것도 가능. */
+  .w_family_link {
+    display: none;
+  }
+} /* end of mobile */

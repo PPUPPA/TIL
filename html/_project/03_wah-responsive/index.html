@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  
+  <!-- font -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+  <!-- project -->
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <title>웹 접근성 연구소</title>
+</head>
+<body>
+  <!-- skip nav S -->
+  <div id="w_skip">
+    <a href="#w_contents">본문 바로가기</a>
+    <a href="#w_gnb">주 메뉴 바로가기</a>
+  </div>
+  <!-- skip nav E -->
+
+  <!-- header S -->
+  <header class="w_header w_center">
+    <div class="clear_fix">
+      <h1 class="w_logo">
+        <a href="#">웹 접근성 연구소</a>
+      </h1>
+      <div class="w_search">
+        <form action="#" method="get">
+          <fieldset>
+            <legend class="blind">검색어</legend>
+            <label for="w_search_total" class="blind">통합검색</label>
+            <input id="w_search_total" type="text">
+            <input
+              id="w_btn_search"
+              type="image"
+              src="img/common/btn_search.png"
+              alt="검색"
+           >
+          </fieldset>
+        </form>
+      </div>
+      <dl class="w_util">
+        <dt class="blind">유틸 메뉴</dt>
+        <dd><a href="#">로그인</a></dd>
+        <dd><a href="#">회원가입</a></dd>
+        <dd><a href="#">사이트맵</a></dd>
+      </dl>
+    </div>
+
+    <!-- 모바일 전용 네비게이션 제어 버튼 -->
+    <div class="w_btn_m_nav">
+      <a href="#w_m_gnb">모바일 메뉴 열기</a>
+    </div>
+
+    <nav id="w_gnb">
+      <h2 class="blind">웹 접근성 연구소 주 메뉴</h2>
+      <ul class="clear_fix">
+        <li class="first">
+          <a href="#">웹 접근성이란</a>
+          <ul class="w_gnb_sub">
+            <li><a href="#">웹 접근성 개요</a></li>
+            <li><a href="#">법. 제도</a></li>
+            <li><a href="#">장애인의 웹사이트 이용 이해</a></li>
+            <li><a href="#">웹 접근성 품질 인증</a></li>
+            <li><a href="#">관련사이트</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">진단 및 컨설팅</a>
+          <ul class="w_gnb_sub">
+            <li><a href="#">진단 및 컨설팅 개요</a></li>
+            <li><a href="#">지킴이 및 멘토 모집</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">교육마당</a>
+          <ul class="w_gnb_sub">
+            <li><a href="#">지킴이.멘토 양성교육</a></li>
+            <li><a href="#">웹 접근성 온라인교육</a></li>
+            <li><a href="#">순회교육</a></li>
+            <li><a href="#">세미나</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">지식마당</a>
+          <ul class="w_gnb_sub">
+            <li><a href="#">지식마당 개요</a></li>
+            <li><a href="#">온라인 자문서비스</a></li>
+            <li><a href="#">개발자아카이브</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">정보마당</a>
+          <ul class="w_gnb_sub">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">자료실</a></li>
+            <li><a href="#">뷰어 다운로드</a></li>
+          </ul>
+        </li>
+        <li class="last">
+          <a href="#">기관소개</a>
+          <ul class="w_gnb_sub">
+            <li><a href="#">기관장 인사말</a></li>
+            <li><a href="#">한국정보화진흥원 소개</a></li>
+            <li><a href="#">주요사업</a></li>
+            <li><a href="#">CI소개</a></li>
+            <li><a href="#">찾아오시는길</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- header E -->
+
+  <!-- contents S -->
+  <div id="w_contents" class="w_center">
+    <h2 class="blind">웹 접근성 연구소 메인 콘텐츠</h2>
+    <div class="visual_box clear_fix">
+      <section class="main_banner1_wrap">
+        <h3 class="blind">메인 배너1</h3>
+        <div class="main_banner1 clear_fix">
+          <img
+            src="img/main/pc_visual01.jpg"
+            alt="2021 제3회 정보접근성 오픈 아카데미 유튜브 라이브 방송 안내/실무자(디자이너, 기획자, 퍼블리셔, 개발자) 중심 정보접근성 기술 교육/2021.09.10(금) 20:00 ~ 22:00"
+         >
+          <img
+            src="img/main/pc_visual01.jpg"
+            alt="접근성 오픈 아카데미 유튜브 채널(AOA - YouTube / 매주 월요일 콘텐츠 업데이트)"
+         >
+        </div>
+        <span class="mb1_paging">
+          <a class="on" href="#">메인배너1-1 보기</a>
+          <a href="#">메인배너1-2 보기</a>
+        </span>
+        <span class="mb1_control">
+          <a class="off" href="#">메인 배너1 재생</a>
+          <a href="#">메인 배너1 정지</a>
+        </span>
+      </section>
+      <section class="w_standard">
+        <div>
+          <a href="#">
+            <h3>한국형 웹 콘텐츠 접근성 지침 2.1(KWCGA 2.1)</h3>
+            <p>2015년 3월 31일 지침 2.1 개정</p>
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <h3>웹 콘텐츠 제작기법</h3>
+            <p>웹접근성 제작기법에 대한 정보 제공</p>
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <h3>웹 콘텐츠 신기술 제작기법</h3>
+            <p>웹 콘텐츠 신기술 제작기법 가이드라인을 제공</p>
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <h3>W3C 접근성 문서 번역</h3>
+            <p>웹 접근성 관련 문서를 한국어로 번역한 것을 제공</p>
+          </a>
+        </div>
+      </section>
+      <section class="w_test">
+        <div>
+          <a href="#">
+            <h3>웹 접근성 자동평가 도구<br>(KWAH 4)</h3>
+            <p>웹 접근성 자동평가 도구 다운</p>
+          </a>
+        </div>
+        <div class="second">
+          <a href="#">
+            <h3>모바일 앱 접근성<br>평가 교육 동영상</h3>
+            <p>모바일 앱 접근성 오프라인 진단 및 컨설팅에서 교육용 동영상</p>
+          </a>
+        </div>
+        <div class="last">
+          <a href="#">
+            <h3>모바일 앱 접근성 점검 매뉴얼</h3>
+            <p>IOS와 Android의 모바일 앱 접근성에 대한 메뉴얼을 제공</p>
+          </a>
+          <div>
+            <a href="#"><img src="img/main/ico_ios.gif" alt="ios"></a>
+            <a href="#"><img src="img/main/ico_and.gif" alt="android"></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="main_board_wrap clear_fix">
+      <section class="w_main_notice">
+        <h3>공지사항</h3>
+        <ul class="w_latest">
+          <li>
+            <a href="#">2021년 제3차 정보접근성 오픈 아...</a>
+            <span>2021-09-02</span>
+          </li>
+          <li>
+            <a href="#">2021년 제2차 정보접근성 오픈 아...</a>
+            <span>2021-06-10</span>
+          </li>
+          <li>
+            <a href="#">[행사안내] 키오스크 정보접근성 및...</a>
+            <span>2021-06-10</span>
+          </li>
+          <li>
+            <a href="#">[홍보] 2021 국민행복 IT 경진...</a>
+            <span>2021-06-04</span>
+          </li>
+        </ul>
+        <a href="#">공지사항 더보기</a>
+      </section>
+      <section class="w_main_reference">
+        <h3>자료실</h3>
+        <ul class="w_latest">
+          <li>
+            <a href="#">캡차(CAPTCHA), 가상키보드, ..</a>
+            <span>2017-12-19</span>
+          </li>
+          <li>
+            <a href="#">웹 접근성 국가표준(KWCAG 2.2..</a>
+            <span>2017-12-19</span>
+          </li>
+          <li>
+            <a href="#">정보접근성 향상을 위한 W3C 국제표..</a>
+            <span>2016-12-14</span>
+          </li>
+          <li>
+            <a href="#">웹 접근성을 고려한 콘텐츠 제작기법 ..</a>
+            <span>2015-10-28</span>
+          </li>
+        </ul>
+        <a href="#">자료실 더보기</a>
+      </section>
+    </div>
+  </div>
+  <!-- contents E -->
+
+  <!-- footer S -->
+  <div class="w_footer_wrap">
+    <footer class="w_footer w_center">
+      <p>
+        <img src="img/common/btm_logo.png" alt="한국정보화진흥원">
+      </p>
+      <nav class="w_site_info">
+        <h2 class="blind">웹 접근성 연구소 사이트 이용안내</h2>
+        <ul class="clear_fix">
+          <li class="odd"><a href="#">한국정보화진흥원소개</a></li>
+          <li><a href="#">웹 접근성 정책</a></li>
+          <li class="w_mark odd"><a href="#">개인정보처리방침침</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li class="odd"><a href="#">찾아오시는길</a></li>
+          <li><a href="#">뷰어내려받기</a></li>
+        </ul>
+      </nav>
+      <address class="w_addr">
+        제주 NIA 글로벌센터 : 제주특별자치도 서귀포시 서호중앙로
+        68-11(697-100) 디지털문화본부
+        <span>이메일 : <a href="mailto:wah@nia.or.kr">wah@nia.or.kr</a></span>
+      </address>
+      <small class="w_copy">
+        본 사이트는 포트폴리오 용도로 제작되었습니다.<br>
+        본 사이트의 모든 콘텐츠의 저작권은 웹접근성연구소와 해당 사이트에
+        있음을 알려드립니다.
+      </small>
+      <ul class="w_family_link clear_fix">
+        <li>
+          <a href="#"
+            ><img
+              src="img/common/btm_wa_auth.gif"
+              alt="미래창조과학부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)"
+         ></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img
+              src="img/common/btm_banner.gif"
+              alt="107 손말이음센터 연중무휴 국번없이 107 청각 언어장애인 의사소통 지원"
+         ></a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+  <!-- footer E -->
+</body>
+</html>
