@@ -478,4 +478,90 @@ Math.floor(Math.random() * 10); // 0 - 10 의 정수
 
 ### object to string
 `JSON.stringify()`
-타입과 관계 없이 string으로 바꿔줌!
+타입과 관계 없이 String으로 바꿔줌!
+<br>
+
+`JSON.parse()`
+단순 String을 분석해서 자바스크립트의 객체로 바꿔줌.
+```javascript
+JSON.parse('{}');              // {}
+JSON.parse('true');            // true
+JSON.parse('"foo"');           // "foo"
+JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
+JSON.parse('null');            // null
+```
+
+<br>
+<br>
+
+### forEach
+`배열.forEach(실행할 내용);` 으로 작성.
+
+> JavaScript는 지금 처리되고 있는 아이템을 그냥 제공함! 함수에서 item 키워드 활용!
+```javascript
+function sayHello(item){
+  console.log("This is the turn of", item);
+}
+...
+if(savedToDos !== null){
+  const parsedToDos = JSON.parse(savedToDos);
+  parsedToDos.forEach(sayHello);
+}
+```
+
+<br>
+<br>
+<br>
+
+### Arrow function
+화살표 함수. 함수를 간단하게 쓰는 방법
+<br>
+
+```javascript
+// 기존
+function sayHello(item){
+  console.log("This is the turn of", item);
+}
+parsedToDos.forEach(sayHello);
+
+// 화살표함수 이용
+parsedToDos.forEach((item) => console.log("This is the turn of", item));
+```
+
+<br>
+<br>
+<br>
+
+### filter
+제외하기(걸러내기) 위한 함수.
+```javascript
+function sexyFilter(){
+  // Should return true if you want include item
+  // 전부 유지
+  // return true;
+  // 전부 삭제
+  return false;
+}
+[1,2,3,4].filter(sexyFilter);
+sexyFilter(4)
+```
+```javascript
+function sexyFilter(item){
+  return item !== 3;
+}
+[1,2,3,4].filter(sexyFilter); // [1,2,4]
+```
+```javascript
+const arr = [1231,432423,54312,52342,523,1323,4122,3,12,34,323,345,221]
+function sexyFunction(potato){
+  return potato <= 1000;
+}
+arr.filter(sexyFunction); // 523,3,12,34,323,345,221
+```
+```javascript
+const todos = [{"text":"asdf","id":1631944047326},{"text":"asfwaf","id":1631944048469},{"text":"asf","id":1631944228165}]
+function sexyFunction(todo){
+  return todo.id !== 1631944047326;
+}
+todos.filter(sexyFunction);
+```
