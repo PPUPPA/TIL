@@ -565,3 +565,35 @@ function sexyFunction(todo){
 }
 todos.filter(sexyFunction);
 ```
+
+<br>
+<br>
+<br>
+
+### geolocation
+`navigator.geolocation.getCurrentPosition()` 등의 형태로 사용.
+브라우저에서 위치 좌표(WiFi, 위치, GPS 등등).
+
+<br>
+
+`getCurrentPosition()`은 인자가 두개(성공, 에러 시 실행할 함수) 필요함
+
+```javascript
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+```
+
+<br>
+<br>
+<br>
+
+### fetch
+자원 가져오기. `fetch("자원주소")` 형태로 입력한다.
+
+```javascript
+function onGeoOk(position){
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+  fetch(url);
+}
+```

@@ -49,7 +49,7 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(savedToDos !== null){
   const parsedToDos = JSON.parse(savedToDos);
-  console.log(parsedToDos);
+  // console.log(parsedToDos);
   toDos = parsedToDos;
   // Arrow function
   // 함수를 더 짧고 간단하게 작성하는 방법..!

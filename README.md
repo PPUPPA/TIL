@@ -70,49 +70,53 @@
 
 - [2021-09-07]
   - [INTRODUCTION](./javascript/00_javascript-summary.md#JavaScript%3F)
-  - [WELCOME TO JAVASCRIPT 2.0 ~ 2.6](./javascript/01_practice.js)
+  - [WELCOME TO JAVASCRIPT 2.0 ~ 2.6](./javascript/project-momentum/01_practice.js)
 - [2021-09-08]
   - [자바스크립트 객체](./javascript/00_javascript-summary.md#Function)
-  - [WELCOME TO JAVASCRIPT 2.7 ~ 2.10](./javascript/02_practice.js)
-  - [WELCOME TO JAVASCRIPT 2.11](./javascript/03_practice-calculator.js)
-  - [WELCOME TO JAVASCRIPT 2.12](./javascript/04_practice.js)
+  - [WELCOME TO JAVASCRIPT 2.7 ~ 2.10](./javascript/project-momentum/02_practice.js)
+  - [WELCOME TO JAVASCRIPT 2.11](./javascript/project-momentum/03_practice-calculator.js)
+  - [WELCOME TO JAVASCRIPT 2.12](./javascript/project-momentum/04_practice.js)
 - [2021-09-09]
   - [조건문](./javascript/00_javascript-summary.md#Conditionals)
-  - [WELCOME TO JAVASCRIPT 2.13 ~ 2.16, Conditionals](./javascript/05_practice.js)
+  - [WELCOME TO JAVASCRIPT 2.13 ~ 2.16, Conditionals](./javascript/project-momentum/05_practice.js)
 - [2021-09-11]
   - [document객체](./javascript/00_javascript-summary.md#Document)
   - [html element 가져오기](./javascript/00_javascript-summary.md#getElement)
-  - [JAVASCRIPT ON THE BROWSER 3.0 ~ 3.2, searching for elements](./javascript/06_practice.js)
+  - [JAVASCRIPT ON THE BROWSER 3.0 ~ 3.2, searching for elements](./javascript/project-momentum/06_practice.js)
   - [events](./javascript/00_javascript-summary.md#events)
-  - [JAVASCRIPT ON THE BROWSER 3.3 ~ 3.5, events](./javascript/07_practice.js)
+  - [JAVASCRIPT ON THE BROWSER 3.3 ~ 3.5, events](./javascript/project-momentum/07_practice.js)
 - [2021-09-12]
   - [css in javascript](./javascript/00_javascript-summary.md#css-in-javascript)
-  - [JAVASCRIPT ON THE BROWSER 3.6 ~ 3.8, css](./javascript/08_practice.js)
+  - [JAVASCRIPT ON THE BROWSER 3.6 ~ 3.8, css](./javascript/project-momentum/08_practice.js)
   - [chek input value](./javascript/00_javascript-summary.md#check-input-value)
-  - [LOGIN 4.0 ~ 4.3, input, events](./javascript/09_practice.js)
+  - [LOGIN 4.0 ~ 4.3, input, events](./javascript/project-momentum/09_practice.js)
 - [2021-09-13]
   - [combine string](./javascript/00_javascript-summary.md#combine-string)
-  - [HTML, LOGIN 4.4 ~ 4.7, username](./javascript/test2.html)
-  - [LOGIN 4.4 ~ 4.7, username](./javascript/10_practice.js)
-  - [LOGIN](./javascript/momentum/js/greetings.js)
+  - [HTML, LOGIN 4.4 ~ 4.7, username](./javascript/project-momentum/test2.html)
+  - [LOGIN 4.4 ~ 4.7, username](./javascript/project-momentum/10_practice.js)
+  - [LOGIN](./javascript/project-momentum/momentum/js/greetings.js)
 - [2021-09-14]
   - [intervals](./javascript/00_javascript-summary.md#intervals)
-  - [CLOCK 5.0 ~ 5.3](./javascript/11_practice.js)
-  - [HTML, CLOCK](./javascript/momentum/index.html)
-  - [JS, CLOCK](./javascript/momentum/js/clock.js)
+  - [CLOCK 5.0 ~ 5.3](./javascript/project-momentum/11_practice.js)
+  - [HTML, CLOCK](./javascript/project-momentum/momentum/index.html)
+  - [JS, CLOCK](./javascript/project-momentum/momentum/js/clock.js)
 - [2021-09-15]
   - [random](./javascript/00_javascript-summary.md#random)
-  - [HTML, Quotes & Background](./javascript/momentum/index.html)
-  - [Quotes 6.0](./javascript/momentum/js/quotes.js)
-  - [Background 6.1 ~ 6.2](./javascript/momentum/js/background.js)
+  - [HTML, Quotes & Background](./javascript/project-momentum/momentum/index.html)
+  - [Quotes 6.0](./javascript/project-momentum/momentum/js/quotes.js)
+  - [Background 6.1 ~ 6.2](./javascript/project-momentum/momentum/js/background.js)
 - [2021-09-16]
   - [to string](./javascript/00_javascript-summary.md#object-to-string)
-  - [HTML, Todo](./javascript/momentum/index.html)
-  - [Todo - add, delete, save 7.0 ~ 7.3](./javascript/momentum/js/todo.js)
+  - [HTML, Todo](./javascript/project-momentum/momentum/index.html)
+  - [Todo - add, delete, save 7.0 ~ 7.3](./javascript/project-momentum/momentum/js/todo.js)
 - [2021-09-18]
   - [forEach, Arrow function, filter](./javascript/00_javascript-summary.md#forEach)
-  - [HTML, Todo](./javascript/momentum/index.html)
-  - [Todo - loading, delete saved to dos 7.4 ~ 7.8](./javascript/momentum/js/todo.js)
+  - [HTML, Todo](./javascript/project-momentum/momentum/index.html)
+  - [Todo - loading, delete saved to dos 7.4 ~ 7.8](./javascript/project-momentum/momentum/js/todo.js)
+- [2021-09-20]
+  - [navigator, geolocation](./javascript/00_javascript-summary.md#geolocation)
+  - [HTML, Weather](./javascript/project-momentum/momentum/index.html)
+  - [Weather API 8.0 ~ 8.3](./javascript/project-momentum/momentum/js/todo.js)
 
 
 <!-- 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- settings -->
+  <link rel="stylesheet" href="fonts/font.css">
+  <link rel="stylesheet" href="css/sunny_general.css">
+  <script src="js/jquery-1.12.3.min.js"></script>
+  <script src="js/sunny_general.js"></script>
+
+  <!-- project -->
+  <link rel="stylesheet" href="css/momentum.css">
+  
+  <title>Momentum</title>
+</head>
+<body>
+  <main role="main" class="main">
+    <h1 class="ir_text">Momentum</h1>
+
+    <section class="section-login">
+      <form id="login-form" class="hidden">
+        <div class="inp_txt_wrap">
+					<label for="inp-login">What is your name?</label>
+					<input type="text" id="inp-login" name="inp_txt" class="inp_txt" title="What is your name?" required maxlength="15">
+				</div>
+        <button type="submit"><span>Log In</span></button>
+      </form>
+      
+      <h2 id="greeting" class="hidden">Hello.</h2>
+    </section>
+    
+    <section class="section-todo">
+      <strong id="clock">00:00:00</strong>
+      
+      <form id="todo-form">
+        <div class="inp_txt_wrap">
+          <label for="inp-todo">Write a To Do and Press Enter</label>
+          <input type="text" id="inp-todo" name="inp_txt" class="inp_txt" title="Write a To Do and Press Enter." required>
+        </div>
+      </form>
+      
+      <ul id="todo-list"></ul>
+      <div id="quote">
+        <span class="quote-text"></span>
+        <cite class="quote-cite"></cite>
+      </div>
+      <div id="weather">
+        <span class="weather-state"></span>
+        <span class="weather-locate"></span>
+      </div>
+    </section>
+  </main>
+
+  <!-- project javascript -->
+  <script src="js/greetings.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/todo.js"></script>
+  <script src="js/weather.js"></script>
+</body>
+</html>
