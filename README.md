@@ -63,7 +63,16 @@
 - [2021-09-16]
   - [개인 복습, 웹접근성연구소 메인 카피](./html/_project/03_wah-responsive/index.html)
 
-### JavaScript (preview)
+### JavaScript
+> 예습 내용과 겹칠 경우 추가 필기!
+<br>
+
+- [2021-09-24]
+  - [기초 문법 1(강의 소개) ~ 11(형변환)](./javascript/00_javascript-summary.md#JavaScript%3F)
+  - 내부 실습 js 파일(main-01.js ~ main-12-casting.js)
+<br>
+<br>
+
 #### 바닐라 JS로 크롬 앱 만들기
 <cite><a href="https://nomadcoders.co/javascript-for-beginners">by nomadcoders</a></cite>
 <br>
@@ -121,6 +130,7 @@
 <br>
 
 #### 바닐라 JS 챌린지
+##### 2단계 종료 후 삭제 예정
 <cite><a href="https://nomadcoders.co/vanillajs-challenge">by nomadcoders</a></cite>
 <br>
 
@@ -129,6 +139,8 @@
 - [2021-09-22] : Quiz 03
 - [2021-09-23]
   - [Coding 01](./javascript/challenge-vanilla/210923/index.html)
+- [2021-09-24]
+  - [Coding 02](./javascript/challenge-vanilla/210924/index.html)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

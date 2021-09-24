@@ -4,6 +4,54 @@
 ### JavaScript?
 > 자바 스크립트는 **모든 브라우저에 내장**되어있고 프론트엔드 개발자가 사용할수 있는 유일한 프로그래밍 언어이다.
 
+- 객체(Object) 기반의 스트립트 프로그래밍 언어.
+- ECMAScript 사양을 준수하는 범용 스크립팅 언어.
+- 웹의 동적 동작을 구현하기 위해 제작
+- 자바와 직접적인 연관은 없다.
+
+<br>
+
+### 입출력(I/O)
+- 운영체제에서 대표적 입출력은 **표준 입력, 표준 출력, 표준 오류 출력**이 있음
+- 표준 입력(Standard-In)
+  - (일반적으로) 키보드의 응답을 받아 입력
+  - 데이터를 추가
+  - 알고리즘에서는 문제의 Testcase 입력을 위해 사용
+- 표준 출력(Standard-Out)
+  - (일반적으로) 모니터에 문자열로 출력
+  - 실행 상태 혹은 실행 결과를 보고 판단
+  - 알고리즘에서는 문제의 정답 확인, 디버깅 용으로 사용
+
+<br>
+
+### 코드 구성
+- 다수의 표현식으로 하나의 명령문이 만들어지며, 명령문으로 프로그램이 수행
+- 하나의 명령문 끝은 개행 문자 혹은 세미콜론(권장!)으로 표시.
+
+<br>
+
+> [code, main-01.js](zerobase/main-01.js)
+
+<br>
+
+#### 식별자
+- 대소문자 구별, 유니코드 문자셋 이용.
+- 식별자 규칙
+  - 키워드 사용 불가
+  - 숫자로 시작 불가
+  - 특수문자는 _, $만 허용
+  - 공백 사용 불가
+<br>
+
+> [code, main-02.js](zerobase/main-02-identifier.js)
+
+<br>
+
+#### 주석
+단일 주석은 `//`로, 다중 행 주석은 `/* */`로 작성한다.
+
+<br>
+
 ### console
 > console은 자바스크립트와 상호작용하기는 좋지만 긴 코드를 작성하기엔 적합하지 않으며, 유지되는 게 아니므로 테스트 용도로 사용함.
 
@@ -15,6 +63,9 @@ alert('hi')
 // console.log(1+1)
 1+1
 ```
+
+<br>
+<br>
 
 ## 자바스크립트 객체
 자바스크립트의 객체는 크게 내장 객체, 브라우저 객체 모델(BOM), 문서 객체 모델(DOM)로 나누어 볼 수 있음.
@@ -31,16 +82,37 @@ alert('hi')
 - RegExp() : 정규 표현 객체
 
 <br>
+
 - 브라우저 객체 : 브라우저에 계층적으로 내장되어 있는 객체들을 의미.
   - window, screen, location, history, navigator, console 객체 등이 있음.
 - 문서 객체 : HTML의 문서 구조를 의미.
   - 최상위 객체로 `<html>`이 있고, 하위 객체로 `<head>` 와 `<body>`가 있음. 이하 나머지 요소들도 객체임.
 
 <br>
-<br>
 
 ### 변수(variable)
 - 값을 저장하거나 유지하는 역할을 함.
+- **변경 가능한 값**을 저장하기 위한 기억공간
+- 사용하기 전 반드시 선언 필요!
+- 중복해서 선언 불가능.
+- `let`을 통해 선언.
+  - ```javascript
+      let a = 5;
+      let b = 2;
+      let myName = "Sunny";
+      console.log(a+b);
+      console.log(a*b);
+      console.log(a/b);
+      console.log('hello ' + myName);
+      myName = "Sunny-as";
+      console.log('my name is '+ myName);
+    ```
+<br>
+
+### 상수(constant)
+- **변경 불가능한 값**을 저장하기 위한 기억공간
+- 사용하기 전 반드시 선언 필요!
+- 중복해서 선언 불가능.
 - `const`(상수; constant) 를 통해 선언.
   - 상수 : 바뀌지 않는 값
   - ```javascript
@@ -54,34 +126,245 @@ alert('hi')
       console.log(a/b);
       console.log('hello ' + myName);
     ```
-- 혹은 `let`을 통해 선언.
-  - ```javascript
-      let a = 5;
-      let b = 2;
-      let myName = "Sunny";
-      console.log(a+b);
-      console.log(a*b);
-      console.log(a/b);
-      console.log('hello ' + myName);
-      myName = "Sunny-as";
-      console.log('my name is '+ myName);
-    ```
 
 > **[const와 let의 차이점]**
 > `const`는 상수로 변하지 않는 값에 사용
 > `let`은 새로운 값을 대입할 수 있는 변수에 사용.
+```javascript
+// 선언 후 할당
+let hi;
+hi = "hello";
+```
+```javascript
+// 선언과 동시에 초기화
+let halo = "Hello!";
+```
+```javascript
+// 한 줄에 여러 변수 선언과 초기화
+let name = "john", age = 13, msg = 'hello';
+```
+```javascript
+// 상수는 보통 대문자 표기
+const TESTCASE = 5;
+const BIRTHDAY = '2000.1.1';
+```
+<br>
+
+> [code, main-03.js](zerobase/main-03-variable.js)
+
+<br>
+<br>
+
+### 호이스팅(Hosting)
+- 코드에 선언된 변수 및 함수를 유효한 범위의 코드 상단으로 끌어올리는 작업
+- var로 선언한 변수 및 함수만 위로 올려지고, 할당은 올려지지 않는다.
+- let/const로 선언한 변수, 상수, 함수에서는 호이스팅이 발생하지 않으니 let과 const 사용을 지향한다.
+
+```javascript
+// var
+console.log(name); // output : undefined
+var name = "john";
+console.log(name); // output : john
+```
+```javascript
+// let / const
+// ReferenceError : Cannot access 'name_2' before initialization
+console.log(name_2);
+let name_2 = "john";
+```
+<br>
+
+> [code, main-04.js](zerobase/main-04-hosting.js)
+
+<br>
+<br>
+
+### 자료형
+- 원시타입
+  - Boolean : 논리적 값으로 true, false
+  - null : 존재하지 않거나 유효하지 않은 주소 표시
+  - undefined : 선언 후 값을 할당받지 않은 변수
+  - Number : 정수, 실수 등의 숫자. 정수의 한계는 +-2<sup>53</sup>
+  - String : 글자들을 표현하는 문자열, 빈 문자열
+  - Symbol : 문자열과 함께 객체 property로 사용하며 ES6에서 추가됨
+- 객체타입
+  - Object : 두개 이상의 복잡한 개체 저장 가능.
+<br>
+
+> [code, main-05.js](zerobase/main-05-object01.js)
 
 <br>
 <br>
 
 ### Boolean
+- 논리적 값을 표현하는 자료형
+- 참인 true와 거짓인 false의 두가지 값만 존재한다
+- 주로 조건문 등에서 동작 판단의 기준으로 사용된다.
 - 0, -0, null, false, NaN, undefined, 빈 문자열 은 false로 취급된다.
+
 ```javascript
 const amIFat = null; // null : 절대 자연적으로는 생기지 않음. 아무것도 없다는 걸 의도적으로 표현한 것.
 let something; // undefined : 변수는 있지만 정의되지 않은 상태
 const isHere = true; // Boolean : true or false
 console.log(amIFat, something);
 ```
+<br>
+
+> [code, main-06.js](zerobase/main-06-boolean.js)
+
+<br>
+<br>
+
+### null & undefined
+- null
+  - 비어있다는 의미로 표현됨
+  - 존재하지 않는, 비어있는, 알 수 없는 값을 나타내는 데 사용.
+- undefined
+  - 값이 할당되지 않은 상태
+  - 변수 선언 후 초기화 하지 않으면 undefined가 할당됨.
+
+```javascript
+const amIFat = null; // null : 절대 자연적으로는 생기지 않음. 아무것도 없다는 걸 의도적으로 표현한 것.
+let something; // undefined : 변수는 있지만 정의되지 않은 상태
+```
+<br>
+
+> [code, main-07.js](zerobase/main-07-null_undefined.js)
+<br>
+<br>
+
+### number
+- number는 정수, 소숫점 등 숫자를 표현하는 자료형
+- 일반적 숫자 외에 Infinity, -Infinity, NaN(Not a Number) 같은 특수 숫자 값을 포함
+- number에서는 2<sup>53</sup>-1보다 큰 값을 사용할 수 없으며, 더 큰 정수를 다루면 bigint 자료형 사용 필요
+
+<br>
+
+> [code, main-08.js](zerobase/main-08-number.js)
+<br>
+<br>
+
+### string
+- string은 문자, 문자열을 표현하는 자료형
+- 3가지 종류 따옴표로 표현 가능
+  - `"hello"`(큰 따옴표), `'hello'`(작은 따옴표), <code>`hello`</code>(백틱, backtick)
+
+<br>
+
+> [code, main-09.js](zerobase/main-09-string.js)
+
+<br>
+<br>
+
+### Objects
+- 다수의 원시 자료형을 포함하거나 복잡한 개체(entity)를 표현하는 자료형
+- Object() 혹은 중괄호`{}`로 생성
+- 객체 안의 속성(property)는 `이름:값`(key:value) 으로 표현하고, 속성과 속성사이는 `,`로 구분함.
+  - 접근은 object.key 형태로 접근/
+<br>
+
+```javascript
+const player = {
+  name: 'sunny',
+  points: 10,
+  fat: true,
+}
+console.log(player);
+console.log(player.name);
+console.log(player['name']);
+player.fat = false;
+console.log(player);
+player.lastName = 'potato';
+```
+
+<br>
+
+> [code, main-10.js](zerobase/main-10-object.js)
+
+<br>
+<br>
+
+### Objects 복사 문제점
+- 오브젝트의 값을 복사할 떄는 대상이 복사되는 게 아니라 주소 값만 복사됨
+- 대상 전체를 복사하려면 **얕은 복사(Shallow copy), 깊은 복사(Deep copy)**를 통해 가능
+
+<br>
+
+> [code, main-10-2.js](zerobase/main-10-2-object_problem.js)
+
+<br>
+<br>
+
+### 얕은 복사
+- for문 사용
+  - ```javascript
+      let admin = {}
+
+      for(let key in user){
+        admin[key] = user[key];
+      }
+      ```
+- Object.assign() 함수 사용
+  - ```javascript
+      let admin = Object.assign({}, user);
+      ```
+- 전개연산자 사용(ES6부터 지원)
+  - ```javascript
+      let admin = { ...user } // user 내의 모든 필드값을 전개시킨다.
+                              // {user.name, user.age}
+      ```
+
+<br>
+
+> [code, main-11.js](zerobase/main-11-shallow_copy.js)
+
+<br>
+<br>
+
+#### 얕은 복사 문제점
+- 객체 내 또 다른 객체가 있다면 복제되지 않음
+- 너무 복잡해지기 때문..
+
+```javascript
+let user = {
+  name : "john",
+  age : 25,
+  size: {
+    height:180,
+    weight:70,
+  }
+};
+```
+
+<br>
+<br>
+
+### 깊은 복사
+- 재귀함수 이용
+- JSON 객체를 이용
+  - stringify는 객체를 문자열로 변환 > 원본 객체와의 참조가 끊김!
+  - ```javascript
+      let admin = JSON.parse(JSON.stringify(user));
+      ```
+
+<br>
+
+> [code, main-11-2.js](zerobase/main-11-2-deep_copy.js)
+
+<br>
+<br>
+
+### 형변환
+- 자바스크립트는 *느슨한/동적 타입 언어*로, **자료형을 명시적으로 선언할 필요가 없는 언어**다
+- 연산자로 인한 계산이나 변수에 전달되는 값은 자동으로 **암묵적** 형 변환을 수행한다.
+- 강제적 형 변환을 위해서는 자료형 함수를 이용해 **명시적** 형 변환을 수행한다.
+  - Number
+    - 정수변환 : parseInt(피연산자)
+    - 실수변환 : parseFloat(피연산자)
+
+<br>
+
+> [code, main-12.js](zerobase/main-12-casting.js)
 
 <br>
 <br>
@@ -109,27 +392,6 @@ const daysOfWeek = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 console.log(daysOfWeek[4]);
 // Add one more day to the array
 daysOfWeek.push('sun');
-```
-
-<br>
-<br>
-
-### Objects
-객체 안의 속성(property)는 `이름:값`(name:value) 으로 표현하고, 속성과 속성사이는 `,`로 구분함.
-<br>
-
-```javascript
-const player = {
-  name: 'sunny',
-  points: 10,
-  fat: true,
-}
-console.log(player);
-console.log(player.name);
-console.log(player['name']);
-player.fat = false;
-console.log(player);
-player.lastName = 'potato';
 ```
 
 <br>

@@ -1,0 +1,10 @@
+body {
+  background: yellow;
+  color: #fff;
+}
+body.bg-purple {
+  background: purple;
+}
+body.bg-blue {
+  background: blue;
+}
