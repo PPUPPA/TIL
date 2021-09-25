@@ -369,6 +369,295 @@ let user = {
 <br>
 <br>
 
+### 연산자
+- 데이터를 처리하여 결과를 산출할 목적으로 사용되는 문자
+- 피연산자 : 연산의 대상 값
+  - 개수에 따라 단항/이항/삼항 연산자로 나뉨
+  - 단항 연산자
+    - 부호 연산자(+,-), 증감 연산자(++,--), 논리 연산자(!), 비트 연산자(~)
+  - 이항 연산자
+    - **산술 연산자**(+,-,*,/,%), **대입 연산자**(=,+=,-=), 비교 연산자(==,!=), 논리 연산자(&&,||)
+  - 삼항 연산자
+    - (조건식) ? 참일 경우의 식 : 거짓일 경우의 식
+
+<br>
+
+> [연산자 우선순위, MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+<br>
+<br>
+
+#### 산술 연산자
+수학적 계산을 위해 제공하는 연산자
+
+<br>
+
+> [code, main-13.js](zerobase/main-13-arithmetic_operator.js)
+
+<br>
+<br>
+
+#### 대입 연산자
+계산한 결과를 변수에 저장하기 위한 연산자
+
+<br>
+
+> [code, main-13-2.js](zerobase/main-13-2-assignment_operator.js)
+
+<br>
+<br>
+
+##### 복합 대입 연산자
+산술 연산자로 피연산자를 계산해 결과값을 한번에 대입 시켜주는 연산자
+
+<br>
+
+> [code, main-13-3.js](zerobase/main-13-3-assignment_operators.js)
+
+<br>
+<br>
+
+##### 증가/감소 연산자
+1만큼 증가시키거나 감소시킬 때 사용되는 연산자
+- 증가연산자 : ++(피연산자), (피연산자)++;
+- 감소연산자 : --(피연산자), (피연산자)--;
+ - 연산자를 앞에 쓰는 경우, 바로 그 행에서 업데이트가 되기 때문에 기준 값과 피연산자 모두 1이 증감됨.
+
+<br>
+
+> [code, main-13-4.js](zerobase/main-13-4-in-decrement_operator.js)
+
+<br>
+<br>
+
+#### 비교 연산자
+좌항과 우항의 피연산자를 비교한 후 결과값을 논리적 자료형(Boolean)으로 반환하는 연산자.
+- a > b
+- a < b
+- a >= b
+- a <= b
+- a == b : a와 b가 같으면 true, 아니면 false (5 == '5' //true)
+- a != b : a와 b가 같지 않으면 true, 아니면 false (5 != '5' //false)
+- a === b : a와 b가의 자료형과 값이 같으면 true, 아니면 false (5 === '5' //false)
+- a !== b : a와 b가의 자료형과 값이 같지 않으면 true, 아니면 false (5 === '5' //true)
+
+<br>
+
+> [code, main-13-5.js](zerobase/main-13-5-comparison_operator.js)
+
+<br>
+<br>
+
+##### 논리 연산자
+좌항과 우항의 피연산자 간 논리 값을 연산하여 참, 거짓을 결과로 얻는 연산자
+- a && b : a와 b가 모두 true면 true, 아니면 false
+  - a가 b보다 작으면 true, 아니면 false
+- a || b : a와 b 중 하나 이상이 true면 true, 아니면 false
+  - a가 b보다 크면 true, 아니면 false
+- !a : not. a가 true의 값을 가지고 있으면 false를 반환, false값을 가지고 있다면 true 반환.
+
+<br>
+
+> [code, main-13-6.js](zerobase/main-13-6-logical_operator.js)
+
+<br>
+<br>
+
+### Scope
+- 변수 혹은 상수에 접근할 수 있는 범위
+- 모듈/함수 내 코드에서 동일한 변수 사용시 간섭을 줄이는 용도
+- Global Scope : 전역에 선언되어 어디서든 적븐 가능
+- Local Scope(block, function level scope) : 특정 지역(`{}`)에 선언되어 해당지역 내에서 접근 가능
+
+<br>
+
+> [code, main-14.js](zerobase/main-14-scope.js)
+
+<br>
+<br>
+
+### Conditionals
+#### if-else
+`if`, `else if`, `else` 를 사용한 조건문.
+- 조건식에 맞을 경우 `{}` 안의 명령문을 수행
+- 단 단일 실행문의 경우 중괄호 생략 가능.
+- 알고리즘에서 논리적 비교를 할 때 사용되는 조건식
+- 조건 내에 여러 조건을 함께 체크할 수 있다.
+  - `&&`(and) : 여러 조건을 동시에 만족해야 함.
+  - `||`(or) : 여러 조건 중 하나만 만족해도 됨.
+-
+
+```javascript
+// else 생략 가능
+if(condition){
+  // condition === true
+}else{
+  // condition === false
+}
+```
+<br>
+
+**[ 조건문 예제 ]**
+
+```javascript
+const age = parseInt(prompt("How old are you?"));
+if(isNaN(age) || age < 0){
+  console.log("Please write a real positive number.");
+}else if(age < 18){
+  console.log("You are too young.");
+}else if(age >= 18 && age <= 50){
+  console.log("You can drink.")
+}else if(age > 50 && age <= 80){
+  console.log("You should exercise.");
+}else if(age === 100){
+  console.log("Wow. You are wise.")
+}else if(age > 80){
+  console.log("You can do whatever you want.")
+}
+```
+<br>
+
+> [code, main-15.js](zerobase/main-15-conditionals.js)
+
+> prompt는 구형이라 사용하지 않는 추세임.
+> 1. 커스텀 불가. 2. 브라우저나 사용자가 막을 수 있음. 3. 값 입력 전까지 로딩을 중지함.
+>
+> parseInt : String -> Number 타입 변환
+>
+> isNaN 함수 : boolean 값을 리턴함. (true : NaN, false : Number)
+
+<br>
+<br>
+
+#### 3항연산자
+- if-else를 대체하여 사용가능
+- 3항연산자 : 변수 = (조건식) ? 참일 때의 값 : 거짓일 때의 값
+```javascript
+let age = 20;
+msg_another = age < 19 ? "The user is not an adult." : "The user is an adult.";
+console.log(msg_another);
+```
+
+<br>
+
+> [code, main-15-2.js](zerobase/main-15-2-ternary_operator.js)
+
+<br>
+<br>
+
+#### switch
+- 표현식을 평가하여 그 값이 일치하는 case를 실행하는 조건문
+- switch, case, break, default 키워드를 통해 구성.
+- 일반적으로 하나의 케이스만 수행되도록 case문의 끝을 break로 사용함.
+```javascript
+switch (ch){
+  case 1:
+    statements;
+    break;
+  case 2:
+    statements;
+    break;
+  case 3:
+    statements;
+    break;
+  default:
+    statements;
+    break;
+}
+```
+
+<br>
+
+> [code, main-15-3.js](zerobase/main-15-3-switch.js)
+
+<br>
+<br>
+
+### 반복문(iteration)
+#### for
+`선언문`, `조건문`, `중감문` 으로 이루어진 반복문
+- 조건문이 fail되기 전까지 반복 수행
+- 선언문, 조건문, 증감문 자리에 공백 입력 가능
+  - 증감문에는 `;`을 입력하지 않음
+```javascript
+for(선언문; 조건문; 증감문){
+  // 반복할 코드 블록
+}
+```
+
+<br>
+<br>
+
+##### 2중 for문
+```javascript
+for (let i=0;i<3;i++){
+  for(let j=0;j<3;j++){
+    console.log(`${i} + ${j} = ${i+j}`);
+  }
+}
+// 내부 for문이 전부 돈 후 다시 바깥 for문이 동작하는 형태
+```
+
+<br>
+
+##### for in 문
+- 객체의 key, value 형태를 반복하여 수행하는데 최적화된 유형
+- 첫번째부터 마지막까지 객체의 키 개수만큼 반복
+
+<br>
+
+##### for of 문
+- Collection 객체 자체가 Symbol.iterator속성(property)을 가지고 있어야 동작 가능
+- ES6에 새로 추가된 Collection 기반의 반복 구문
+
+> [code, main-16.js](zerobase/main-16-for_iteration.js)
+
+<br>
+<br>
+
+#### While
+- 조건이 참일 때 코드 블록을 반복 수행하는 반복문
+- for문에 비해 선언문과 증감문 없이 반복하며 무한 반복 등의 수행 시 주로 사용
+- 조건문을 코드블록보다 아래로 옮긴 do ... while 문도 존재(최소 한번 수행이 필요한 경우)
+```javascript
+// while
+while(조건문){
+  // 반복할 코드 블록
+}
+```
+```javascript
+// do ... while
+// 조건을 알기 전에 1회 먼저 실행(최소 한번의 실행) 후 조건 확인 후 반복
+do{
+  // 반복할 코드 블록
+}
+while(조건문);
+```
+
+<br>
+
+> [code, main-16-2.js](zerobase/main-16-2-while.js)
+
+<br>
+<br>
+
+#### 반복문 제어
+- break
+  - 반복문 수행 시 코드 블록을 탈출하는 용도로 사용(중지)
+  - 다중 반복문일 경우 가장 안쪽의 반복문을 종료함
+  - Label을 통해 다중반복문을 한번에 종료 가능
+    - Label : 반복문 앞에 콜론과 함께 쓰이는 식별자
+    - **프로그램 가독성을 줄이고, 로직을 망가뜨릴 수 있어 사용을 권장하지 않음**.
+- continue
+  - 반복문 수행 시 코드블록을 해당 라인에서 중지하고, 블록코드를 종료시킨 후 반복문 내 명시된 조건 판단(스킵)
+
+<br>
+
+> [code, main-16-3.js](zerobase/main-16-3-break_continue.js)
+
+<br>
+<br>
+
 ### Array
 기본적으로는 `new` 키워드와 `Array()` 생성자 함수를 사용하여 배열 인스턴스(객체)를 생성한다.
 - 배열은 값을 순서대로 나열한 목록이며, 0부터 시작하는 색인(index)값을 통해 배열안에 값을 저장하고 가져다 사용한다.
@@ -425,49 +714,6 @@ player.sayHello('lynn');
 <br>
 <br>
 
-### Conditionals
-`if`, `else if`, `else` 를 사용한 조건문.
-- 조건 내에 여러 조건을 함께 체크할 수 있다.
-  - `&&`(and) : 여러 조건을 동시에 만족해야 함.
-  - `||`(or) : 여러 조건 중 하나만 만족해도 됨.
-
-```javascript
-// else 생략 가능
-if(condition){
-  // condition === true
-}else{
-  // condition === false
-}
-```
-<br>
-
-**[ 조건문 예제 ]**
-
-```javascript
-const age = parseInt(prompt("How old are you?"));
-if(isNaN(age) || age < 0){
-  console.log("Please write a real positive number.");
-}else if(age < 18){
-  console.log("You are too young.");
-}else if(age >= 18 && age <= 50){
-  console.log("You can drink.")
-}else if(age > 50 && age <= 80){
-  console.log("You should exercise.");
-}else if(age === 100){
-  console.log("Wow. You are wise.")
-}else if(age > 80){
-  console.log("You can do whatever you want.")
-}
-```
-
-> prompt는 구형이라 사용하지 않는 추세임.
-> 1. 커스텀 불가. 2. 브라우저나 사용자가 막을 수 있음. 3. 값 입력 전까지 로딩을 중지함.
->
-> parseInt : String -> Number 타입 변환
->
-> isNaN 함수 : boolean 값을 리턴함. (true : NaN, false : Number)
-<br>
-<br>
 
 ### Document
 자바스크립트에는 document라는 오브젝트가 이미 내장되어 있고, 해당 html에 접근할 수 있음.
