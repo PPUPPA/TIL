@@ -71,10 +71,14 @@
   - [기초 문법 1(강의 소개) ~ 11(형변환)](./javascript/00_javascript-summary.md#JavaScript%3F)
     - 내부 실습 js 파일(main-01.js ~ main-12-casting.js)
 - [2021-09-25]
-  - [기초 문법 12(산술대입 연산자) ~ 21(반복문 연습문제)](./javascript/00_javascript-summary.md#JavaScript%3F)
+  - [기초 문법 12(산술대입 연산자) ~ 21(반복문 연습문제)](./javascript/00_javascript-summary.md#%EC%97%B0%EC%82%B0%EC%9E%90)
     - 내부 실습 js 파일(main-13-arithmetic_operator.js ~ main-16-3-brak_continue.js)
     - [조건문 연습문제](./javascript/15-test.js)
     - [반복문 연습문제](./javascript/16-test.js)
+- [2021-09-26]
+  - [기초 문법 22(함수) ~ 25(함수 연습문제)](./javascript/00_javascript-summary.md#Function)
+    - 내부 실습 js 파일(main-17-function.js ~ main-17-3-callback_function.js)
+    - [함수 연습문제](./javascript/17-test.js)
 <br>
 <br>
 

@@ -658,6 +658,183 @@ while(조건문);
 <br>
 <br>
 
+### Function
+- 반복해서 사용할 수 있는 코드 조각.
+- 다수의 명령문을 코드 블록으로 캡슐화해서 여러번 실행할 수 있게 만들어줌.
+- 유사한 동작을 묶어 범용성이 확대됨
+- 정의 부분과 호출 부분으로 구성.
+- 함수는 가급적 한가지 일만 하며, 매개변수는 최대 3개 이내로 작성을 권장.
+- 매개변수와 return값은 필요 시 입력한다.
+<br>
+- 인수(argument) : 함수를 실행하는 동안 어떤 정보를 함수에 보낼 수 있는 방법.
+
+<br>
+
+```javascript
+//함수 이름(매개변수;parameter)
+function sayHello(nameOfPerson, age){
+  console.log('Hello my name is ' + nameOfPerson + ' and I\'m ' + age);
+}
+// 함수 호출(인자;argument)
+sayHello('sunny', 26);
+sayHello('dada', 22);
+```
+```javascript
+const player = {
+  name:'sunny',
+  sayHello: function(otherPersonsName){
+    console.log('hello '+otherPersonsName+' nice to meet you!');
+  }
+}
+console.log(player.name);
+player.sayHello('lynn');
+```
+
+<br>
+<br>
+
+#### 함수 정의
+1. 함수 선언식
+  -  ```javascript
+      /*
+      function func(arg1, arg2, ...argN){
+        expression;
+      }
+      */
+      function add(x, y){
+        return x+y;
+      }
+      ```
+2. 함수 표현식
+  -  ```javascript
+      /*
+      const func = function (arg1, arg2, ...argN){
+        expression;
+      }
+      */
+      const add = function(x, y){
+        return x+y;
+      }
+      ```
+3. 화살표 함수
+  -  ```javascript
+      /*
+      const func = (arg1, arg2, ...argN) => expression;
+      */
+      const add = (x,y) => x+y;
+      ```
+
+<br>
+<br>
+
+#### 함수 호출
+- 매개변수와 인수의 개수가 일치하는지 확인하지 않음!
+- ES6에서 도입된 기본값을 통해 undefined 변수가 들어올 경우 값 초기화 지정 가능.
+<br>
+
+1. default value (권장)
+  -  ```javascript
+      function print_add(x,y=10){
+        // y의 기본값 : 10
+        console.log(x+y);
+      }
+      print_add(10,20,30); // 30
+      print_add(10,20); // 30
+      print_add(10); // 20
+      print_add(); // NaN
+      ```
+2. dynamic parameters
+  -  ```javascript
+      function print_min(){
+        // console.log(arguments);
+        console.log(arguments[0] - arguments[1]);
+      }
+      print_min(10,20,30); // -10
+      print_min(10,20); // -10
+      print_min(10); // NaN
+      print_min(); // NaN
+      ```
+
+<br>
+<br>
+
+#### 함수 반환
+`return` 뒤의 코드는 수행되지 않으며 `default return value`는 `undefined`
+
+<br>
+
+> [code, main-17.js](zerobase/main-17-function.js)
+
+<br>
+<br>
+
+#### 재귀 함수
+- 함수 스스로 자신을 참조해 호출
+  - 동일한 코드가 계속적으로 수행되는 함수 호출 방법
+- 특정 조건이 됐을 때 자신을 그만 호출되도록 제한하는 `exit code`가 필요함
+```javascript
+function recurse(){
+  // function code
+  recurse();
+}
+recurse();
+```
+
+<br>
+
+> [code, main-17-2.js](zerobase/main-17-2-recursive_function.js)
+
+<br>
+<br>
+
+#### 콜백 함수
+- 콜백함수 : 다른 함수의 매개변수로 전달되어 수행되는 함수
+- 고차함수 : 매개변수를 통해 함수를 받아 호출하는 함수
+```javascript
+// 콜백함수
+function callback_func(){
+  console.log("I'm callback function");
+}
+// 고차함수
+function higher_order_func(callback){
+  console.log("I'm higher-order function");
+  callback();
+}
+higher_order_func(callback_func); // 고차함수가 콜백함수 호출
+```
+
+<br>
+
+> [code, main-17-3.js](zerobase/main-17-3-callback_function.js)
+
+<br>
+<br>
+
+##### call by *
+- call by value
+  - 값에 의한 복사
+  - 함수 내에서 매개 변수 값을 변경시켜도 **원본 데이터에 영향이 없음**
+  - **원시타입**을 매개변수로 넘겼을 때 발생
+  - ```javascript
+      let a = 1;
+      let add = function(b){b=b+1;} // callee
+      add(a); // caller
+      console.log(a); // 1
+      ```
+- call by reference
+  - 주소에 대한 복사
+  - 함수 내에서 매개 변수 값을 변경시키면 **원본 데이터도 영향을 받음**
+  - **객체타입**을 매개변수로 넘겼을 때 발생
+  - ```javascript
+      var a = {v:1};
+      var add = function(b){b.v=b.v+1;}; // callee
+      add(a); // caller
+      console.log(a.v); // 2
+      ```
+
+<br>
+<br>
+
 ### Array
 기본적으로는 `new` 키워드와 `Array()` 생성자 함수를 사용하여 배열 인스턴스(객체)를 생성한다.
 - 배열은 값을 순서대로 나열한 목록이며, 0부터 시작하는 색인(index)값을 통해 배열안에 값을 저장하고 가져다 사용한다.
@@ -685,35 +862,6 @@ daysOfWeek.push('sun');
 
 <br>
 <br>
-
-### Function
-반복해서 사용할 수 있는 코드 조각. 어떤 코드를 캡슐화해서 여러번 실행할 수 있게 만들어줌.
-<br>
-- 인수(argument) : 함수를 실행하는 동안 어떤 정보를 함수에 보낼 수 있는 방법.
-
-<br>
-
-```javascript
-function sayHello(nameOfPerson, age){
-  console.log('Hello my name is ' + nameOfPerson + ' and I\'m ' + age);
-}
-sayHello('sunny', 26);
-sayHello('dada', 22);
-```
-```javascript
-const player = {
-  name:'sunny',
-  sayHello: function(otherPersonsName){
-    console.log('hello '+otherPersonsName+' nice to meet you!');
-  }
-}
-console.log(player.name);
-player.sayHello('lynn');
-```
-
-<br>
-<br>
-
 
 ### Document
 자바스크립트에는 document라는 오브젝트가 이미 내장되어 있고, 해당 html에 접근할 수 있음.
