@@ -727,6 +727,24 @@ player.sayHello('lynn');
 <br>
 <br>
 
+**[Arrow function]**
+화살표 함수. 함수를 간단하게 쓰는 방법
+<br>
+
+```javascript
+// 기존
+function sayHello(item){
+  console.log("This is the turn of", item);
+}
+parsedToDos.forEach(sayHello);
+
+// 화살표함수 이용
+parsedToDos.forEach((item) => console.log("This is the turn of", item));
+```
+
+<br>
+<br>
+
 #### 함수 호출
 - 매개변수와 인수의 개수가 일치하는지 확인하지 않음!
 - ES6에서 도입된 기본값을 통해 undefined 변수가 들어올 경우 값 초기화 지정 가능.
@@ -835,14 +853,168 @@ higher_order_func(callback_func); // 고차함수가 콜백함수 호출
 <br>
 <br>
 
+### method
+객체에 저장된 값이 함수인 경우, 이를 메서드라고 부름.
+<br>
+
+#### this
+메서드 내에서 객체 내부의 속성(property)에 접근할 수 있는 지시자
+
+<br>
+
+```javascript
+let obj = {
+  name: "John",
+  age: 27,
+  // method
+  hello_func(){
+    console.log("hello"+this.name);
+  },
+};
+```
+<br>
+
+> [code, main-18.js](zerobase/main-18-method.js)
+
+<br>
+<br>
+
+### Number
+- 10진수 외에도 16진수, 2진수, 8진수의 다양한 진수 활용
+  - 16진수(hexadecimal) : 0xFF
+  - 8진수(octal)        : 0o71
+  - 2진수(binary)       : 0b1101
+- 대표 상수 값
+  - [MAX|MIN]_VALUE
+    - MAX_VALUE : 지수로 표기되는 최대 양수값(`1.7976931348623157e+308`)
+    - MIN_VALUE : 지수로 표기되는 최소 양수값(`5e-324`)
+  - [MAX|MIN]_SAFE_INTEGER
+    - MAX_SAFE_INTEGER : 안전하게 표기되는 최대 양수값(`9007199254740991`)
+    - MIN_SAFE_INTEGER : 안전하게 표기되는 최소 음수값(`-9007199254740991`)
+  - [POSITIVE|NEGATIVE]_INFINITY, NaN
+    - POSITIVE_INFINITY : 무한대 양수값(`Infinity`)
+    - NEGATIVE_INFINITY : 무한대 음수값(`-Infinity`)
+    - NaN : Not a Number
+- 대표 메서드
+  - 문자열로 변환: `Number.toString()`, `String(Number)`, `Number+""`
+  - 특정 자리수까지 제한: `Number.toFixed()`, `Number.toPrecision()`
+    - `Number.toFixed()` : 소수 자리 수 제한
+    - `Number.toPrecision()` : 정수와 소수 자리수를 합한 길이로 제한
+  - 타입 확인 : `Number.isNaN()`, `Number.isFinite()`
+    - `Number.isNaN()` : NaN인지 확인
+    - `Number.isFinite()` : 정상적인 유한수인지 확인
+  - 형변환
+    - `Number.parseInt()`, `Number.parseFloat()`
+      - `Number.parseInt()` : 정수로 변환
+      - `Number.parseFloat()` : 실수로 변환
+
+<br>
+
+**[표기법]**
+- 지수 표기법(Exponential notation)
+  - 아주 큰 숫자나 아주 작은 숫자를 표기하기 위해 지수 표기법으로 0의 갯수를 대체 표기
+  - ```javascript
+      let billion_1 = 1000000000; // 10억
+      let billion_2 = 1e9; // 10억 (0 9개)
+      let us = 1e-6; // 0.000001micro sec, 왼쪽으로 6번 소숫점 이동
+      ```
+- 진법 표기법(Base N)
+  - 진법 표기를 지원하기 위해 0x(16진수), 0o(8진수), 0b(2진수)로 N진수 표기 가능
+  - ```javascript
+      console.log(0x0f); // 15
+      console.log(0o17); // 15
+      console.log(0b1111); // 15
+      ```
+
+<br>
+
+> [code, main-19.js](zerobase/main-19-number.js)
+
+<br>
+<br>
+
+### String
+- 길이에 상관없이 문자열 형태로 저장되는 자료형
+- 자바스크립트에는 글자 하나만 저장할 수 있는 char 자료형이 없음
+- 문자열은 페이지 인코딩 방식과 상관없이 항상 `UTF-16`
+- 대표 속성(property)과 메서드(method)
+  - 문자열 길이
+    - `String.length`
+  - 문자열 접근
+    - `String.chatAt(index)`, `String.chatCodeAt(index)`(아스키코드)
+  - 문자열 검색
+    - index : `String.indexOf()`, `String.lastIndexOf()`
+    - bool : `String.includes()`, `String.startsWith()`
+  - 문자열 변환
+    - `String.toUpperCase()`, `String.toLowerCase()`
+  - 문자열 치환
+    - `String.replace(origin_str, change_str)` : 처음 만나는 요소 문자열 치환(치환된 문자열 반환)
+    - `/치환문자열/gi`(g:전체,i:대소문자구분x) : 정규표현식 활용 문자열 치환, 치환문자열에 정규 표현식 기입
+  - 문자열 추출
+    - `String.slice()`, `String.substring()`, `String.substr()`
+    - 위치 기반 : `String.slice(시작인덱스(, 종료인덱스))`, `String.substring(시작인덱스(, 종료인덱스))`
+    - 길이 기반 : `String.substr(시작인덱스, 갯수)`
+  - 문자열 분할
+    - `String.split()`
+
+<br>
+
+**[문자 정의/표기]**
+- 정의
+  - `""`, `''`, <code>``</code>, `String()`
+- 표기
+  - `\n` : 줄바꿈
+  - `\r` : 줄바꿈
+  - `\\` : \
+  - `\t` : tab
+  - `\u{}` : unicode
+
+<br>
+
+> [code, main-20.js](zerobase/main-20-string.js)
+
+<br>
+<br>
+
 ### Array
 기본적으로는 `new` 키워드와 `Array()` 생성자 함수를 사용하여 배열 인스턴스(객체)를 생성한다.
 - 배열은 값을 순서대로 나열한 목록이며, 0부터 시작하는 색인(index)값을 통해 배열안에 값을 저장하고 가져다 사용한다.
+- 여러 개체(entity)값을 순차적으로 나열한 자료 구조(알고리즘 내 사용빈도 많음!!)
 - 배열의 값으로는 문자, 숫자, 불리언(Boolean), 개체, 배열, 함수 등 모든 것이 올 수 있다.
   - ```javascript
       nonsense = [1, 2,'hello', false, null, true, undefined, "sunny"]
     ```
 - `push(값)`를 통해 배열 끝에 요소 추가도 가능하다.
+- 대표 속성(property)과 메서드(method)
+  - 배열 크기 및 여부 배열 확인
+    - `Array.length`, `Array.isArray()`
+  - 배열 추가/삭제(LIFO)
+    - 뒤쪽에서 작용(Back) :  `Array.push()`, `Array.pop()`
+    - 앞쪽에서 작용(Front) : `Array.shift()`, `Array.unshift()`
+    - `Array.splice(index(,length))` : 인덱스 값 이후로 자름(length개만큼)(원본을 자름)
+    - `Array.slice(index(, end))` : 인덱스부터 종료 인덱스까지 잘라서 보여줌(별도 생성)
+    - `Array.concat(arg1, arg2 ...)` : 다중 배열 병합(별도 생성)
+  - 배열 탐색
+    - `Array.indexOf()` : index탐색(앞에서부터)
+    - `Array.lastIndexOf()` : index탐색(뒤에서부터)
+    - `Array.includes()` : 값 포함 여부 확인
+  - 배열 변형(callback 미사용)
+    - `Array.sort()` : 내림차순 정렬
+    - `Array.reverse()` : 오름차순 정렬
+    - `Array.join()` : 배열 변환
+      - `Array.join(separator)` : 배열 값을 문자열로 변환
+- 배열 반복문
+  - 다양한 반복문 문법을 통해 배열 요소에 접근 가능
+  - 반복문 문법 : `for length`(index접근), `for of`(element접근), `for in`(key접근)
+<br>
+
+**[배열의 실체]**
+- 자바스크립트에서 배열은 다른 언어에서 말하는 일반적 배열과 달리 *Hash 기반의 객체*
+- 메모리가 연속적인 밀집 배열(dense array)가 아닌 비연속적인 희소 배열(sparse array);
+
+<br>
+
+> 배열을 `delete array[index]`로 일부 요소를 삭제할 수 있으나, 삭제해도 배열 사이즈가 그대로인 문제점이 있어 잘 사용하지 않음!
 
 <br>
 <br>
@@ -859,6 +1031,11 @@ console.log(daysOfWeek[4]);
 // Add one more day to the array
 daysOfWeek.push('sun');
 ```
+
+<br>
+
+> [배열 / code, main-21.js](zerobase/main-21-array.js)
+> [배열 탐색과 변형 / code, main-21-2-search_transform.js](zerobase/main-21-2-search_transform.js)
 
 <br>
 <br>
@@ -1163,25 +1340,6 @@ if(savedToDos !== null){
   const parsedToDos = JSON.parse(savedToDos);
   parsedToDos.forEach(sayHello);
 }
-```
-
-<br>
-<br>
-<br>
-
-### Arrow function
-화살표 함수. 함수를 간단하게 쓰는 방법
-<br>
-
-```javascript
-// 기존
-function sayHello(item){
-  console.log("This is the turn of", item);
-}
-parsedToDos.forEach(sayHello);
-
-// 화살표함수 이용
-parsedToDos.forEach((item) => console.log("This is the turn of", item));
 ```
 
 <br>

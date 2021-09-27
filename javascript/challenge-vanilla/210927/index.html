@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+    .hidden{display:none;}
+
+    .random-title{margin:0 0 20px;}
+    .form-random_number{margin:0;}
+    .inp_num_wrap{margin:0;}
+    .inp_num_wrap input[type="number"]{width:100px;}
+    .inp_num-generate{margin-bottom:16px;}
+    .inp_num-generate label{font-weight:700;}
+
+    .result-number{margin:0;}
+    .result-game{display:block;font-weight:700;}
+  </style>
+</head>
+<body>
+  <h1 class="random-title">RanDom Number Game</h1>
+  <form class="form-random_number" name="form-random_number">
+    <div class="inp_num_wrap inp_num-generate">
+      <label for="num-generate">Generate a number between 0 and</label>
+      <input type="number" name="num-generate" id="num-generate" min="0" required>
+    </div>
+    <div class="inp_num_wrap inp_num-chose">
+      <label for="num-chose">Guess the number:</label>
+      <input type="number" name="num-chose" id="num-chose" min="0" disabled required>
+      <button class="btn-play" type="submit">Play!</button>
+    </div>
+  </form>
+  <div class="random-result hidden">
+    <p class="result-number"></p>
+    <strong class="result-game"></strong>
+  </div>
+
+  <script>
+    const HIDDEN_CLASSNAME = "hidden";
+
+    const generate_num = document.querySelector("#num-generate");
+    const chose_num = document.querySelector("#num-chose");
+    const result_wrap = document.querySelector(".random-result");
+    const result_num = document.querySelector(".random-result .result-number");
+    const result_game = document.querySelector(".random-result .result-game");
+    const formRandomNum = document.querySelector(".form-random_number");
+    
+    function set_num(){
+      if(generate_num.value !== ""){
+        chose_num.removeAttribute("disabled");
+        chose_num.setAttribute("max", generate_num.value);
+      }
+    }
+    function random_game(event){
+      event.preventDefault();
+
+      const random_num = Math.round(Math.random() * generate_num.value);
+      result_wrap.classList.remove(HIDDEN_CLASSNAME);
+      result_num.innerText = `You chose: ${chose_num.value}, the machine chose: ${random_num}.`;
+      if(Number(chose_num.value) == random_num) result_game.innerText = `You won!`
+      else result_game.innerText = `You lost!`;
+    }
+
+    setInterval(set_num, 500);
+    set_num();
+
+    formRandomNum.addEventListener("submit", random_game);
+  </script>
+</body>
+</html>

@@ -79,6 +79,9 @@
   - [기초 문법 22(함수) ~ 25(함수 연습문제)](./javascript/00_javascript-summary.md#Function)
     - 내부 실습 js 파일(main-17-function.js ~ main-17-3-callback_function.js)
     - [함수 연습문제](./javascript/17-test.js)
+- [2021-09-27]
+  - [기초 문법 26(method) ~ 32(배열탐색-변형)](./javascript/00_javascript-summary.md#method)
+    - 내부 실습 js 파일(main-18-method.js ~ main-21-2-search_transform.js)
 <br>
 <br>
 
@@ -151,6 +154,8 @@
 - [2021-09-24]
   - [Coding 02](./javascript/challenge-vanilla/210924/index.html)
 - [2021-09-25] : Quiz 04
+- [2021-09-27]
+  - [Coding 03](./javascript/challenge-vanilla/210927/index.html)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용
