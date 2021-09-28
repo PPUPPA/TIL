@@ -36,3 +36,33 @@ date.setDate(1);
 console.log(date);
 date.setDate(0);
 console.log(ms_year);
+
+let ms_parse = Date.parse("2020-03-31T00:00:00.000");
+
+console.log(ms_parse);
+console.log(new Date(ms_parse));
+
+console.log(new Date(Date.parse("2020-03-31T00:00:00.000Z")));
+
+// 벤치마크
+function dateSub(old_date, new_date){
+  return new_date - old_date;
+}
+
+function getTimeSub(old_date, new_date){
+  return new_date.getTime() - old_date.getTime();
+}
+
+function benchmark(callback_func){
+  let date_1 = new Date("2020-01-01");
+  let date_2 = new Date();
+
+  let start = Date.now();
+  for(let i=0;i<100000;i++){
+    callback_func(date_1, date_2);
+  }
+  return Date.now() - start;
+}
+
+console.log("dateSub: "+benchmark(dateSub)+"ms");
+console.log("getTimeSub: "+benchmark(getTimeSub)+"ms");

@@ -1366,7 +1366,55 @@ Math.floor(Math.random() * 10); // 0 - 10 의 정수
 
 <br>
 
+#### benchmark
+성능 측정
+- 벤치마크 측정 대상 함수 전후로 시간을 비교하여 알고리즘 성능 측정
+
+<br>
+
 > [code, main-27.js](zerobase/main-27-date.js)
+
+<br>
+<br>
+<br>
+
+#### N차원 배열
+- 배열(Array) 안에 N개 만큼의 배열이 존재하는 객체
+- 2/3차원 지도 정보, RGB를 저장하는 2차원 사진 파일 등을 표현할 때 활용 가능.
+- 2차원 배열은 array[N][M]으로 접근하며, 배열(Array) 전체를 push(), pop() 가능.
+
+<br>
+
+##### 2차원 배열 반복문
+- 이중 for loop를 사용한 2차원 배열 접근
+```javascript
+let array = [[101,102,103],[201,202,203],[301,302,303],];
+for(let i=0;i<array.length;i++){
+  for(let j=0;j<array[i].length;j++){
+    console.log(array[i][j]);
+  }
+}
+/* 101,102 ... 302,303 */
+```
+```javascript
+let fruits = [
+  ["strawberry",50],
+  ["banana",100],
+  ["ice",150],
+];
+for(let i=0;i<array.length;i++){
+  console.log(`fruit: ${fruits[i][0]}, amount: ${fruits[i][1]}`);
+}
+/*
+fruit: strawberry, amount: 50
+fruit: banana, amount: 100
+fruit: ice, amount: 150
+*/
+```
+
+<br>
+
+> [code, main-28.js](zerobase/main-28-nd_array.js)
 
 <br>
 <br>
