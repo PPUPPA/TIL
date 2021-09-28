@@ -23,6 +23,7 @@
   - 알고리즘에서는 문제의 정답 확인, 디버깅 용으로 사용
 
 <br>
+<br>
 
 ### 코드 구성
 - 다수의 표현식으로 하나의 명령문이 만들어지며, 명령문으로 프로그램이 수행
@@ -64,6 +65,7 @@ alert('hi')
 1+1
 ```
 
+<br>
 <br>
 <br>
 
@@ -154,6 +156,7 @@ const BIRTHDAY = '2000.1.1';
 
 <br>
 <br>
+<br>
 
 ### 호이스팅(Hosting)
 - 코드에 선언된 변수 및 함수를 유효한 범위의 코드 상단으로 끌어올리는 작업
@@ -178,6 +181,7 @@ let name_2 = "john";
 
 <br>
 <br>
+<br>
 
 ### 자료형
 - 원시타입
@@ -193,6 +197,7 @@ let name_2 = "john";
 
 > [code, main-05.js](zerobase/main-05-object01.js)
 
+<br>
 <br>
 <br>
 
@@ -214,6 +219,7 @@ console.log(amIFat, something);
 
 <br>
 <br>
+<br>
 
 ### null & undefined
 - null
@@ -230,6 +236,8 @@ let something; // undefined : 변수는 있지만 정의되지 않은 상태
 <br>
 
 > [code, main-07.js](zerobase/main-07-null_undefined.js)
+
+<br>
 <br>
 <br>
 
@@ -241,6 +249,8 @@ let something; // undefined : 변수는 있지만 정의되지 않은 상태
 <br>
 
 > [code, main-08.js](zerobase/main-08-number.js)
+
+<br>
 <br>
 <br>
 
@@ -253,6 +263,7 @@ let something; // undefined : 변수는 있지만 정의되지 않은 상태
 
 > [code, main-09.js](zerobase/main-09-string.js)
 
+<br>
 <br>
 <br>
 
@@ -283,6 +294,7 @@ player.lastName = 'potato';
 
 <br>
 <br>
+<br>
 
 ### Objects 복사 문제점
 - 오브젝트의 값을 복사할 떄는 대상이 복사되는 게 아니라 주소 값만 복사됨
@@ -292,6 +304,7 @@ player.lastName = 'potato';
 
 > [code, main-10-2.js](zerobase/main-10-2-object_problem.js)
 
+<br>
 <br>
 <br>
 
@@ -338,6 +351,7 @@ let user = {
 
 <br>
 <br>
+<br>
 
 ### 깊은 복사
 - 재귀함수 이용
@@ -353,6 +367,7 @@ let user = {
 
 <br>
 <br>
+<br>
 
 ### 형변환
 - 자바스크립트는 *느슨한/동적 타입 언어*로, **자료형을 명시적으로 선언할 필요가 없는 언어**다
@@ -366,6 +381,7 @@ let user = {
 
 > [code, main-12.js](zerobase/main-12-casting.js)
 
+<br>
 <br>
 <br>
 
@@ -475,6 +491,7 @@ let user = {
 
 <br>
 <br>
+<br>
 
 ### Conditionals
 #### if-else
@@ -572,6 +589,7 @@ switch (ch){
 
 <br>
 <br>
+<br>
 
 ### 반복문(iteration)
 #### for
@@ -655,6 +673,7 @@ while(조건문);
 
 > [code, main-16-3.js](zerobase/main-16-3-break_continue.js)
 
+<br>
 <br>
 <br>
 
@@ -804,6 +823,7 @@ recurse();
 
 <br>
 <br>
+<br>
 
 #### 콜백 함수
 - 콜백함수 : 다른 함수의 매개변수로 전달되어 수행되는 함수
@@ -825,6 +845,7 @@ higher_order_func(callback_func); // 고차함수가 콜백함수 호출
 
 > [code, main-17-3.js](zerobase/main-17-3-callback_function.js)
 
+<br>
 <br>
 <br>
 
@@ -852,9 +873,11 @@ higher_order_func(callback_func); // 고차함수가 콜백함수 호출
 
 <br>
 <br>
+<br>
 
 ### method
 객체에 저장된 값이 함수인 경우, 이를 메서드라고 부름.
+
 <br>
 
 #### this
@@ -876,6 +899,7 @@ let obj = {
 
 > [code, main-18.js](zerobase/main-18-method.js)
 
+<br>
 <br>
 <br>
 
@@ -932,6 +956,7 @@ let obj = {
 
 <br>
 <br>
+<br>
 
 ### String
 - 길이에 상관없이 문자열 형태로 저장되는 자료형
@@ -975,6 +1000,7 @@ let obj = {
 
 <br>
 <br>
+<br>
 
 ### Array
 기본적으로는 `new` 키워드와 `Array()` 생성자 함수를 사용하여 배열 인스턴스(객체)를 생성한다.
@@ -1006,6 +1032,7 @@ let obj = {
 - 배열 반복문
   - 다양한 반복문 문법을 통해 배열 요소에 접근 가능
   - 반복문 문법 : `for length`(index접근), `for of`(element접근), `for in`(key접근)
+
 <br>
 
 **[배열의 실체]**
@@ -1022,6 +1049,7 @@ let obj = {
 > `Array()` 생성자 함수와 `new` 키워드를 사용해 만든 인스턴스는 실제로는 복합 객체를 만들어낸다.
 > 따라서 typeof 연산자와 관련한 문제가 발생할 수 있으므로 가능하다면 리터널 문법을 권장한다.
 > 그리고 리터널이 빠르고 간편하게 작성할 수 있다.
+
 <br>
 
 ```javascript
@@ -1037,6 +1065,310 @@ daysOfWeek.push('sun');
 > [배열 / code, main-21.js](zerobase/main-21-array.js)
 > [배열 탐색과 변형 / code, main-21-2-search_transform.js](zerobase/main-21-2-search_transform.js)
 
+<br>
+<br>
+<br>
+
+### 고차함수
+- 하나 이상의 함수를 매개변수로 취하거나 함수를 결과로 반환하는 함수
+- 매개변수로 전달되는 함수는 [콜백함수](#콜백-함수)
+- 대표 배열 조작 메서드
+  - 임의 정렬 : Array.sort(callback function)
+    - 문제점 : 일의 자리가 4가 10의 자리보다 뒤쪽에 정렬
+    - 원인 : sort 메서드로 정렬될 때 배열의 요소가 일시적으로 문자열로 변경되어 발생
+      - ```javascript
+          let nums = [1,-1,4,0,2,3,10,20,12];
+          console.log(nums.sort()); // output : [-1,0,10,12,2,20,3,4]
+          console.log(nums.reverse()); // output : [4,3,20,2,12,10,1,0,-1]
+          ```
+    - 한계점 : 대소문자 구분 없이 정렬하고 싶지만, 대소문자 구분되어 정렬
+      - ```javascript
+          let fruits = ["apple", "Orange", "orange", "melon"]
+          console.log(fruits.sort()); // output : ["Orange","apple","melon","orange"]
+          console.log(fruits.reverse()); // output : ["orange","melon","apple","Orange"]
+          ```
+    - 고차함수 이용한 해결 : sort() 함수의 매개변수로 함수를 넣어 고차함수를 이용한 정렬 수행 가능
+      - ```javascript
+          let ascending_order = function(x,y){return x-y;};
+          let descending_order = function(x,y){return y-x;};
+          let nums = [1,-1,4,0,10,20,12];
+          console.log(nums.sort(ascending_order));
+          // output : [-1,0,1,4,10,12,20]
+          console.log(nums.sort(descending_order));
+          // output : [20,12,10,4,1,0,-1]
+          ```
+  - 반복 작업 : Array.forEach()
+    - `배열.forEach(실행할 내용);` 으로 작성.
+      - JavaScript는 지금 처리되고 있는 아이템을 그냥 제공함! 함수에서 item 키워드 활용!
+      - ```javascript
+          function sayHello(item){
+            console.log("This is the turn of", item);
+          }
+          ...
+          if(savedToDos !== null){
+            const parsedToDos = JSON.parse(savedToDos);
+            parsedToDos.forEach(sayHello);
+          }
+          ```
+  - 콜백함수 결과 배열 반환 : Array.map()
+    - 배열 요소별 함수 호출 및 결과를 배열로 반환 : Array.map(function(item,index,array){})
+    - item : 배열 요소, index : 배열 위치, array : 배열
+  - 조건 만족하는 하나의 값 반환 : Array.find()
+    - 콜백 함수의 조건을 만족하는, 단 하나의 값만 반환: Array.find(function(item,index,array){})
+    - item : 배열 요소, index : 배열 위치, array : 배열
+  - 조건 만족하는 값 배열로 반환 : Array.filter()
+    - 콜백 함수의 조건을 만족하는 값을 배열로 반환: Array.filter(function(item,index,array){})
+    - item : 배열 요소, index : 배열 위치, array : 배열
+    - 제외하기(걸러내기) 위한 함수.
+      - ```javascript
+          function sexyFilter(){
+            // Should return true if you want include item
+            // 전부 유지
+            // return true;
+            // 전부 삭제
+            return false;
+          }
+          [1,2,3,4].filter(sexyFilter);
+          sexyFilter(4)
+          ```
+      - ```javascript
+          function sexyFilter(item){
+            return item !== 3;
+          }
+          [1,2,3,4].filter(sexyFilter); // [1,2,4]
+          ```
+      - ```javascript
+          const arr = [1231,432423,54312,52342,523,1323,4122,3,12,34,323,345,221]
+          function sexyFunction(potato){
+            return potato <= 1000;
+          }
+          arr.filter(sexyFunction); // 523,3,12,34,323,345,221
+          ```
+      - ```javascript
+          const todos = [{"text":"asdf","id":1631944047326},{"text":"asfwaf","id":1631944048469},{"text":"asf","id":1631944228165}]
+          function sexyFunction(todo){
+            return todo.id !== 1631944047326;
+          }
+          todos.filter(sexyFunction);
+          ```
+  - 누적 결과 값 반환 : Array.reduce()
+    - 요소별 함수 수행 누적 결과값 반환 : Array.reduce(function(accumulator,item,index,array){})
+    - accumulator: 이전 함수 결과(initial로 초기값 설정 가능), item : 배열 요소, index : 배열 위치, array : 배열
+
+<br>
+
+> [code, main-22.js](zerobase/main-22-higher_order_function.js)
+
+<br>
+<br>
+<br>
+
+### 생성자함수
+- 유사한 객체를 다중으로 만들 때 사용되는 함수 (타 언어에서의 class 개념과 유사)
+- 일반적으로 생성자 함수의 첫 글자는 대문자로 시작
+- 생성자 함수로 객체 생성 시 `new` 연산자를 통해 객체 생성 (붕어빵 틀과 슈크림 붕어빵, 팥 붕어빵 등!)
+  - `new` 가 빠지면 생성자 함수가 생성되지 않으니 꼭! 같이 사용해야 함!
+  - `new.target` 속성(property)을 사용하여 new와 함께 호출했는지 확인 가능
+
+<br>
+
+```javascript
+// 오류
+function User(name){
+  console.log(new.target);
+  this.name = name;
+}
+// not use new keyword -> function
+let result_1 = User("john");
+console.log(result_1);
+/* output
+  undefined
+  undefined */
+// use new keyword -> constructor function
+let result_2 = new User("john");
+console.log(result_2);
+/* output
+  [Function: User]
+  User {name:'john'} */
+```
+```javascript
+// new가 없으면 생성자 함수를 붙여주는 코드
+function User(name){
+  if(!new.target){
+    return new User(name);
+  }
+  this.name = name;
+}
+let result_1 = User("john");
+console.log(result_1);
+// output: User{name:'john'}
+let result_2 = new User("john");
+console.log(result_2);
+// output: User{name:'john'}
+```
+
+<br>
+
+> [code, main-23.js](zerobase/main-23-constrctor_function.js)
+
+<br>
+<br>
+<br>
+
+### Collection
+- 구조 혹은 비구조화 형태로 프로그래밍 언어가 제공하는 값을 담을 수 있는 공간
+- 자바스크립트에서 제공하는 Collection
+  - Indexed Collection -> Array / Typed Array
+  - Keyd Collection -> Objects, Map, Set, Weak Map, Weak Set
+
+<br>
+
+#### Map
+- 다양한 자료형의 key를 허용하고, key-value 형태의 자료형을 저장 가능한 Collection
+- Map은 Object 대비 비교하면 다양한 key의 사용을 허용하고, 값의 추가/삭제 시 메서드를 통해 수행이 필요함.
+- 대표 속성(property) 및 메서드(method)
+  - 생성자 : new Map()
+  - 개수 확인 : Map.size
+  - 요소 추가 : Map.set(key, value)
+  - 요소 접근 : Map.get(key)
+  - 요소 삭제 : Map.delete(key)
+  - 전체 삭제 : Map.clear()
+  - 요소 존재 여부 확인 : Map.has(key)
+  - 그 밖의 메서드 : Map.keys(), Map.values(), Map.entires()
+
+##### Map 반복문
+- Collection 객체인 Map이 가지고 있는 iterator 속성을 이용, for of 구문을 통해 반복문 수행
+
+> [code, main-24.js](zerobase/main-24-map.js)
+
+<br>
+<br>
+<br>
+
+#### Set
+- value만을 저장하며 중복을 허용하지 않는 Collection
+- 대표 속성(property) 및 메서드(method)
+  - 생성자: new Set()
+  - 개수 확인: Set.size
+  - 요소 추가: Set.add(value)
+    - 다양한 자료형을 value로 사용 가능하며, `set.add` 호출 시 set이 반환되므로, **체이닝도 가능**하다.
+  - 요소 삭제: Set.delete(value)
+  - 전체 삭제: Set.clear()
+  - 요소 존재 여부 확인: Set.has(key)
+  - 그 밖의 메서드: Set.keys(), Set.values(), Set.entires()
+
+<br>
+
+##### Set 반복문
+- Collection 객체인 Set이 가지고 있는 iterator 속성을 이용, for of 구문을 통해 반복문 수행
+
+> [code, main-25.js](zerobase/main-25-set.js)
+
+<br>
+<br>
+<br>
+
+### Math
+- 표준 빌트인 객체로써, 수학적 연산을 위한 속성값과 메서드를 제공하는 객체.
+- Math는 생성자 함수가 아니며, 모든 속성과 메서드는 정적이기에 `Math.function()`으로 언제든 호출 가능
+- 대표 속성(property) 및 메서드(method)
+  - 오일러 상수(e): Math.E
+  - PI(π): Math.PI
+  - 절대값: Math.abs(x)
+  - 최대값: Math.max(x)
+  - 최소값: Math.min(x)
+  - 랜덤값(0~ 1이하의 값): Math.random()
+  - 제곱과 제곱근: Math.pow(x,y), Math.sqrt(x)
+  - 소수점 처리: Math.round(x), Math.ceil(x), Math.floor(x)
+
+#### max, min, abs
+- 절대값: Math.abs(x)
+- 최대값: Math.max(x)
+- 최소값: Math.min(x)
+
+<br>
+
+#### 제곱/제곱근
+- 제곱: Math.pow(x,y)
+- 제곱근: Math.sqrt(x)
+
+<br>
+
+#### random
+> Math.random();
+<br>
+
+0-1 사이의 숫자(소숫점)를 반환한다.
+
+```javascript
+Math.random(); // 0 - 1
+Math.random() * 10 // 0 - 10
+```
+<br>
+
+#### ceil
+> Math.ceil();
+소숫점 숫자를 올림처리한다.
+```javascript
+Math.ceil(1.1) // 2
+Math.ceil(1.6) // 2
+Math.ceil(Math.random() * 10); // 1 - 11 의 정수
+```
+<br>
+
+#### round
+> Math.round();
+소숫점 숫자를 반올림처리한다.
+```javascript
+Math.round(1.1) // 1
+Math.round(1.6) // 2
+Math.round(Math.random() * 10); // 0 - 11 의 정수
+```
+
+<br>
+
+#### floor
+> Math.floor();
+소숫점 숫자를 내림처리한다.
+```javascript
+Math.floor(1.1) // 1
+Math.floor(1.6) // 1
+Math.floor(Math.random() * 10); // 0 - 10 의 정수
+```
+
+<br>
+
+> [code, main-26.js](zerobase/main-26-math.js)
+
+<br>
+<br>
+<br>
+
+### Date
+- 표준 빌트인 객체로써 날짜와 시간을 위한 속성값과 메서드를 제공하는 객체
+- 1970년 1월 1일 UTC(협정 세계시) 자정과의 시간 차이를 밀리초로 나타내는 정수 값
+- 현재 시스템의 날짜를 알아낼 수 있고, 시스템 날짜도 조절할 수 있음
+- 생성자 및 대표 메서드(method)
+  - Date 객체 생성자: new Date()
+  - 현재 시간 기준 문자열: Date()
+  - 날짜 정보(년/월/일): Date.getFullYear(), Date.getMonth(), Date.getDate()
+  - 날짜 정보(시/분/초): Date.getHours(), Date.getMinutes(), Date.getSeconds()
+  - 날짜 설정(년/월/일): Date.setFullYear(), Date.setMonth(), Date.setDate()
+  - 날짜 설정(시/분/초): Date.setHours(), Date.setMinutes(), Date.setSeconds()
+  - 그 외 날짜 정보 얻기: Date.getDay(), Date.getTime(), Date.getTimezoneOffset()
+    - Date.getTime() : 주어진 일시(1970/1/1) 차분(ms)
+    - Date.getTimezoneOffset() : 현지 시간 - 표준 시간 차분(min)
+  - 그 외 날짜 정보 설정: Date.parse(string)
+    - 날짜 정보 설정
+      - 문자열 기반 날짜 정보 설정: Date.parse(YYYY-MM-DDTHH:mm:ss.sssZ)
+      - YYYY-MM-DD : 날짜(연-월-일), `T`: 구분기호, HH:mm:ss.sss: 시:분:초.밀리초
+      - `Z`(옵션): 설정하지 않을 경우 로컬 기준 UTC로 설정할 경우 UTC+0 기준으로 시간 설정
+
+<br>
+
+> [code, main-27.js](zerobase/main-27-date.js)
+
+<br>
 <br>
 <br>
 
@@ -1067,6 +1399,7 @@ document.querySelector(".hello");
 // 전부 가져옴!
 document.querySelectorAll(".hello");
 ```
+<br>
 <br>
 <br>
 
@@ -1109,6 +1442,7 @@ function handleTitleClick(){
 // 이벤트
 title.onclick =  handleTitleClick;
 ```
+<br>
 <br>
 <br>
 
@@ -1224,6 +1558,7 @@ greeting.inputText = ` Hello ${username}!`;
 2번 방식은 새롭게 고안된 방식이며, 아래와 같은 규칙을 따른다.
 - 변수 + string을 하고 싶다면 `${변수명}`의 형태로 사용한다.
 - 백틱(<code>`</code>)기호로 시작하고 끝낸다.
+
 <br>
 <br>
 <br>
@@ -1235,6 +1570,7 @@ greeting.inputText = ` Hello ${username}!`;
 - `setItem(key, value)` : 정보 저장하기
 - `getItem(key, value)` : 정보 불러오기
 - `removeItem(key, value)` : 정보 삭제하기
+
 <br>
 <br>
 <br>
@@ -1242,6 +1578,7 @@ greeting.inputText = ` Hello ${username}!`;
 ### intervals
 특정 시간마다 함수 호출.
 `setInterval(함수명, N(ms));` 형태로 작성, Nms 마다 함수를 호출한다.
+
 <br>
 <br>
 <br>
@@ -1249,6 +1586,7 @@ greeting.inputText = ` Hello ${username}!`;
 ### setTimeout()
 특정 시간이 지난 후 함수 호출.
 `setTimeout(함수명, N(ms));` 형태로 작성, Nms 마다 함수를 호출한다.
+
 <br>
 <br>
 <br>
@@ -1258,53 +1596,6 @@ String 타입에 사용 가능하며, 글자 수가 x개가 아니라면 y를 �
 ```javascript
 "1".padStart(2,"0") // 01 / 1이 2글자가 아니라면 앞에 0을 붙인다
 ```
-<br>
-<br>
-<br>
-
-### Math
-
-#### random
-> Math.random();
-<br>
-
-0-1 사이의 숫자(소숫점)를 반환한다.
-```javascript
-Math.random(); // 0 - 1
-Math.random() * 10 // 0 - 10
-```
-<br>
-
-### ceil
-> Math.ceil();
-소숫점 숫자를 올림처리한다.
-```javascript
-Math.ceil(1.1) // 2
-Math.ceil(1.6) // 2
-Math.ceil(Math.random() * 10); // 1 - 11 의 정수
-```
-<br>
-
-### round
-> Math.round();
-소숫점 숫자를 반올림처리한다.
-```javascript
-Math.round(1.1) // 1
-Math.round(1.6) // 2
-Math.round(Math.random() * 10); // 0 - 11 의 정수
-```
-
-<br>
-
-### floor
-> Math.floor();
-소숫점 숫자를 내림처리한다.
-```javascript
-Math.floor(1.1) // 1
-Math.floor(1.6) // 1
-Math.floor(Math.random() * 10); // 0 - 10 의 정수
-```
-
 <br>
 <br>
 <br>
@@ -1322,62 +1613,6 @@ JSON.parse('true');            // true
 JSON.parse('"foo"');           // "foo"
 JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
 JSON.parse('null');            // null
-```
-
-<br>
-<br>
-
-### forEach
-`배열.forEach(실행할 내용);` 으로 작성.
-
-> JavaScript는 지금 처리되고 있는 아이템을 그냥 제공함! 함수에서 item 키워드 활용!
-```javascript
-function sayHello(item){
-  console.log("This is the turn of", item);
-}
-...
-if(savedToDos !== null){
-  const parsedToDos = JSON.parse(savedToDos);
-  parsedToDos.forEach(sayHello);
-}
-```
-
-<br>
-<br>
-<br>
-
-### filter
-제외하기(걸러내기) 위한 함수.
-```javascript
-function sexyFilter(){
-  // Should return true if you want include item
-  // 전부 유지
-  // return true;
-  // 전부 삭제
-  return false;
-}
-[1,2,3,4].filter(sexyFilter);
-sexyFilter(4)
-```
-```javascript
-function sexyFilter(item){
-  return item !== 3;
-}
-[1,2,3,4].filter(sexyFilter); // [1,2,4]
-```
-```javascript
-const arr = [1231,432423,54312,52342,523,1323,4122,3,12,34,323,345,221]
-function sexyFunction(potato){
-  return potato <= 1000;
-}
-arr.filter(sexyFunction); // 523,3,12,34,323,345,221
-```
-```javascript
-const todos = [{"text":"asdf","id":1631944047326},{"text":"asfwaf","id":1631944048469},{"text":"asf","id":1631944228165}]
-function sexyFunction(todo){
-  return todo.id !== 1631944047326;
-}
-todos.filter(sexyFunction);
 ```
 
 <br>

@@ -82,6 +82,9 @@
 - [2021-09-27]
   - [기초 문법 26(method) ~ 32(배열탐색-변형)](./javascript/00_javascript-summary.md#method)
     - 내부 실습 js 파일(main-18-method.js ~ main-21-2-search_transform.js)
+- [2021-09-28]
+  - [기초 문법 33(고차함수) ~ 41(N차원 Array)](./javascript/00_javascript-summary.md#method)
+    - 내부 실습 js 파일(main-22-method.js ~ main-27-date.js)
 <br>
 <br>
 
