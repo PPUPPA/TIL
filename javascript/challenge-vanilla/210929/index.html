@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+    .xmas-title{margin:0 0 20px;}
+    .xmas-time_wrap{display:block;font-size:1.4rem;font-weight:700;}
+  </style>
+</head>
+<body>
+  <h1 class="xmas-title">Time Until Christmas Eve</h1>
+  <div class="xmas-time_wrap">
+    <span class="xmas-time">00d 00h 00m 00s</span>
+  </div>
+
+  <script>
+    const d_day_xmas = document.querySelector(".xmas-time_wrap .xmas-time");
+    const date = new Date();
+    const thisYear = date.getFullYear();
+    const xmas = new Date(`${thisYear}-12-25T00:00:00`).getTime();
+    
+    function countXmas(){
+      const today = new Date().getTime();
+      const count = xmas - today;
+      const days = String(Math.floor(count/(1000*60*60*24))).padStart(2, "0");
+      const hours = String(Math.floor((count%(1000*60*60*24))/(1000*60*60))).padStart(2, "0");
+      const minutes = String(Math.floor((count%(1000*60*60))/(1000*60))).padStart(2, "0");
+      const seconds = String(Math.floor((count%(1000*60))/(1000))).padStart(2, "0");
+      d_day_xmas.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(countXmas, 1000);
+    countXmas();
+  </script>
+</body>
+</html>

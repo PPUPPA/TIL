@@ -652,6 +652,9 @@ do{
 while(조건문);
 ```
 
+> 무한으로 돌아가는 while을 만들려면 while(true){} / while(1){} 등으로 넣어두고,
+> 멈춤 브레이크 코드를 넣는다.
+
 <br>
 
 > [code, main-16-2.js](zerobase/main-16-2-while.js)

@@ -73,18 +73,20 @@
 - [2021-09-25]
   - [기초 문법 12(산술대입 연산자) ~ 21(반복문 연습문제)](./javascript/00_javascript-summary.md#%EC%97%B0%EC%82%B0%EC%9E%90)
     - 내부 실습 js 파일(main-13-arithmetic_operator.js ~ main-16-3-brak_continue.js)
-    - [조건문 연습문제](./javascript/15-test.js)
-    - [반복문 연습문제](./javascript/16-test.js)
+    - [조건문 연습문제](./javascript/zerobase/test/basic/15-test.js)
+    - [반복문 연습문제](./javascript/zerobase/test/basic/16-test.js)
 - [2021-09-26]
   - [기초 문법 22(함수) ~ 25(함수 연습문제)](./javascript/00_javascript-summary.md#Function)
     - 내부 실습 js 파일(main-17-function.js ~ main-17-3-callback_function.js)
-    - [함수 연습문제](./javascript/17-test.js)
+    - [함수 연습문제](./javascript/zerobase/test/basic/17-test.js)
 - [2021-09-27]
   - [기초 문법 26(method) ~ 32(배열탐색-변형)](./javascript/00_javascript-summary.md#method)
     - 내부 실습 js 파일(main-18-method.js ~ main-21-2-search_transform.js)
 - [2021-09-28]
   - [기초 문법 33(고차함수) ~ 41(N차원 Array)](./javascript/00_javascript-summary.md#method)
     - 내부 실습 js 파일(main-22-method.js ~ main-28-nd_array.js)
+- [2021-09-29]
+  - [복습, 기초 문법 42 ~ 62 문제 풀이](./javascript/zerobase/test/basic/index.md)
 <br>
 <br>
 
@@ -159,6 +161,8 @@
 - [2021-09-25] : Quiz 04
 - [2021-09-27]
   - [Coding 03](./javascript/challenge-vanilla/210927/index.html)
+- [2021-09-29]
+  - [Coding 04](./javascript/challenge-vanilla/210929/index.html)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

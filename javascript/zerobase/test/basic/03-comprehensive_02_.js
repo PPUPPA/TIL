@@ -1,0 +1,34 @@
+/* 2. 제곱 구현 */
+/*
+x,y 두 수를 입력 받아 x의 y제곱 값을 반환해주는 함수를 구현하시오.
+* 제곱연산자 사용 금지
+*/
+
+/* user code */
+function answer(x, y) {
+  let result = 1;
+
+  // 코드 구현 시작 영역
+
+  for(let i=0;i<y;i++){
+    result *= x;
+  }
+
+  // 코드 구현 종료 영역
+
+  return result;
+}
+
+/* main code */
+let input = [
+  // TC: 1
+  [2, 3],
+  // TC: 2
+  [4, 6],
+  // TC: 3
+  [1, 100],
+];
+
+for (let i = 0; i < input.length; i++) {
+  console.log(`#${i + 1} ${answer(input[i][0], input[i][1])}`);
+}
