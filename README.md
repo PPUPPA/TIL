@@ -87,6 +87,10 @@
     - 내부 실습 js 파일(main-22-method.js ~ main-28-nd_array.js)
 - [2021-09-29]
   - [복습, 기초 문법 42 ~ 62 문제 풀이](./javascript/zerobase/test/basic/index.md)
+- [2021-09-30]
+  - [수학 기본 이론 1 ~ 6](./javascript/00_javascript-summary.md#Operation)
+    - 내부 실습 js 파일(main-30.js)
+  - [복습, 수학 기본 이론 7 ~ 9 문제 풀이](./javascript/zerobase/test/operation/index.md)
 <br>
 <br>
 
@@ -163,6 +167,8 @@
   - [Coding 03](./javascript/challenge-vanilla/210927/index.html)
 - [2021-09-29]
   - [Coding 04](./javascript/challenge-vanilla/210929/index.html)
+- [2021-09-30]
+  - [Coding 05](./javascript/challenge-vanilla/210930/index.html)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용
