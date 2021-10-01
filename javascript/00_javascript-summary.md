@@ -1019,7 +1019,7 @@ let obj = {
     - `Array.length`, `Array.isArray()`
   - 배열 추가/삭제(LIFO)
     - 뒤쪽에서 작용(Back) :  `Array.push()`, `Array.pop()`
-    - 앞쪽에서 작용(Front) : `Array.shift()`, `Array.unshift()`
+    - 앞쪽에서 작용(Front) : `Array.unshift()`, `Array.shift()`
     - `Array.splice(index(,length))` : 인덱스 값 이후로 자름(length개만큼)(원본을 자름)
     - `Array.slice(index(, end))` : 인덱스부터 종료 인덱스까지 잘라서 보여줌(별도 생성)
     - `Array.concat(arg1, arg2 ...)` : 다중 배열 병합(별도 생성)
@@ -1554,6 +1554,62 @@ function big_o(n){
 
 > [등차/등비수열 code, main-31.js](zerobase/main-31-recursive.js)
 > [팩토리얼/피보나치수열 code, main-31.js](zerobase/main-31-recursive2.js)
+
+<br>
+<br>
+<br>
+
+## Data structure
+- 선형 자료구조
+  - 배열
+  - 연결리스트
+     - 이중 연결리스트
+     - 원형 연결리스트
+  - 스택
+  - 큐
+  - 해시테이블
+    - 선형 해시테이블
+    - 체이닝 해시테이블
+    - 딕셔너리 해시테이블
+  - 데크
+- 비선형 자료구조
+  - 그래프
+    - DFS
+    - BFS
+  - 힙
+  - 트리
+    - 이진 트리
+    - 이진 탐색 트리
+  - 트라이
+
+<br>
+
+### 선형 자료구조
+#### 배열
+- 여러 개체(Entity)값을 순차적으로 나열한 선형 자료 구조
+- 배열의 인덱스는 0부터 시작
+- 대표 속성(property)와 메서드(method) [*기존에 다룬 배열 참고1](#Array) [*기존에 다룬 배열 참고2](#고차함수)
+  - 배열 크기 및 배열 여부 확인: Array.length, Array.isArray()
+  - 배열 추가/삭제: Array.push(), Array.pop(), Array.shift(), Array.unshift(), Array.splice(), Array.slice() 등
+  - 배열 탐색: Array.indexOf(), Array.lastIndexOf(), Array.includes()
+  - 배열 변형: Array.sort(), Array.reverse(), Array.join()
+  - 배열 반복: Array.sort(), Array.forEach(), Array.map(), Array.find(), Array.filter(), Array.reduce()
+  - 배열 논리연산: Array.some(), Array.every()
+    - Array.some(): 배열 내 단 하나라도 콜백 함수의 조건을 만족하는 요소가 있다면 true, 없다면 false(빈 배열도 false)반환
+      - Array.some(function(item, index, array){}), item: 배열요소, index: 배열위치, array: 배열
+    - Array.every(): 배열의 모든 요소가 콜백 함수의 조건을 만족해야 true(빈 배열도 true), 아니면 false 반환
+      - Array.every(function(item, index, array){}), item: 배열요소, index: 배열위치, array: 배열
+- [N차원 배열](#N차원-배열)
+
+<br>
+
+> [배열 / code, main-21.js](zerobase/main-21-array.js)
+> [배열 탐색과 변형 / code, main-21-2-search_transform.js](zerobase/main-21-2-search_transform.js)
+
+##### 배열 선언/접근/속성
+- 선언: `new Array()` 혹은 `[]`를 통해 선언, 사이즈 혹은 값을 입력해 초기화도 가능
+- 접근 방법: `Array[index]`를 통해 O(1) 접근
+- 배열 속성: `Array.length`를 통해 배열 갯수 확인 가능
 
 <br>
 <br>

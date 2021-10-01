@@ -91,6 +91,9 @@
   - [수학 기본 이론 1 ~ 6](./javascript/00_javascript-summary.md#Operation)
     - 내부 실습 js 파일(main-30.js)
   - [복습, 수학 기본 이론 7 ~ 9 문제 풀이](./javascript/zerobase/test/operation/index.md)
+- [2021-10-01]
+  - [선형 자료구조 1 ~ 2](./javascript/00_javascript-summary.md#Data-structure)
+  - [복습, 배열 3 ~ 12 문제 풀이](./javascript/zerobase/test/data-structure/linear/index.md)
 <br>
 <br>
 
@@ -169,6 +172,8 @@
   - [Coding 04](./javascript/challenge-vanilla/210929/index.html)
 - [2021-09-30]
   - [Coding 05](./javascript/challenge-vanilla/210930/index.html)
+- [2021-10-01]
+  - [Project](./javascript/challenge-vanilla/211001/index.html)
 
 <!-- 
 띄어쓰기는 + 대신 - 로 적용

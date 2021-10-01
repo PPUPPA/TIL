@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- settings -->
+  <link rel="stylesheet" href="fonts/font.css">
+  <link rel="stylesheet" href="css/sunny_general.css">
+  <script src="js/jquery-1.12.3.min.js"></script>
+  <script src="js/sunny_general.js"></script>
+
+  <!-- project -->
+  <link rel="stylesheet" href="css/common.css">
+  
+  <title>Todo</title>
+</head>
+<body>
+  <main role="main" class="main">
+    <h1 class="ir_text">Todo</h1>
+
+    <section class="section-login">
+      <form id="login-form" class="hidden">
+        <div class="inp_txt_wrap">
+					<label for="inp-login">이름을 입력해주세요.</label>
+					<input type="text" id="inp-login" name="inp_txt" class="inp_txt" title="이름을 입력해주세요." required maxlength="15">
+				</div>
+        <button type="submit"><span>Log In</span></button>
+      </form>
+      
+      <h2 id="greeting" class="hidden">안녕하세요.</h2>
+    </section>
+    
+    <section class="section-todo">
+      <strong id="clock">00:00:00</strong>
+      
+      <form id="todo-form">
+        <div class="inp_txt_wrap">
+          <label for="inp-todo">오늘의 할 일은?</label>
+          <input type="text" id="inp-todo" name="inp_txt" class="inp_txt" title="Write a To Do and Press Enter." required>
+        </div>
+      </form>
+      
+      <ul id="todo-list"></ul>
+      <div id="quote">
+        <strong class="today_music">🎵 오늘의 음악</strong>
+        <a class="quote-link" href="#" target="_blank" title="새창열림, 유튜브 뮤직">
+          <span class="quote-text"></span>
+          <cite class="quote-cite"></cite>
+        </a>
+      </div>
+      <div id="weather">
+        <span class="weather-state"></span>
+        <span class="weather-locate"></span>
+      </div>
+    </section>
+  </main>
+
+  <!-- project javascript -->
+  <script src="js/greetings.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/todo.js"></script>
+  <script src="js/weather.js"></script>
+</body>
+</html>
