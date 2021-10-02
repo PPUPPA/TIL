@@ -4,62 +4,93 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="shortcut icon" href="img/_fav/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/_fav/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" href="img/_fav/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="img/_fav/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" href="img/_fav/android-chrome-512x512.png" sizes="512x512">
+  <meta name="description" content="새벽의 생각 투두 리스트">
+  <meta property="og:image" content="img/5.jpg">
+  <meta property="og:title" content="Thoughts of dawn">
+  <meta property="og:description" content="새벽의 생각 투두 리스트">
+  
   <!-- settings -->
   <link rel="stylesheet" href="fonts/font.css">
   <link rel="stylesheet" href="css/sunny_general.css">
   <script src="js/jquery-1.12.3.min.js"></script>
   <script src="js/sunny_general.js"></script>
-
+  
   <!-- project -->
   <link rel="stylesheet" href="css/common.css">
   
-  <title>Todo</title>
+  <title>Thoughts of dawn</title>
 </head>
 <body>
   <main role="main" class="main">
-    <h1 class="ir_text">Todo</h1>
-
-    <section class="section-login">
-      <form id="login-form" class="hidden">
-        <div class="inp_txt_wrap">
-					<label for="inp-login">이름을 입력해주세요.</label>
-					<input type="text" id="inp-login" name="inp_txt" class="inp_txt" title="이름을 입력해주세요." required maxlength="15">
-				</div>
-        <button type="submit"><span>Log In</span></button>
-      </form>
-      
-      <h2 id="greeting" class="hidden">안녕하세요.</h2>
-    </section>
     
-    <section class="section-todo">
-      <strong id="clock">00:00:00</strong>
+    <!-- header -->
+    <header id="header" class="header">
+      <h1 class="ir_text">Thoughts of dawn</h1>
+      <div class="now_wrap">
+        <span class="today">1월 1일 일요일</span>
+        <span id="clock" class="clock">00:00:00 AM</span>
+      </div>
+      <div id="weather" class="weather">
+        <span class="weather-state"></span>
+        <span class="weather-temp"></span>
+        <span class="weather-locate"></span>
+      </div>
+    </header>
+    <!-- // header -->
+
+    <div class="container">
+      <!-- step1 : section-login -->
+      <section class="section-login">
+        <form id="login-form" class="login-form hidden">
+          <div class="inp_txt_wrap">
+            <label for="inp-login">이름을 입력해주세요.</label>
+            <input type="text" id="inp-login" name="inp_txt" class="inp_txt" title="이름을 입력해주세요." required maxlength="15">
+          </div>
+          <button class="btn-submit" type="submit"><span>Log In</span></button>
+        </form>
+        
+        <h2 id="greeting" class="greeting hidden">안녕하세요.</h2>
+      </section>
+      <!-- // step1 : section-login -->
       
-      <form id="todo-form">
-        <div class="inp_txt_wrap">
-          <label for="inp-todo">오늘의 할 일은?</label>
-          <input type="text" id="inp-todo" name="inp_txt" class="inp_txt" title="Write a To Do and Press Enter." required>
-        </div>
-      </form>
-      
-      <ul id="todo-list"></ul>
-      <div id="quote">
+      <!-- step2 : section-todo -->
+      <section class="section-todo hidden">
+        <form id="todo-form" class="todo-form">
+          <div class="inp_txt_wrap">
+            <label for="inp-todo">오늘의 할 일은?</label>
+            <input type="text" id="inp-todo" name="inp_txt" class="inp_txt" title="오늘의 할 일을 입력한 후 엔터 키를 눌러주세요." required>
+          </div>
+        </form>
+        
+        <ul id="todo-list"></ul>
+      </section>
+      <!-- // step2 : section-todo -->
+    </div>
+    
+    <!-- footer -->
+    <footer id="footer" class="footer">
+      <div id="quote" class="quote">
         <strong class="today_music">🎵 오늘의 음악</strong>
         <a class="quote-link" href="#" target="_blank" title="새창열림, 유튜브 뮤직">
           <span class="quote-text"></span>
           <cite class="quote-cite"></cite>
         </a>
       </div>
-      <div id="weather">
-        <span class="weather-state"></span>
-        <span class="weather-locate"></span>
+      <div class="footer-info">
+        <small class="copyrights">&copy; Sunny</small>
       </div>
-    </section>
+    </footer>
+    <!-- // footer -->
   </main>
 
   <!-- project javascript -->
   <script src="js/greetings.js"></script>
-  <script src="js/clock.js"></script>
+  <script src="js/now.js"></script>
   <script src="js/quotes.js"></script>
   <script src="js/background.js"></script>
   <script src="js/todo.js"></script>

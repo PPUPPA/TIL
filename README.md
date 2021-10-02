@@ -94,6 +94,8 @@
 - [2021-10-01]
   - [선형 자료구조 1 ~ 2](./javascript/00_javascript-summary.md#Data-structure)
   - [복습, 배열 3 ~ 12 문제 풀이](./javascript/zerobase/test/data-structure/linear/index.md)
+- [2021-10-02]
+  - [선형 자료구조 13 ~ 20](./javascript/00_javascript-summary.md#prototype)
 <br>
 <br>
 

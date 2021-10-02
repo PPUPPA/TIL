@@ -33,4 +33,89 @@ html, body, .main {
   opacity: .5;
 }
 
+/* components */
+/* header */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .now_wrap {
+  line-height: 1.2;
+}
+
+.header .now_wrap .today {
+  display: block;
+  font-size: 22px;
+}
+
+.header .now_wrap .clock {
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.header .weather {
+  position: relative;
+  font-size: 0;
+}
+
+.header .weather:before {
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffbb00;
+  content: '';
+}
+
+.header .weather-state, .header .weather-temp, .header .weather-locate {
+  line-height: 1;
+}
+
+.header .weather-state, .header .weather-temp {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.header .weather-state {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.header .weather-state:after {
+  display: inline-block;
+  margin-left: 1px;
+  -webkit-transform: translateY(-3px) rotate(8deg);
+          transform: translateY(-3px) rotate(8deg);
+  content: ',';
+}
+
+.header .weather-temp {
+  margin-left: 8px;
+  font-size: 18px;
+  color: #444;
+  text-align: right;
+}
+
+.header .weather-locate {
+  display: block;
+  margin-top: 12px;
+  font-size: 15px;
+  text-align: right;
+  font-style: italic;
+  opacity: .8;
+}
+
+.header .weather-locate:before {
+  content: '@ ';
+}
+
+/* footer */
 /* main */

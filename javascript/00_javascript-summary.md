@@ -1615,6 +1615,42 @@ function big_o(n){
 <br>
 <br>
 
+#### prototype
+어떠한 객체가 만들어지기 위해 객체의 모태가 되는 원형
+- 자바스크립트는 다른 일반적인 객체지향 언어와는 달리 프로토타입을 이용한 복사(Cloning)를 통해 새로운 객체를 생성한다.
+- 일반적인 객체 생성 방식 : 속성은 생성자, 메서드는 프로토타입에서 정의함
+
+<br>
+
+> 자료구조는 아니지만, 앞으로 스택, 링크드 리스트 등을 만들고 이해하는데 있어 필요함
+
+<br>
+
+> [code, main-32.js](zerobase/main-32-prototype.js)
+
+<br>
+<br>
+<br>
+
+#### 연결 리스트(linked list)
+- 각 노드가 *데이터와 포인터*를 가지며, **한 줄**로 연결되어 있는 방식으로 데이터를 저장하는 자료 구조.
+- 구현 메서드(method)
+  - 노드 개수 / 비어있는지 확인 / 노드 출력: `LinkedList.size()`, `LinkedList.isEmpty()`, `LinkedList.printNode()`
+  - 노드 추가: `LinkedList.append()`, `LinkedList.insert()`
+  - 노드 삭제: `LinkedList.remove()`, `LinkedList.removeAt()`
+  - 데이터 위치 확인: `LinkedList.indexOf()` 
+
+> [Node] data:next
+> [Linked List] head -> 0:-> 0:-> 0:-> null
+
+<br>
+
+> [연결리스트 구현 / code, main-33.js](zerobase/main-33-linkedList.js)
+
+<br>
+<br>
+<br>
+
 ### Document
 자바스크립트에는 document라는 오브젝트가 이미 내장되어 있고, 해당 html에 접근할 수 있음.
 (ex: console창에서 document.title을 입력하면 페이지의 타이틀 값을 불러오며, 재정의할 수 있음.)
