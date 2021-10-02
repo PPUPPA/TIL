@@ -174,7 +174,7 @@
   - [Coding 04](./javascript/challenge-vanilla/210929/index.html)
 - [2021-09-30]
   - [Coding 05](./javascript/challenge-vanilla/210930/index.html)
-- [2021-10-01]
+- [2021-10-01 ~ 2021-10-02]
   - [Project](./javascript/challenge-vanilla/211001/index.html)
 
 <!-- 
