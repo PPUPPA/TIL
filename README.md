@@ -96,6 +96,8 @@
   - [복습, 배열 3 ~ 12 문제 풀이](./javascript/zerobase/test/data-structure/linear/index.md)
 - [2021-10-02]
   - [선형 자료구조 13 ~ 20](./javascript/00_javascript-summary.md#prototype)
+- [2021-10-03]
+  - [수학 기본 이론 10 ~ 21 문제 풀이](./javascript/zerobase/test/operation/index.md)
 <br>
 <br>
 

@@ -36,9 +36,9 @@
         <span id="clock" class="clock">00:00:00 AM</span>
       </div>
       <div id="weather" class="weather">
-        <span class="weather-state"></span>
-        <span class="weather-temp"></span>
-        <span class="weather-locate"></span>
+        <span class="weather-state">Unknown</span>
+        <span class="weather-temp">0.0°C</span>
+        <span class="weather-locate">Somewhere</span>
       </div>
     </header>
     <!-- // header -->
@@ -54,12 +54,13 @@
           <button class="btn-submit" type="submit"><span>Log In</span></button>
         </form>
         
-        <h2 id="greeting" class="greeting hidden">안녕하세요.</h2>
       </section>
       <!-- // step1 : section-login -->
       
       <!-- step2 : section-todo -->
       <section class="section-todo hidden">
+        <h2 id="greeting" class="greeting"><span class="greeting-hi">Thoughts of Username.</span></h2>
+
         <form id="todo-form" class="todo-form">
           <div class="inp_txt_wrap">
             <label for="inp-todo">오늘의 할 일은?</label>
@@ -74,11 +75,13 @@
     
     <!-- footer -->
     <footer id="footer" class="footer">
-      <div id="quote" class="quote">
-        <strong class="today_music">🎵 오늘의 음악</strong>
-        <a class="quote-link" href="#" target="_blank" title="새창열림, 유튜브 뮤직">
-          <span class="quote-text"></span>
-          <cite class="quote-cite"></cite>
+      <div id="music" class="music">
+        <a class="music-link" href="#" target="_blank" title="새창열림, 유튜브 뮤직">
+          <strong class="today_music"><i class="ico-music">🎵</i> 오늘의 음악</strong>
+          <span class="music-wrap">
+            <span class="music-text"></span>
+            <cite class="music-cite"></cite>
+          </span>
         </a>
       </div>
       <div class="footer-info">
@@ -91,7 +94,7 @@
   <!-- project javascript -->
   <script src="js/greetings.js"></script>
   <script src="js/now.js"></script>
-  <script src="js/quotes.js"></script>
+  <script src="js/music.js"></script>
   <script src="js/background.js"></script>
   <script src="js/todo.js"></script>
   <script src="js/weather.js"></script>

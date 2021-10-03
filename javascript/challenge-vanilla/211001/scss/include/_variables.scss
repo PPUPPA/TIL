@@ -1,10 +1,9 @@
 $color_white:#fff;
 $color_black:#000;
 $color_main:#0E2432;
-$color_primary:#009eb4;
-$color_secondary:#0063c3;
-$btn_color1:#009eb4;
-$btn_color2:#015aaa;
+$color_primary:#ffbb00;
+$btn_color1:#ffbb00;
+$btn_color2:#ff6600;
 
 /* default btn */
 %gradient_btn{
@@ -116,5 +115,34 @@ $btn_color2:#015aaa;
     max-width:182px;
     padding: 10px 20px;
     font-size: 1.4rem;
+  }
+}
+
+%text_shadow-w{
+  text-shadow:0 0 2px #fff, 1px 1px 4px #fff;
+  text-shadow: 0 0 3px rgba(255,255,255,1),0 0 2px rgba(255,255,255,.6),0 0 1px rgba(255,255,255,.8);
+}
+
+%animation-flip{
+  display:inline-block;
+  -webkit-animation:flip 2s ease-in infinite;
+  -moz-animation:flip 2s ease-in infinite;
+  animation:flip 2s ease-in infinite;
+}
+
+@-moz-keyframes flip {
+  100% {
+    -moz-transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes flip {
+  100% {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+@keyframes flip {
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
   }
 }

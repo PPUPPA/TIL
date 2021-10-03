@@ -12,9 +12,13 @@ function saveToDos(){
 
 function deleteToDo(event){
   const li = event.target.parentElement;
-  li.remove();
-  toDos = toDos.filter(todo => todo.id !== parseInt(li.id));
-  saveToDos();
+  if(confirm("정말로 삭제할까요?")){
+    li.remove();
+    toDos = toDos.filter(todo => todo.id !== parseInt(li.id));
+    saveToDos();
+  }else{
+    return false;
+  }
 }
 
 function paintToDo(newToDo){
