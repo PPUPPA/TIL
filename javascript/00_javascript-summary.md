@@ -1651,6 +1651,47 @@ function big_o(n){
 <br>
 <br>
 
+#### Double Linked List
+이중 연결 리스트
+- 각 노드가 *데이터와 포인터*를 가지며, **두 줄**로 연결되어 있는 방식으로 데이터를 저장하는 자료 구조.
+- 구현 메서드(method)
+  - 노드 개수 / 비어있는지 확인: `DoubleLinkedList.size()`, `DoubleLinkedList.isEmpty()`
+  - 순차 출력 / 역 출력: `DoubleLinkedList.printNode()`, `DoubleLinkedList.printNodeInverse()`
+  - 노드 추가: `DoubleLinkedList.append()`, `DoubleLinkedList.insert()`
+  - 노드 삭제: `DoubleLinkedList.remove()`, `DoubleLinkedList.removeAt()`
+  - 데이터 위치 확인: `DoubleLinkedList.indexOf()`
+
+> [Node] prev:data:next
+> [Double Linked List] head(null) -> <-:0:-> <-:0:-> <-:0:-> <- null(tail)
+
+<br>
+
+> [이중연결리스트 구현 / code, main-34.js](zerobase/main-34-doubleLinkedList.js)
+
+<br>
+<br>
+<br>
+
+#### Circular Linked List
+원형 연결 리스트
+- 각 노드가 *데이터와 포인터*를 가지며, **원형**으로 연결되어 있는 방식으로 데이터를 저장하는 자료 구조.
+- 구현 메서드(method)
+  - 노드 개수 / 비어있는지 확인: `CircularLinkedList.size()`, `CircularLinkedList.isEmpty()`
+  - 노드 추가: `CircularLinkedList.append()`, `CircularLinkedList.insert()`
+  - 노드 삭제: `CircularLinkedList.remove()`, `CircularLinkedList.removeAt()`
+  - 데이터 위치 확인/노드 출력: `CircularLinkedList.indexOf()`, `CircularLinkedList.printNode()`
+
+> [Node] data:next
+> [Double Linked List] head -> 0:-> 0:-> <-:0:-> (첫번째 노드로 연결 / tail 없음!)
+
+<br>
+
+> [원형연결리스트 구현 / code, main-35.js](zerobase/main-35-circularLinkedList.js)
+
+<br>
+<br>
+<br>
+
 ### Document
 자바스크립트에는 document라는 오브젝트가 이미 내장되어 있고, 해당 html에 접근할 수 있음.
 (ex: console창에서 document.title을 입력하면 페이지의 타이틀 값을 불러오며, 재정의할 수 있음.)
