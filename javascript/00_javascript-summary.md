@@ -1692,6 +1692,54 @@ function big_o(n){
 <br>
 <br>
 
+#### Stack
+스택
+- 나중에 넣은 데이터가 먼저 나오는 **LIFO(Last In First Out)** 기반의 선형 자료구조 (ctrl+z 같은? 뒤로가기처럼!)
+- 구현 메서드(method)
+  - 데이터 전체 획득/비어 있는지 확인: `Stack.getBuffer()`, `Stack.isEmpty()`
+  - 추가/삭제/마지막 데이터 조회/크기 확인: `Stack.push()`, `Stack.pop()`, `Stack.peak()`, `Stack.size()`
+  - 데이터 위치/존재 여부 확인: `Stack.indexOf()`, `Stack.includes()`
+
+> [Stack]
+> 1 (나중에 쌓이고 먼저 빠짐)
+> 0 (먼저 쌓인 데이터, 늦게 빠짐)
+
+<br>
+
+> 0 -> push(2) ->> 0, 2 ->> pop() -> 0
+
+<br>
+
+> [스택 구현 / code, main-36.js](zerobase/main-36-stack.js)
+
+<br>
+<br>
+<br>
+
+#### 큐(Queue)
+- 먼저 넣은 데이터가 먼저 나오는 **FIFO(First In First Out)** 기반의 선형 자료구조
+- 구현 메서드(method)
+  - 데이터 전체 획득/비어 있는지 확인: `Queue.getBuffer()`, `Queue.isEmpty()`
+  - 데이터 추가/삭제: `Queue.enqueue()`, `Queue.dequeue()`
+  - 첫번째 데이터/사이즈/전체 삭제: `Queue.front()`, `Queue.size()`, `Queue.clear()`
+
+> [Queue]
+> 1 (나중에 쌓이고 먼저 빠짐)
+> 0 (먼저 쌓인 데이터, 늦게 빠짐)
+
+<br>
+
+> 0 -> push(2) ->> 0, 2 ->> pop() -> 0
+
+<br>
+
+> [큐 구현 / code, main-37.js](zerobase/main-37-queue.js)
+> [큐 최적화 / code, main-37.js](zerobase/main-37-2-queue_optimize.js)
+
+<br>
+<br>
+<br>
+
 ### Document
 자바스크립트에는 document라는 오브젝트가 이미 내장되어 있고, 해당 html에 접근할 수 있음.
 (ex: console창에서 document.title을 입력하면 페이지의 타이틀 값을 불러오며, 재정의할 수 있음.)

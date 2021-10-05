@@ -101,6 +101,9 @@
 - [2021-10-04]
   - [선형 자료구조 21 ~ 28](./javascript/00_javascript-summary.md#Double-Linked-List)
   - [복습, 선형 자료구조 29 ~ 31 문제 풀이](./javascript/zerobase/test/data-structure/linear/index.md#%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8)
+- [2021-10-04]
+  - [선형 자료구조 32 ~ 41](./javascript/00_javascript-summary.md#Stack)
+  - [복습, 선형 자료구조 34 ~ 38](./javascript/zerobase/test/data-structure/linear/index.md#%EC%8A%A4%ED%83%9D)
 <br>
 <br>
 
